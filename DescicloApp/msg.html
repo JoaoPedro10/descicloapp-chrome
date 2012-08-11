@@ -1,8 +1,11 @@
 <html>
 <head>
+<title>Enviar uma mensagem - DescicloApp</title>
+<link rel="shortcut icon" href="icons/icon.png" />
 <link rel="stylesheet" href="popup.html" />
-<link rel="stylesheet" href="select.css" />
-<link rel="stylesheet" href="button.css" />
+<link rel="stylesheet" href="css/select.css" />
+<link rel="stylesheet" href="css/button.css" />
+<link rel="stylesheet" href="css/inputtext.css" />
 
 <style type="text/css">
 body {
@@ -24,18 +27,84 @@ body {
        float:left;
 	margin-top:2px;
 	margin-right:4px;
-} 
+}
 </style> 
 <script type="text/javascript">
 function changeMsg() {
-var el=document.getElementById('msgform').action = 'http://' + document.getElementById('alternativomsg').value + '/index.php?title=Usuário_Discussão:' + document.getElementById('qmsg').value + '&action=edit&section=new';
-var el=document.getElementById('mailform').action = 'http://' + document.getElementById('alternativomsg').value + '/wiki/Especial:Contatar_usuário/' + document.getElementById('qmsg').value; 
+var el=document.getElementById('msgform').action = 'http://' + document.getElementById('alternativomsg').value + '/index.php?title=Usu%C3%A1rio_Discuss%C3%A3o:' + document.getElementById('qmsg').value + '&action=edit&section=new';
+var el=document.getElementById('mailform').action = 'http://' + document.getElementById('alternativomsg').value + '/wiki/Especial:Contatar_usu%C3%A1rio/' + document.getElementById('qmsg').value; 
 }
+</script>
+<script>
+	function verificarSuporte()
+	{
+		var c = (window.webkitNotifications !== undefined);
+		if (!c)
+		{
+			alert("Que porra \u00E9 essa? Tem um probleminha no seu Google Chrome, n\u00E3o t\u00E1 mostrando as notifica\u00E7\u00F5es =[ Ou voc\u00EA ta usando outro navegador? Poser");
+		}
+		return c;
+	}
+
+	function verificarPermissao()
+	{
+		if (!verificarSuporte()) return;
+		switch (webkitNotifications.checkPermission())
+		{
+		case 0:
+			alert("Está dando pra usar as notificações (ou não)");
+			break;
+		case 1:
+			alert("Você desativou as notificações? VTNC!!");
+			break;
+		case 2:
+			alert("Você não permitiu as notificações seu emo? Poser");
+			break;
+		}
+	}
+
+	function solicitarPermissao()
+	{
+		if (!verificarSuporte()) return;
+		webkitNotifications.requestPermission();
+	}
+ 	function Mensagem()
+	{
+		if (!verificarSuporte()) return;
+		if (webkitNotifications.checkPermission() == 0)
+		{
+			var icone = "icons/icon_32.png";
+			var titulo = "DescicloApp";
+			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o username de um usuário que você quer enviar uma mensagem (erótica), via página de discussão";
+			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
+			notificacao.show();
+			setTimeout(function ()
+			{
+				notificacao.cancel()
+			}, 5000);
+		}
+	}
+ 	function Email()
+	{
+		if (!verificarSuporte()) return;
+		if (webkitNotifications.checkPermission() == 0)
+		{
+			var icone = "icons/icon_32.png";
+			var titulo = "DescicloApp";
+			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o username de um usuário que você quer enviar um e-mail na Desciclopédia (bem particular, só vocês dois (ui!)), via Contatar usuário";
+			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
+			notificacao.show();
+			setTimeout(function ()
+			{
+				notificacao.cancel()
+			}, 5000);
+		}
+	}
 </script>
 </head>
 <body>
 <div class="imageml"><a onclick="window.open('popup.html', '_self')"><img src="imagens/voltarwp7.png" width="20px" height="20px" onMouseOver="this.src='imagens/voltarwp7mouse.png'" onMouseOut="this.src='imagens/voltarwp7.png'" title="Voltar" ></a><div align="center"><h4>Enviar mensagem</h4></div></div><hr>
-<table width="25px"><tr><select name="alternativomsg" id="alternativomsg" onchange="changeMsg();" style="height:22px;width:50px; -webkit-border-radius:10px;">
+<table width="25px"><tr><td><select name="alternativomsg" id="alternativomsg" onchange="changeMsg();" style="height:22px;width:50px; -webkit-border-radius:10px;">
 <option value="desciclopedia.org">.org</option>
 <option value="desciclopedia.ws">.ws</option>
 <option value="pudim.info">.info</option>
@@ -43,6 +112,7 @@ var el=document.getElementById('mailform').action = 'http://' + document.getElem
 <option value="pesquisa.la">.la</option>
 <option value="sophia.desciclopedia.org">sophia.</option>
 <option value="roberto.desciclopedia.org">roberto.</option>
-</select><input type="text" class="text" id="qmsg" autocomplete="on" onkeyup="changeMsg();" style="-webkit-border-radius: 10px; width: 150px;" placeholder="Enviar para..." name="qmsg" /><form id="msgform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="submit" name="Enviar mensagem" title="Enviar mensagem" value="M" /></form><form id="mailform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="submit" name="Enviar e-mail" title="Enviar e-mail" value="@" /></form></table>
+</select></td><td><input type="text" class="text" id="qmsg" autocomplete="on" onkeyup="changeMsg();" style="-webkit-border-radius: 10px;" placeholder="Enviar para..." name="qmsg" /></td></tr></table><form id="msgform" method="post" action="javascript:Mensagem()" target="_blank"><input type="submit" name="Enviar mensagem" style="min-width: 4em;" title="Enviar mensagem (discussão)" value="Enviar mensagem" /></form><form id="mailform" method="post" action="javascript:Email()" target="_blank"><input type="submit" name="Enviar e-mail" title="Enviar e-mail (contatar usuário)" value="Enviar e-mail" style="min-width: 4em;" /></form>
 </body>
 </head>
+</html>

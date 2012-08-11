@@ -3,12 +3,11 @@ div.tooltip {
      font:12px arial, verdana, helvetica, sans-serif;
      padding:0;
      color:#0000ff;
-     text-decoration:none;
+     text-decoration:none; 
 }
 
 div.tooltip:hover {
      background:transparent;
-     color:#f00;
 }
  
 div.tooltip span{display: none}
@@ -17,7 +16,7 @@ div.tooltip:hover span{
      -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
      display:block; 
      position:absolute; 
-     top:3em; 
+     top:2em; 
      font: 12px arial, verdana, helvetica, sans-serif;
      padding:5px 10px;
      border:1px solid #00ffff;
@@ -25,17 +24,16 @@ div.tooltip:hover span{
      color:#ffffff;
 }
 
- div.tooltip2 {
+div.tooltip2 {
      position:relative;
      font:12px arial, verdana, helvetica, sans-serif;
      padding:0;
      color:#0000ff;
-     text-decoration:none;
-}
+     text-decoration:none; 
+} 
 
 div.tooltip2:hover {
      background:transparent;
-     color:#f00;
 }
  
 div.tooltip2 span{display: none}
@@ -53,21 +51,46 @@ div.tooltip2:hover span{
      right:2em;
 }
 
- div.tooltip3 {
+div.tooltip3 {
      position:relative;
      font:12px arial, verdana, helvetica, sans-serif;
      padding:0;
      color:#0000ff;
-     text-decoration:none;
-}
+     text-decoration:none; 
+} 
 
 div.tooltip3:hover {
      background:transparent;
-     color:#f00;
 }
  
 div.tooltip3 span{display: none}
 div.tooltip3:hover span{
+     -webkit-border-radius: 5px;
+     -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+     display:block; 
+     position:absolute; 
+     bottom:2em; 
+     font: 12px arial, verdana, helvetica, sans-serif;
+     padding:5px 10px;
+     border:1px solid #00ffff;
+     background:#000000;
+     color:#ffffff;
+     left:2em;
+}
+
+div.tooltip4 {
+     position:relative;
+     font:12px arial, verdana, helvetica, sans-serif;
+     padding:0;
+     color:#0000ff;
+     text-decoration:none; 
+}
+ 
+div.tooltip4:hover {
+     background:transparent;
+}
+div.tooltip4 span{display: none}
+div.tooltip4:hover span{
      -webkit-border-radius: 5px;
      -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
      display:block; 
@@ -79,4 +102,58 @@ div.tooltip3:hover span{
      background:#000000;
      color:#ffffff;
      left:2em;
+}
+
+div.tooltip5 {
+     position:relative;
+     font:12px arial, verdana, helvetica, sans-serif;
+     padding:0;
+     color:#0000ff;
+     text-decoration:none; 
+} 
+
+div.tooltip5:hover {
+     background:transparent;
+}
+ 
+div.tooltip5 span{display: none}
+div.tooltip5:hover span{
+     -webkit-border-radius: 5px;
+     -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+     display:block; 
+     position:absolute; 
+     top:3em; 
+     font: 12px arial, verdana, helvetica, sans-serif;
+     padding:5px 10px;
+     border:1px solid #00ffff;
+     background:#000000;
+     color:#ffffff;
+     left:2em;
+}
+
+div.tooltip6 {
+     position:relative;
+     font:12px arial, verdana, helvetica, sans-serif;
+     padding:0;
+     color:#0000ff;
+     text-decoration:none; 
+} 
+
+div.tooltip6:hover {
+     background:transparent;
+}
+ 
+div.tooltip6 span{display: none}
+div.tooltip6:hover span{
+     -webkit-border-radius: 5px;
+     -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+     display:block; 
+     position:absolute; 
+     top:3em; 
+     font: 12px arial, verdana, helvetica, sans-serif;
+     padding:5px 10px;
+     border:1px solid #00ffff;
+     background:#000000;
+     color:#ffffff;
+     right:2em;
 }

@@ -28,7 +28,7 @@ body {
 	font-family:  Arial;
 	background-color: #ffffff;
 	font-size: 12px;
-        width: 305px;
+     width: 305px;
 	color: #000000;
 	background:url(imagens/batata.png) no-repeat center;
 }
@@ -56,13 +56,30 @@ hr {
 .menuitem img {
        float:left;
        margin-top:2px;
-	 margin-right:4px; 
+	  margin-right:4px; 
 }
 </style>
+<script type=”text/javascript”>
+function submitenter(myfield,e)
+{
+var keycode;
+if (window.event) keycode =
+window.event.keyCode;
+else if (e) keycode = e.which;
+else return true;
+if (keycode == 13)
+{
+myfield.form.submit();
+return false;
+}
+else
+return true;
+}
+</script> 
 <script type="text/javascript">
 function changeSearch() {
 var el=document.getElementById('searchform').action = 'http://' + document.getElementById('alternativo').value + '/index.php?title=Especial%3ABusca&search=' + document.getElementById('q').value;
-var el=document.getElementById('editform').action = 'http://' + document.getElementById('alternativo').value + document.getElementById('q').value + '&action=edit';
+var el=document.getElementById('editform').action = 'http://' + document.getElementById('alternativo').value + '/index.php?title=' + document.getElementById('q').value + '&action=edit';
 var el=document.getElementById('goform').action = 'http://' + document.getElementById('alternativo').value + '/wiki/' + document.getElementById('q').value;
 }
 </script>
@@ -72,7 +89,7 @@ var el=document.getElementById('goform').action = 'http://' + document.getElemen
 <div align="center"><b>DescicloApp</b></div>
 <br><br>
 <table height="25px">
-<tr><div class="tooltip"><span>Escolha o dom&iacute;nio alternativo</span><select name="alternativo" id="alternativo" style="height:22px;width:50px; -webkit-border-top-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float:left;" onchange="changeSearch();">
+<tr><div class="tooltip4"><span>Escolha o dom&iacute;nio alternativo</span><select name="alternativo" id="alternativo" style="height:22px;width:50px; -webkit-border-top-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float:left;" onchange="changeSearch();">
 <option value="desciclopedia.org">.org</option>
 <option value="desciclopedia.ws">.ws</option>
 <option value="pudim.info">.info</option>
@@ -80,7 +97,8 @@ var el=document.getElementById('goform').action = 'http://' + document.getElemen
 <option value="pesquisa.la">.la</option>
 <option value="sophia.desciclopedia.org">sophia.</option>
 <option value="roberto.desciclopedia.org">roberto.</option>
-</select></div><input type="text" class="text" id="q" style="float:left; width: 175px; -webkit-border-radius: 0px;" autocomplete="on" onkeyup="changeSearch();" placeholder="Escreva algo..." name="q" /><form id="goform" method="post" action="javascript:Ir()" target="_blank"><div class="tooltip"><span>Ir a esta p&aacute;gina</span><input type="submit" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url(imagens/avancarwp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; float:left; -webkit-border-radius:0px;"value="" /></div></form><form id="editform" method="post" action="javascript:Editar()" target="_blank"><div class="tooltip"><span>Editar ou criar essa p&aacute;gina</span><input type="submit" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url(imagens/novowp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; float:left; -webkit-border-radius: 0px;" value="" /></div></form><form id="searchform" method="post" action="javascript:Pesquisar()" target="_blank"><div class="tooltip"><span>Pesquisar</span><input type="submit" style="width:25px; height:22px; border: #000000 solid 1px; float:left; -webkit-border-bottom-right-radius: 10px; -webkit-border-top-right-radius: 10px; background-image:url(imagens/buscawp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px;" value="" /></div></form></tr></table>
+</select></div><form id="goform" method="post" action="javascript:Ir()" target="_blank" ><input type="search" class="text" id="q" style="float:left; width: 175px; -webkit-border-radius: 0px;" autocomplete="on" onkeyup="changeSearch();" placeholder="Escreva algo..." name="q" onKeyPress="return submitenter
+(this,event)" /><div class="tooltip"><span>Ir a esta p&aacute;gina</span><input type="submit" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url(imagens/avancarwp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; float:left; -webkit-border-radius:0px;" value="" /></div></form><form id="editform" method="post" action="javascript:Editar()" target="_blank"><div class="tooltip"><span>Editar ou criar essa p&aacute;gina</span><input type="submit" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url(imagens/novowp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; float:left; -webkit-border-radius: 0px;" value="" /></div></form><form id="searchform" method="post" action="javascript:Pesquisar()" target="_blank"><div class="tooltip"><span>Pesquisar</span><input type="submit" style="width:25px; height:22px; border: #000000 solid 1px; float:left; -webkit-border-bottom-right-radius: 10px; -webkit-border-top-right-radius: 10px; background-image:url(imagens/buscawp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px;" value="" /></div></form></tr></table>
 <br><br>
 	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/P%C3%A1gina_principal'});" class="menuitem">
 		<img src="icons/icon.png"> Ir a Desciclop&eacute;dia
@@ -100,6 +118,9 @@ var el=document.getElementById('goform').action = 'http://' + document.getElemen
                <img src="imagens/vigiado.png" width="16px" height="16px"> P&aacute;ginas vigiadas </div>
                <div class="tooltip"><span>Abrir dentro da extens&atilde;o</span><div style="float:right; width:20px; height: 20px;" onclick="window.open('VG/' + document.getElementById('alternativo').value + 'VG.html', '_self')" class="menuitem"><img src="imagens/frente.png" align="right" title="Abrir dentro da extens&atilde;o"></div></div>
      </div>
+     <div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Carregar_arquivo'});" class="menuitem">
+		<img src="imagens/upload.png" width="16px"> Carregar arquivo
+	</div> 
      <div class="menuitem" onclick="window.open('msg.html', '_self')"> 
 		<img src="imagens/enviarmensagem.png" width="16px" height="16px"> Enviar uma mensagem
      </div> 
@@ -111,6 +132,6 @@ var el=document.getElementById('goform').action = 'http://' + document.getElemen
 
 <br><br>
 
-<div class="tooltip3"><a onclick="window.open('http://facebook.com/Desciclopedia')" target="_blank"><img src="imagens/facebook.png" height="16px" align="left"></a><span>Facebook da Desciclop&eacute;dia</span></div><div class="tooltip3"><a onclick="window.open('http://twitter.com/DaDesciclopedia')" target="_blank"><img src="imagens/twitter.png" height="16px" align="left"></a><span>Twitter da Desciclop&eacute;dia</span></div><div class="tooltip2" style="float: right;"><a onclick="javascript:Sobre();"><img src="imagens/feedback.png" width="16px" height="16px"></a><span>Sobre</span></div><div class="tooltip2" style="float: right;"><a onclick="javascript:Sugestao()"><img src="imagens/info.png" width="16px" height="16px"></a><span>Feedback</span></div>
+<div class="tooltip3" style="float:left"><a onclick="window.open('http://facebook.com/Desciclopedia')" target="_blank"><img src="imagens/facebook.png" height="16px"></a><span>Facebook</span></div><div class="tooltip3" style="float:left"><a onclick="window.open('http://twitter.com/DaDesciclopedia')" target="_blank"><img src="imagens/twitter.png" height="16px"></a><span>Twitter</span></div><div class="tooltip2" style="float: right;"><a onclick="javascript:Sobre();"><img src="imagens/feedback.png" width="16px" height="16px"></a><span>Sobre</span></div><div class="tooltip2" style="float: right;"><a onclick="javascript:Sugestao()"><img src="imagens/info.png" width="16px" height="16px"></a><span>Feedback</span></div>
 </body>
 </html>

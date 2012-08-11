@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <script>
+
+var Aloogle = {
+	Open: function(what)
+	{
+		switch(what)
+		{
+			case "ir":
+				chrome.tabs.create({url: 'http://desciclopedia.org/wiki/Página_principal'});
+				break;
+			case "pagina":
+				chrome.tabs.create({url: 'http://desciclopedia.org/wiki/Especial:Minha_página'});
+				break;
+			case "discussao":
+				chrome.tabs.create({url: 'http://desciclopedia.org/wiki/Especial:Minha_discussão'});
+				break;
+		}
+	}
+}
+  </script>
+ </head>
+<html>

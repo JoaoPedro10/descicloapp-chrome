@@ -1,0 +1,15 @@
+{
+   "name": "DescicloApp para Chrome",
+   "description": "Uma extens\u00E3ozinha da Desciclop\u00E9dia para Google Chrome; by Alefe Souza http://desciclopedia.org/wiki/Utilizador:Alefe_Souza",
+   "version": "0.9.5",
+   "permissions": [ "tabs", "http://desciclopedia.org/" ],
+   "background_page": "background.html",
+   "icons": {
+      "128": "icons/icon_128.png"
+   },
+   "browser_action": {
+      "default_icon": "icons/icon.png",
+      "default_title": "Desciclop\u00E9dia",
+      "popup": "popup.html"
+   }
+}

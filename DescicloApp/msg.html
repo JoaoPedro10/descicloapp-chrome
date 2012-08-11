@@ -2,6 +2,7 @@
 <head>
 <title>Enviar uma mensagem - DescicloApp</title>
 <link rel="shortcut icon" href="icons/icon.png" />
+<link rel="author" href="https://plus.google.com/101361157875821775334/" />
 <link rel="stylesheet" href="popup.html" />
 <link rel="stylesheet" href="css/select.css" />
 <link rel="stylesheet" href="css/button.css" />
@@ -15,6 +16,7 @@ body {
 	font-size: 12px;
 	color: #000000;
 	width:305px;
+	height:305px;
       background: url(imagens/batata.png) no-repeat center;
 }
 
@@ -36,6 +38,23 @@ var el=document.getElementById('msgform').action = 'http://' + document.getEleme
 var el=document.getElementById('mailform').action = 'http://' + document.getElementById('alternativomsg').value + '/wiki/Especial:Contatar_usu%C3%A1rio/' + document.getElementById('qmsg').value; 
 }
 </script>
+<script type=â€text/javascriptâ€>
+function enviar(myfield,e)
+{
+var keycode;
+if (window.event) keycode =
+window.event.keyCode;
+else if (e) keycode = e.which;
+else return true;
+if (keycode == 13)
+{
+myfield.form.submit();
+return false;
+}
+else
+return true;
+}
+</script> 
 <script>
 	function verificarSuporte()
 	{
@@ -59,7 +78,7 @@ var el=document.getElementById('mailform').action = 'http://' + document.getElem
 			alert("Você desativou as notificações? Poser");
 			break;
 		case 2:
-			alert("Você não permitiu as notificações seu emo? VTNC!!");
+			alert("Você não permitiu as notificações seu emo? Vtnc!!");
 			break;
 		}
 	}
@@ -106,7 +125,7 @@ var el=document.getElementById('mailform').action = 'http://' + document.getElem
 <body>
 <div class="imageml"><a onclick="window.open('popup.html', '_self')"><img src="imagens/voltarwp7.png" width="20px" height="20px" onMouseOver="this.src='imagens/voltarwp7mouse.png'" onMouseOut="this.src='imagens/voltarwp7.png'" title="Voltar" ></a><div align="center"><h4>Enviar mensagem</h4></div></div><hr>
 <br>
-<table width="25px"><tr><div><select name="alternativomsg" id="alternativomsg" onchange="changeMsg();" style="height:22px;width:50px; -webkit-border-top-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float:left;">
+<table width="25px"><tr><div><div class="tooltip4"><span>Escolha o dom&iacute;nio alternativo</span><select name="alternativomsg" id="alternativomsg" onchange="changeMsg();" style="height:22px;width:50px; -webkit-border-top-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float:left;">
 <option value="desciclopedia.org">.org</option>
 <option value="desciclopedia.ws">.ws</option>
 <option value="pudim.info">.info</option>
@@ -114,9 +133,9 @@ var el=document.getElementById('mailform').action = 'http://' + document.getElem
 <option value="pesquisa.la">.la</option>
 <option value="sophia.desciclopedia.org">sophia.</option>
 <option value="roberto.desciclopedia.org">roberto.</option>
-</select><input type="text" id="qmsg" autocomplete="on" onkeyup="changeMsg();" class="text" id="q" style="float:left; width: 175px; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px; float: left;" placeholder="Enviar para..." name="qmsg" /></div></tr></table>
+</select></div><form id="msgform" method="post" action="javascript:Mensagem()" target="_blank"><input type="text" id="qmsg" autocomplete="on" onkeyup="changeMsg();" class="text" id="q" style="float:left; width: 175px; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px; float: left;" placeholder="Enviar para..." name="qmsg" onKeyPress="return enviar(this,event)" /></div></tr></table>
 <br><br>
-<div><form id="msgform" method="post" action="javascript:Mensagem()" target="_blank"><div class="tooltip"><span>Enviar mensagem (discuss&atilde;o)</span><input type="submit" name="Mensagem" style="min-width: 4em; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float: left; width: 100px;" value="Mensagem" /></div></form><form id="mailform" method="post" action="javascript:Email()" target="_blank"><div class="tooltip"><span>Enviar e-mail (contatar usu&aacute;rio)</span><input type="submit" name="E-mail" value="E-mail" style="min-width: 4em; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px; float: left; width: 100px;" /></div></form><div>
+<div><form id="msgform" method="post" action="javascript:Mensagem()" target="_blank"><div class="tooltip7"><span>Enviar mensagem (discuss&atilde;o)</span><input type="submit" name="Mensagem" style="min-width: 4em; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float: left; width: 100px;" value="Mensagem" /></div></form><form id="mailform" method="post" action="javascript:Email()" target="_blank"><div class="tooltip7"><span>Enviar e-mail (contatar usu&aacute;rio)</span><input type="submit" name="E-mail" value="E-mail" style="min-width: 4em; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px; float: left; width: 100px;" /></div></form><div>
 </body>
 </head>
 </html>

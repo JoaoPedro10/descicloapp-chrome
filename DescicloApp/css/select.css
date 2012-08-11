@@ -4,8 +4,9 @@
  *
  * This is the generic select css used on various WebUI implementations.
 */
-/*Grande parte desse código foi copiado do css das página de configurações do Google Chrome
-*/
+
+/* Esse codigo foi copiado da pagina de configuracoes do Google Chrome, com algumas modificacoes minhas */
+
 select {
   -webkit-appearance: button;
   -webkit-border-radius: 10px;

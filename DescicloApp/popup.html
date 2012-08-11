@@ -1,4 +1,8 @@
-<html><head>
+<html>
+<head>
+<title>DescicloApp para Chrome</title>
+<link rel="shortcut icon" href="icons/icon.png" />
+<link rel="author" href="https://plus.google.com/101361157875821775334/" /> 
 <link rel="stylesheet" href="scrollbar.css" />
 <script type="text/javascript">
 	var Popup = {
@@ -12,7 +16,7 @@
 					break;
 			}
 		}
-	};
+	}
 </script>
 <style type="text/css">
 body {
@@ -41,42 +45,15 @@ hr {
 
 .menuitem:hover {
 	color: #ffffff;
-      text-decoration:none;
+    text-decoration:none;
 	cursor:Pointer;
 	background:url(imagens/preto_real_player.png);
 }
 
 .menuitem img {
-	float:left;
+    float:left;
 	margin-top:2px;
 	margin-right:4px;
-}
-
-#overlay {
-	width:100%;
-	height:100%;
-	z-level:999;
-	display:none;
-	background:#ffffff;
-	position:fixed;
-	opacity:0.95;
-	text-align:center;
-}
-#overlay h2 {
-	color:#3aa5f4;
-	
-}
-#message {
-	color:#555555;
-	min-height:50px;
-	font-size:large;
-}
-a {
-	color:#000000;
-	text-decoration:none;
-}
-a:hover {
-	text-decoration:underline
 }
 </style>
 
@@ -84,7 +61,7 @@ a:hover {
 function changeSearch() {
 var el=document.getElementById('searchform').action = 'http://' + document.getElementById('alternativo').value + '/index.php?title=Especial%3ABusca&search=' + document.getElementById('q').value;
 var el=document.getElementById('editform').action = 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&title=' + document.getElementById('q').value;
- var el=document.getElementById('goform').action = 'http://' + document.getElementById('alternativo').value + '/wiki/' + document.getElementById('q').value;
+var el=document.getElementById('goform').action = 'http://' + document.getElementById('alternativo').value + '/wiki/' + document.getElementById('q').value;
 }
 </script>
 </head>
@@ -92,32 +69,33 @@ var el=document.getElementById('editform').action = 'http://' + document.getElem
 <body>
 
 <table width="50">
-<select name="alternativo" id="alternativo" onchange="changeSearch();" style="height:22px;width:50px;vertical-align:middle;border:1px solid #000; -webkit-border-radius:10px;">
+<tr><select name="alternativo" id="alternativo" onchange="changeSearch();" style="height:22px;width:50px; -webkit-border-radius:10px;">
 <option value="desciclopedia.org">.org</option>
 <option value="desciclopedia.ws">.ws</option>
+<option value="pudim.info">.info</option>
 <option value="vist.as">.as</option>
 <option value="pesquisa.la">.la</option>
 <option value="sophia.desciclopedia.org">sophia.</option>
-<option value="roberto.descilcopedia.org">roberto.</option>
-</select>
-<input type="text" id="q" autocomplete="on" onkeyup="changeSearch();" style="-webkit-border-radius: 10px;" placeholder="Escreva algo..." name="q" />
+<option value="roberto.desciclopedia.org">roberto.</option>
+</select></tr><tr>
+<input type="text" id="q" autocomplete="on" onkeyup="changeSearch();" style="-webkit-border-radius: 10px;" placeholder="Escreva algo..." name="q" /></tr><tr>
 <form id="goform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" name="Ir" title="Ir a esta página" src="imagens/ir.gif"/></form>
 <form id="editform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" title="Editar ou criar essa página" name="Pesquisar" src="imagens/novo.png"/></form>
-<form id="searchform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" title="Pesquisar" name="Pesquisar" src="imagens/busca.png"/></form></table>
+<form id="searchform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" title="Pesquisar" name="Pesquisar" src="imagens/busca.png"/></form></tr></table>
 <br><br>
-	<div onclick="Popup.Do('open','ir');" class="menuitem">
+	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Página_principal'});" class="menuitem">
 		<img src="icons/icon.png"> Ir a Desciclopédia
 	</div>
 	<hr>
-	<div onclick="Popup.Do('open','pagina');" class="menuitem">
+	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_página'});" class="menuitem">
 		<img src="imagens/mafagafo.jpg" width="16px"> Minha página
 	</div>
-	<div onclick="Popup.Do('open','discussao');" class="menuitem">
+	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_Discussão'});" class="menuitem">
 		<img src="imagens/discussao.png"> Minha discussão
 	</div>
-       <div class="menuitem">
-		<a href="MR.html"><img src="imagens/mrwp7.png" width="16px" height="16px"> Mudanças recentes </a>
-        </div>
+       <div class="menuitem" onclick="window.open('MR.html', '_self')">
+		<img src="imagens/mrwp7.png" width="16px" height="16px"> Mudanças recentes
+     </div> 
 
 <br><br>
 

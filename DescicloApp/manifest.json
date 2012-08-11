@@ -1,7 +1,8 @@
 {
    "name": "DescicloApp para Chrome",
    "description": "Uma extens\u00E3ozinha da Desciclop\u00E9dia para Google Chrome; by Alefe Souza http://desciclopedia.org/wiki/Utilizador:Alefe_Souza",
-   "version": "0.9.5",
+   "version": "1.0.1",
+   "update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
    "permissions": [ "tabs", "http://desciclopedia.org/" ],
    "background_page": "background.html",
    "icons": {

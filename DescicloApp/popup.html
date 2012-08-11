@@ -2,8 +2,9 @@
 <head>
 <title>DescicloApp para Chrome</title>
 <link rel="shortcut icon" href="icons/icon.png" />
-<link rel="author" href="https://plus.google.com/101361157875821775334/" /> 
+<link rel="author" href="https://plus.google.com/101361157875821775334/" />
 <link rel="stylesheet" href="scrollbar.css" />
+<link rel="stylesheet" href="select.css" />
 <script type="text/javascript">
 	var Popup = {
 		Do: function(what, arg) {
@@ -24,52 +25,63 @@ body {
 	background-color: #ffffff;
 	font-size: 12px;
 	color: #000000;
-	width:300px;
+	width:305px;
 	background:url(imagens/batata.png) no-repeat center;
 }
 
 hr {
 	border: 0px;
 	height: 1px;
-	background-color: #0000ff;	
-	color: #ccc;
+	background-color: #0000ff;
 }
 
 .menuitem {
 	height:20px;
 	line-height:20px;
 	padding: 2px 4px;
-	white-space:nowrap;
 	vertical-align:middle; 
 }
 
 .menuitem:hover {
 	color: #ffffff;
-    text-decoration:none;
-	cursor:Pointer;
+       text-decoration:none;
 	background:url(imagens/preto_real_player.png);
 }
 
 .menuitem img {
-    float:left;
-	margin-top:2px;
-	margin-right:4px;
+       float:left;
+       margin-top:2px;
+	margin-right:4px; 
+}
+
+input.text {
+       background: transparent;
+       -webkit-border-radius: 10px;
+}
+
+input.text:hover {
+      -webkit-box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.2);
+       border: #007eff solid 2px;
+}
+
+input.text:focus {
+       background: #e4e4e4;
+       border: #000000 solid 2px;
 }
 </style>
-
 <script type="text/javascript">
 function changeSearch() {
 var el=document.getElementById('searchform').action = 'http://' + document.getElementById('alternativo').value + '/index.php?title=Especial%3ABusca&search=' + document.getElementById('q').value;
-var el=document.getElementById('editform').action = 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&title=' + document.getElementById('q').value;
+var el=document.getElementById('editform').action = 'http://' + document.getElementById('alternativo').value + '/index.php?title=' + document.getElementById('q').value + '&action=edit';
 var el=document.getElementById('goform').action = 'http://' + document.getElementById('alternativo').value + '/wiki/' + document.getElementById('q').value;
-}
+} 
 </script>
 </head>
 
 <body>
-
-<table width="50">
-<tr><select name="alternativo" id="alternativo" onchange="changeSearch();" style="height:22px;width:50px; -webkit-border-radius:10px;">
+<div align="center"><b>DescicloApp</b></div>
+<table width="25px"> 
+<tr><td><select name="alternativo" id="alternativo" style="height:22px;width:50px; -webkit-border-radius:10px; font-family: Arial;" onchange="changeSearch();">
 <option value="desciclopedia.org">.org</option>
 <option value="desciclopedia.ws">.ws</option>
 <option value="pudim.info">.info</option>
@@ -77,11 +89,7 @@ var el=document.getElementById('goform').action = 'http://' + document.getElemen
 <option value="pesquisa.la">.la</option>
 <option value="sophia.desciclopedia.org">sophia.</option>
 <option value="roberto.desciclopedia.org">roberto.</option>
-</select></tr><tr>
-<input type="text" id="q" autocomplete="on" onkeyup="changeSearch();" style="-webkit-border-radius: 10px;" placeholder="Escreva algo..." name="q" /></tr><tr>
-<form id="goform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" name="Ir" title="Ir a esta página" src="imagens/ir.gif"/></form>
-<form id="editform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" title="Editar ou criar essa página" name="Pesquisar" src="imagens/novo.png"/></form>
-<form id="searchform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" title="Pesquisar" name="Pesquisar" src="imagens/busca.png"/></form></tr></table>
+</select></td><td><input type="text" id="q" class="text" autocomplete="on" onkeyup="changeSearch();" placeholder="Escreva algo..." name="q" /></td><td><br><form id="goform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" name="Ir" valign="middle" title="Ir a esta página" height="22px" src="imagens/avancarwp7.png" onMouseOver="this.src='imagens/avancarwp7mouse.png'" onMouseOut="this.src='imagens/avancarwp7.png'"/></form></td><td><br><form id="editform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" title="Editar ou criar essa página" name="Pesquisar" height="22px" src="imagens/novowp7.png" onMouseOver="this.src='imagens/novowp7mouse.png'" onMouseOut="this.src='imagens/novowp7.png'" /></form></td>&nbsp;<td>&nbsp;<br><form id="searchform" method="post" action="http://desciclopedia.org/" target="_blank"><input type="image" title="Pesquisar" name="Pesquisar" height="22px" src="imagens/buscawp7.png" onMouseOver="this.src='imagens/buscawp7mouse.png'" onMouseOut="this.src='imagens/buscawp7.png'" /></form></td></tr></table> 
 <br><br>
 	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Página_principal'});" class="menuitem">
 		<img src="icons/icon.png"> Ir a Desciclopédia
@@ -90,14 +98,20 @@ var el=document.getElementById('goform').action = 'http://' + document.getElemen
 	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_página'});" class="menuitem">
 		<img src="imagens/mafagafo.jpg" width="16px"> Minha página
 	</div>
-	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_Discussão'});" class="menuitem">
+	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_discussão'});" class="menuitem">
 		<img src="imagens/discussao.png"> Minha discussão
 	</div>
-       <div class="menuitem" onclick="window.open('MR.html', '_self')">
-		<img src="imagens/mrwp7.png" width="16px" height="16px"> Mudanças recentes
+ 	<div onclick="chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Special:MyContributions'});" class="menuitem">
+		<img src="imagens/contribuicao.png" width="16px"> Minhas contribuições
+	</div> 
+       <div class="menuitem" onclick="window.open('msg.html', '_self')"> 
+		<img src="imagens/enviarmensagem.png" width="16px" height="16px"> Enviar uma mensagem
      </div> 
+     <div class="menuitem" onclick="window.open( 'MR.html', '_self')">
+               <img src="imagens/mrwp7.png" width="16px" height="16px"> Mudanças recentes
+     </div>
 
 <br><br>
 
-<div align="right"><a href="http://desciclopedia.org/wiki/Utilizador_Discussão:Alefe_Souza" target="_blank"><img src="imagens/info.png" width="16px" height="16px" title="Sugestões, xingamentos e etceteras"></a><a href="http://desciclopedia.org/wiki/Utilizador:Alefe_Souza/DescicloApp" target="_blank"><img src="imagens/feedback.png" title="Informações" width="16px" height="16px"></a></div>
+<div align="right"><a onclick="window.open('http://' + document.getElementById('alternativo').value + '/index.php?title=Usuário_Discussão:Ás&action=edit&section=new', '_blank')"><img src="imagens/info.png" width="16px" height="16px" title="Sugestões, xingamentos e etceteras"></a><a onclick="window.open('http://' + document.getElementById('alternativo').value + '/wiki/Usuário:Ás/DescicloApp', '_blank')"><img src="imagens/feedback.png" title="Informações" width="16px" height="16px"></a></div>
 </body></html>

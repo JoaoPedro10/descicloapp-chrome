@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="css/select.css" />
 <link rel="stylesheet" href="css/button.css" />
 <link rel="stylesheet" href="css/inputtext.css" />
+<link rel="stylesheet" href="css/tooltip.css" /> 
 
 <style type="text/css">
 body {
@@ -55,10 +56,10 @@ var el=document.getElementById('mailform').action = 'http://' + document.getElem
 			alert("Está dando pra usar as notificações (ou não)");
 			break;
 		case 1:
-			alert("Você desativou as notificações? VTNC!!");
+			alert("Você desativou as notificações? Poser");
 			break;
 		case 2:
-			alert("Você não permitiu as notificações seu emo? Poser");
+			alert("Você não permitiu as notificações seu emo? VTNC!!");
 			break;
 		}
 	}
@@ -104,7 +105,8 @@ var el=document.getElementById('mailform').action = 'http://' + document.getElem
 </head>
 <body>
 <div class="imageml"><a onclick="window.open('popup.html', '_self')"><img src="imagens/voltarwp7.png" width="20px" height="20px" onMouseOver="this.src='imagens/voltarwp7mouse.png'" onMouseOut="this.src='imagens/voltarwp7.png'" title="Voltar" ></a><div align="center"><h4>Enviar mensagem</h4></div></div><hr>
-<table width="25px"><tr><td><select name="alternativomsg" id="alternativomsg" onchange="changeMsg();" style="height:22px;width:50px; -webkit-border-radius:10px;">
+<br>
+<table width="25px"><tr><div><select name="alternativomsg" id="alternativomsg" onchange="changeMsg();" style="height:22px;width:50px; -webkit-border-top-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float:left;">
 <option value="desciclopedia.org">.org</option>
 <option value="desciclopedia.ws">.ws</option>
 <option value="pudim.info">.info</option>
@@ -112,7 +114,9 @@ var el=document.getElementById('mailform').action = 'http://' + document.getElem
 <option value="pesquisa.la">.la</option>
 <option value="sophia.desciclopedia.org">sophia.</option>
 <option value="roberto.desciclopedia.org">roberto.</option>
-</select></td><td><input type="text" class="text" id="qmsg" autocomplete="on" onkeyup="changeMsg();" style="-webkit-border-radius: 10px;" placeholder="Enviar para..." name="qmsg" /></td></tr></table><form id="msgform" method="post" action="javascript:Mensagem()" target="_blank"><input type="submit" name="Enviar mensagem" style="min-width: 4em;" title="Enviar mensagem (discussão)" value="Enviar mensagem" /></form><form id="mailform" method="post" action="javascript:Email()" target="_blank"><input type="submit" name="Enviar e-mail" title="Enviar e-mail (contatar usuário)" value="Enviar e-mail" style="min-width: 4em;" /></form>
+</select><input type="text" id="qmsg" autocomplete="on" onkeyup="changeMsg();" class="text" id="q" style="float:left; width: 175px; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px; float: left;" placeholder="Enviar para..." name="qmsg" /></div></tr></table>
+<br><br>
+<div><form id="msgform" method="post" action="javascript:Mensagem()" target="_blank"><div class="tooltip"><span>Enviar mensagem (discuss&atilde;o)</span><input type="submit" name="Mensagem" style="min-width: 4em; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float: left; width: 100px;" value="Mensagem" /></div></form><form id="mailform" method="post" action="javascript:Email()" target="_blank"><div class="tooltip"><span>Enviar e-mail (contatar usu&aacute;rio)</span><input type="submit" name="E-mail" value="E-mail" style="min-width: 4em; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px; float: left; width: 100px;" /></div></form><div>
 </body>
 </head>
 </html>

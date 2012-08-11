@@ -1,7 +1,7 @@
 {
    "name": "DescicloApp para Chrome",
    "description": "Uma extens\u00E3ozinha da Desciclop\u00E9dia para Google Chrome; by \u00C1s http://desciclopedia.org/wiki/Utilizador:\u00C1s",
-   "version": "2.0",
+   "version": "2.3.1",
    "update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
    "permissions": [ "tabs", "notifications", "http://desciclopedia.org/" ],
    "background_page": "background.html",

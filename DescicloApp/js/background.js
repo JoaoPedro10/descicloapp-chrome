@@ -6,7 +6,7 @@ chrome.omnibox.onInputChanged.addListener(
 		{content: "Chuck Norris", description: "Chuck Norris"},
 		{content: "Cheiramento de gatinhos", description: "Cheiramento de gatinhos"},
 		{content: "Noku", description: "Noku"},
-		{content: "Desciclopdia", description: "Desciclop\u00E9dia"},
+		{content: "Desciclop%C3%A9dia", description: "Desciclop\u00E9dia"},
 	]);
 });
 

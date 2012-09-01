@@ -1,18 +1,18 @@
-/* Todo esse codigo pertence a Aloogle, mas caso voce queira copiar e etc pode a vontade :) */
+/* Esse codigo e o das barras de texto da extensao */
 
 input.text {
-       -webkit-border-radius: 10px;
-       border: 1px solid #000000;
-       background: transparent;
-       height: 22px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #000000;
+	background: transparent;
+	height: 22px;
 }
 
 input.text:hover {
-       -webkit-box-shadow: inset 0 5px 5px rgba(0,0,0,0.1);
-       border: #007eff solid 1px; 
+	-webkit-box-shadow: inset 0 5px 5px rgba(0,0,0,0.1);
+	border: #007eff solid 1px; 
 }
 
 input.text:focus {
-       background: #e4e4e4;
-       border: #000000 solid 2px;
+	background: #e4e4e4;
+	border: #000000 solid 2px;
 }

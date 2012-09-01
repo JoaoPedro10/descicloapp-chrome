@@ -1,21 +1,28 @@
 {
-   "Manifest_version": 2,
-   "name": "DescicloApp",
-   "description": "Uma extens\u00E3o da Desciclop\u00E9dia para Google Chrome; by \u00C1s http://desciclopedia.org/wiki/Utilizador:\u00C1s ou Aloogle http://code.google.com/p/aloogle",
-   "version": "3.1",
-   "update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
-   "permissions": [ "tabs", "notifications", "http://desciclopedia.org/" ],
-   "background_page": "background.html",
-   "icons": {
-      "16": "icons/icon.png",
-      "32": "icons/icon_32.png",
-      "48": "icons/icon_48.png",
-      "64": "icons/icon_64.png",
-      "128": "icons/icon_128.png"
-   },
-   "browser_action": {
-      "default_icon": "icons/icon.png",
-      "default_title": "Desciclop\u00E9dia",
-      "popup": "popup.html"
-   }
+	"name": "DescicloApp",
+	"description": "Uma extens\u00E3o de Google Chrome para acessar a Desciclop\u00E9dia com mais facilidade.",
+	"version": "3.5",
+	"manifest_version": 2,
+	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
+	"permissions": [ "tabs", "notifications"],
+	"background": {
+	"page":
+		"background.html"
+	},
+	"icons": {
+		"16": "icons/icon.png",
+		"32": "icons/icon_32.png",
+		"48": "icons/icon_48.png",
+		"64": "icons/icon_64.png",
+		"128": "icons/icon_128.png"
+	},
+	"omnibox": { 
+		"keyword" : "dp" 
+	},
+	"homepage_url": "http://desciclopedia.org/wiki/Usu%C3%A1rio:%C3%81s/DescicloApp",
+	"browser_action": {
+		"default_icon": "icons/icon.png",
+		"default_title": "Desciclop\u00E9dia",
+		"default_popup": "popup.html"
+	}
 }

@@ -1,25 +1,8 @@
 <html>
 <head>
+<!- Eu coloco esse negocio de autor em todas as paginas porque... porque... porque sim ¬_¬ ->
 <link rel="author" href="https://plus.google.com/101361157875821775334/" />
-<script>
-var Aloogle = {
-	Open: function(what)
-	{
-		switch(what)
-		{
-			case "ir":
-				chrome.tabs.create({url: 'http://desciclopedia.org/wiki/P%C3%A1gina_principal'});
-				break;
-			case "pagina":
-				chrome.tabs.create({url: 'http://desciclopedia.org/wiki/Especial:Minha_p%C3%A1gina'});
-				break;
-			case "discussao":
-				chrome.tabs.create({url: 'http://desciclopedia.org/wiki/Especial:Minha_discuss%C3%A3o'});
-				break;
-		}
-	}
-}
-</script>
+<script src="js/background.js"></script>
 </head>
 <body>
 <!- Isso e so um easter egg sem graca ->

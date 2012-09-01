@@ -8,35 +8,13 @@
 		return c;
 	}
 
-	function verificarPermissao()
-	{
-		if (!verificarSuporte()) return;
-		switch (webkitNotifications.checkPermission())
-		{
-		case 0:
-			alert("Está dando pra usar as notificações (ou não)");
-			break;
-		case 1:
-			alert("Você desativou as notificações? VTNC!!");
-			break;
-		case 2:
-			alert("Você não permitiu as notificações seu emo? Poser");
-			break;
-		}
-	}
-
-	function solicitarPermissao()
-	{
-		if (!verificarSuporte()) return;
-		webkitNotifications.requestPermission();
-	}
-
-	function Ir()
+	function irn()
 	{
 		if (!verificarSuporte()) return;
 		if (webkitNotifications.checkPermission() == 0)
 		{
-			var icone = "icons/icon_32.png";
+//Quando eu tava fazendo essa parte da extensao (30/08/2012) o icone nao aparecia sendo que ta tudo certo, talvez seja um bug no Google Chrome ja que isso tambem tava acontecendo com outras extensoes que usam as notificacoes, por isso coloquei para pegar o icone por url mesmo
+			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
 			var titulo = "DescicloApp";
 			var subTitulo = "Escreva algo primeiro: Digite na barra de texto que página você quer ir na Desciclopédia, poser";
 			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
@@ -47,12 +25,12 @@
 			}, 5000);
 		}
 	}
-	function Editar()
+	function editarn()
 	{
 		if (!verificarSuporte()) return;
 		if (webkitNotifications.checkPermission() == 0)
 		{
-			var icone = "icons/icon_32.png";
+			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
 			var titulo = "DescicloApp";
 			var subTitulo = "Escreva algo primeiro: Digite na barra de texto que página você quer editar ou criar na Desciclopédia, só não vai fazer merda pra um sysop não te pegar, seu n00b!!";
 			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
@@ -63,12 +41,12 @@
 			}, 5000);
 		}
 	}
- 	function Pesquisar()
+ 	function pesquisarn()
 	{
 		if (!verificarSuporte()) return;
 		if (webkitNotifications.checkPermission() == 0)
 		{
-			var icone = "icons/icon_32.png";
+			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
 			var titulo = "DescicloApp";
 			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o que você quer pesquisar na (Xvideos) Desciclopédia, ou não";
 			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
@@ -77,33 +55,5 @@
 			{
 				notificacao.cancel()
 			}, 5000);
-		}
-	}
- 	function Sobre()
-	{
-		if (!verificarSuporte()) return;
-		if (webkitNotifications.checkPermission() == 0)
-		{
-			var url = "../sobre.html";
-			var notificacao = webkitNotifications.createHTMLNotification( url );
-			notificacao.show();
-			setTimeout(function ()
-			{
-				notificacao.cancel()
-			}, 10000);
-		}
-	}
- 	function Sugestao()
-	{
-		if (!verificarSuporte()) return;
-		if (webkitNotifications.checkPermission() == 0)
-		{
-			var url = "../sugestao.html";
-			var notificacao = webkitNotifications.createHTMLNotification( url );
-			notificacao.show();
-			setTimeout(function ()
-			{
-				notificacao.cancel()
-			}, 10000);
 		}
 	}

@@ -1,7 +1,7 @@
 {
 	"name": "DescicloApp",
 	"description": "Uma extens\u00E3o de Google Chrome para acessar a Desciclop\u00E9dia com mais facilidade.",
-	"version": "3.5.1",
+	"version": "3.7",
 	"manifest_version": 2,
 	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
 	"permissions": [ "tabs", "notifications"],

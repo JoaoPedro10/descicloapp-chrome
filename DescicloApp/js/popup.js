@@ -84,6 +84,10 @@ function ajuda(){
 	window.open('paginas/faq.html', '_blank')
 }
 
+function abrir(){
+	window.open('janela.html', '', 'width=330,height=400')
+}
+
 window.onload = function(){
 		$('ir').onclick=ir;
 		$('editar').onclick=editar;
@@ -101,6 +105,7 @@ window.onload = function(){
 		$('blog').onclick=blog;
 		$('tumblr').onclick=tumblr;
 		$('ajuda').onclick=ajuda;
+		$('abrir').onclick=abrir;
 }
 
 window.onkeypress = function(){

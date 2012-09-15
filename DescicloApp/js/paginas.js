@@ -6,6 +6,10 @@ function opera(){
 	window.open('opera.html', '_self')
 }
 
+function firefox(){
+	window.open('firefox.html', '_self')
+}
+
 function shareFacebook(){
 	window.open('https://www.facebook.com/sharer/sharer.php?u=http://desciclopedia.org/wiki/Usu%C3%A1rio:%C3%81s/DescicloApp', '', 'width=657,height=367')
 }
@@ -29,6 +33,7 @@ window.onload=function(){
 		window.location="sobre.html";
 	}
 	$('opera').onclick=opera;
+	$('firefox').onclick=firefox;
 	$('sharefacebook').onclick=shareFacebook;
 	$('sharetwitter').onclick=shareTwitter;
 	$('sharegoogleplus').onclick=shareGooglePlus;

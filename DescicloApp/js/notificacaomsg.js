@@ -17,7 +17,7 @@
 		{
 			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
 			var titulo = "DescicloApp";
-			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o username de um usuário que você quer enviar uma mensagem (erótica), via página de discussão";
+			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o username de um usuário que você quer enviar uma mensagem, via página de discussão";
 			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
 			notificacao.show();
 			setTimeout(function ()
@@ -33,7 +33,7 @@
 		{
 			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
 			var titulo = "DescicloApp";
-			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o username de um usuário que você quer enviar um e-mail na Desciclopédia (bem particular, só vocês dois (ui!)), via Contatar usuário";
+			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o username de um usuário que você quer enviar um e-mail na Desciclopédia, via Contatar usuário";
 			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
 			notificacao.show();
 			setTimeout(function ()

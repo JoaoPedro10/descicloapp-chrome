@@ -1,13 +1,15 @@
 <html>
 <head>
 <title>Sobre - DescicloApp para Chrome</title>
-<link rel="shortcut icon" href="../icons/icon.png"> 
+<link rel="shortcut icon" href="../icons/icon.png" /> 
 <link rel="author" href="https://plus.google.com/101361157875821775334/">
-<link rel="stylesheet" href="../popup.html">
-<link rel="stylesheet" href="../css/paginas.css">
-<link rel="stylesheet" href="../css/button.css">
-<link rel="stylesheet" href="../css/scrollbar.css">
-<link rel="stylesheet" href="../css/tooltip.css">
+<link rel="stylesheet" href="opcoes.html" />
+<link rel="stylesheet" href="../css/paginas.css" />
+<link rel="stylesheet" href="../css/button.css" />
+<link rel="stylesheet" href="../css/scrollbar.css" />
+<link rel="stylesheet" href="../css/tooltip.css" />
+<script src="../js/jquery/modernizr-1.7.min.js"></script>
+<script src="../js/jquery/jquery.min.js"></script>
 <script src="../js/paginas.js"></script>
 <style type="text/css">
 body {
@@ -64,6 +66,7 @@ div.share:active {
 <ul id="navbar">
 <li id="faq" class="navbar-item">FAQ</li>
 <li id="changelog" class="navbar-item">Changelog</li>
+<li id="opcoes" class="navbar-item">Op&ccedil;&otilde;es</li>
 <li id="sobre" class="navbar-item navbar-item-selected">Sobre</li>
 </ul>
 </div>
@@ -71,48 +74,48 @@ div.share:active {
 <div id="mainview-content">
 <div id="page-container">
 <div class="page" style="display:block">
-<div id="aboutPage" class="page">
 <h1>Sobre <a id="opera" title="Tamb&eacute;m usa Opera? Fa&ccedil;a download do DescicloApp para Opera!! Clique aqui"><img src="../imagens/opera.png" height="30px"></a><a id="firefox" title="Tamb&eacute;m usa Firefox? Fa&ccedil;a download do DescicloApp para Firefox!! Clique aqui"><img src="../imagens/firefox.png" height="30px"></a></h1>
 <div>
 <h3>Vers&atilde;o</h3>
-<div>3.7</div>
+<div>4.0</div>
 <hr>
 <h3>Desenvolvido por</h3>
 <div>
 Alefe Souza<br>
 <a href="http://twitter.com/alefesouza5" target="_blank" title="Meu Tuister">@alefesouza5</a><br>
-<a href="http://desciclopedia.org/wiki/Usu%C3%A1rio:%C3%81s" target="_blank" title="P&aacute;gina na Desciclop&eacute;dia">http://desciclopedia.org/wiki/Usu&aacute;rio:&Aacute;s</a>
+<a id="usuario" class="script"></a>
 </div>
 <hr>
 <h3>Enviar feedback</h3>
 <div>
-Se voc&ecirc; quiser <a href="http://desciclopedia.org/wiki/Dar" target="_blank" title="Dar"><font style="color: #000000; text-decoration: none;">dar</font></a> alguma sugest&atilde;o ou relatar algum bug na extens&atilde;o, envie um e-mail para <a href="mailto:alefe.mtv@gmail.com" title="S&oacute; n&atilde;o manda spam, porra">alefe.mtv@gmail.com</a> ou se voc&ecirc; for usu&aacute;rio da Desciclop&eacute;dia fale comigo pela minha p&aacute;gina de <s><a href="http://desciclopedia.org/wiki/Flamewar" target="_blank" title="Flamewar">Flamewar</a></s> <a href="http://desciclopedia.org/wiki/Usu%C3%A1rio_Discuss%C3%A3o:%C3%81s">discuss&atilde;o</a>
+Se voc&ecirc; quiser <a id="dar" title="Dar"><font style="color: #000000; text-decoration: none;">dar</font></a> alguma sugest&atilde;o ou relatar algum bug na extens&atilde;o <a href="mailto:alefe.mtv@gmail.com" title="S&oacute; n&atilde;o manda spam, porra">me mande um e-mail</a> ou se voc&ecirc; for usu&aacute;rio da Desciclop&eacute;dia fale comigo pela minha p&aacute;gina de <s><a id="flamewar" class="script" title="Flamewar">flamewar</a></s> <a id="discussao" class="script">discuss&atilde;o</a>
 </div>
 <hr>
 <h3>Agradecimentos</h3>
 <div>
-Ao <a href="http://desciclopedia.org/wiki/Usu%C3%A1rio:UltraJohnn%C3%BF" target="_blank">UltraJohnn&yuml;</a> e ao <a href="http://desciclopedia.org/wiki/Usu%C3%A1rio:Siphodemos" target="_blank">Siphodemos</a> por terem feito uma &oacute;tima divulga&ccedil;&atilde;o. 
+Ao <a id="johnny" class="script">UltraJohnn&yuml;</a> e ao <a id="sipho" class="script">Siphodemos</a> por terem feito uma &oacute;tima divulga&ccedil;&atilde;o. 
 </div>
 <hr>
 <h3>GitHub</h3>
 <div>
-Caso <a href="http://desciclopedia.org/wiki/Voc%C3%AA" target="_blank" title="Voc&ecirc;">voc&ecirc;</a> seja desenvolvedor (<a href="http://desciclopedia.org/wiki/Ou_n%C3%A3o" target="_blank" title="Ou n&atilde;o">ou n&atilde;o</a>) ou s&oacute; quer ter uma ideia de como a extens&atilde;o foi feita, v&aacute; em <a href="https://github.com/alefesouza/descicloapp-chrome" target="_blank" title="Reposit&oacute;rio da extens&atilde;o no GitHub">https://github.com/alefesouza/descicloapp-chrome</a> para ver o c&oacute;digo-fonte.
+Caso <a id="voce" class="script" title="Voc&ecirc;">voc&ecirc;</a> seja desenvolvedor (<a id="ounao" class="script" title="Ou n&atilde;o">ou n&atilde;o</a>), v&aacute; em <a href="https://github.com/alefesouza/descicloapp-chrome" target="_blank" title="Reposit&oacute;rio da extens&atilde;o no GitHub">clique aqui</a> para ver o c&oacute;digo-fonte.
 </div>
 <hr>
 <h3>Cr&eacute;ditos</h3>
 <div>
-<a href="http://iconspedia.com/" target="_blank">Iconspedia</a> - Por eu ter pego de l&aacute; a maioria dos &iacute;cones da extens&atilde;o.<br>
-<a href="http://www.maujor.com/" target="_blank">http://www.maujor.com/</a> - Por eu ter aprendido de l&aacute; quase tudo que eu sei de CSS enquanto desenvolvia o DescicloApp<br>
-<a href="http://stackoverflow.com/" target="_blank">http://stackoverflow.com/</a> - Por eu ter aprendido muita coisa de Javascript l&aacute; enquanto desenvolvia a extens&atilde;o.<br>
-<a href="https://chrome.google.com/webstore/detail/cjjghkapdciaiogkeofggpblmbbnjinn" target="_blank">Extens&atilde;o Pixlr Grabber</a> - Por eu ter me inspirado no c&oacute;digo dela quando comecei a desenvolver o DescicloApp<br>
-E v&aacute;rios outros sites que eu n&atilde;o lembro...
+<a href="http://iconspedia.com/" target="_blank">Iconspedia</a> - Ajuda nos &iacute;cones.<br>
+<a href="http://www.maujor.com/" target="_blank">Maujor</a> - Ajuda no CSS.<br>
+<a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a> - Ajuda no Javascript.<br>
+<a href="https://chrome.google.com/webstore/detail/cjjghkapdciaiogkeofggpblmbbnjinn" target="_blank">Extens&atilde;o Pixlr Grabber</a> - Inspira&ccedil;&atilde;o no in&iacute;cio.<br>
+E v&aacute;rios outros sites...
 </div>
 </div>
 </div>
 <br><br>
-E se voc&ecirc; tenha gostou muito da extens&atilde;o, compartilhe com seus amigos que conhecem a Desciclop&eacute;dia :D
+E se voc&ecirc; gostou muito da extens&atilde;o, compartilhe com seus amigos que conhecem a Desciclop&eacute;dia :D
 <br><br><br>
 <div align="center"><div class="share"><div class="tooltip7"><span>&nbsp;&nbsp;&nbsp;<button class="toolti" id="sharefacebook"><div style="float:left;"><img src="../imagens/facebook.png" width="45px"><br><font style="color: #ffffff; text-decoration: none;">Facebook</font></div></button>&nbsp;&nbsp;&nbsp;<button class="toolti" id="sharetwitter"><div style="float:right"><img src="../imagens/twitter.png" width="45px"><br><font style="color: #ffffff; text-decoration: none;">Twitter</font></div></button><br><br><button class="toolti" id="sharegoogleplus"><div><img src="../imagens/googleplus.png" width="50px"><br><font style="color: #ffffff; text-decoration: none;">Google+</font></a></div></button></span><b><a>Compartilhar</a></b><a>&nbsp;<img src="../imagens/metrosharebyaloogle.png" width="15px"></div></div>
 <br>
+<div style="display:none"><!- essa parte e para nao ficar dando um erro de "blablabla nao pode ter ter onclick pra algo que nao existe" e eu nao quero fazer um arquivo de scripts pra cada pagina se todas podem usar o mesmo -><div id="descicloapp"/><div id="servidor"/><div id="yourbase"/><div id="store"/><div id="me"/></div>
 </body>
 </html>

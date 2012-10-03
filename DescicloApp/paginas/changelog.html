@@ -4,11 +4,12 @@
 <base target="_blank" />
 <link rel="shortcut icon" href="../icons/icon.png" /> 
 <link rel="author" href="https://plus.google.com/101361157875821775334/" />
-<link rel="stylesheet" href="../popup.html" />
 <link rel="stylesheet" href="../css/paginas.css" />
 <link rel="stylesheet" href="../css/button.css" />
 <link rel="stylesheet" href="../css/scrollbar.css" />
-<script src="../js/changelog.js"></script>
+<script src="../js/jquery/modernizr-1.7.min.js"></script>
+<script src="../js/jquery/jquery.min.js"></script>
+<script src="../js/paginas.js"></script>
 <style type="text/css">
 body {
 	font-family: Helvetica, sans-serif;
@@ -34,11 +35,11 @@ a:visited {
 	bottom: 0; 
 	border-top:#999 solid 1px;
 	border-width: 1px 0;
-	}
+}
 
 #rodape p {
 	margin:0;
-	}
+}
 </style>
 </head>
 <body>
@@ -47,6 +48,7 @@ a:visited {
 <ul id="navbar">
 <li id="faq" class="navbar-item">FAQ</li>
 <li id="changelog" class="navbar-item navbar-item-selected">Changelog</li>
+<li id="opcoes" class="navbar-item">Op&ccedil;&otilde;es</li>
 <li id="sobre" class="navbar-item">Sobre</li>
 </ul>
 </div>
@@ -59,6 +61,18 @@ a:visited {
 Modifica&ccedil;&otilde;es feitas nas &uacute;ltimas vers&otilde;es:
 <br><br>
 <b>NOTA:</b> <i>A partir da vers&atilde;o 1.0 as <a href="http://desciclopedia.org/wiki/Windows" title="Windows" target="_blank">atualiza&ccedil&otilde;es s&atilde;o autom&aacute;ticas</a>, ou seja, usam o mesmo ID (<a href="javascript:" title="O que faz o Chrome identificar a extens&atilde;o (mesmo assim voc&ecirc; n&atilde;o entendeu, mas foda-se)">?</a>), se voc&ecirc; quiser ver como era alguma vers&atilde;o era antigamente depois da 1.0, primeiro desinstale a vers&atilde;o que voc&ecirc; tem e depois instale a antiga, que certamente vai ser atualizada sozinha em at&eacute; um dia...</i>
+<br><br>
+<u><b>Vers&atilde;o 4.0</b></u>
+<br><br>
+Lan&ccedil;ada dia 03 de outubro de 2012:<br>
+Uma atualiza&ccedil;&atilde;ozinha r&aacute;pida:<br>
+<a href="http://aloogle.googlecode.com/files/DescicloApp_4_0.crx" target="_blank"><b>Link para download</b>&nbsp;<img src="../imagens/externowp7mouse.png" width="15px"></a>
+<br><br>
+<font color="#9400d3">&bull;</font>Melhoras na interface.<br>
+<font color="#9400d3">&bull;</font>Colocado um bot&atilde;o de mais, que ao clicar aparece outros namespaces na popup:<br>
+&nbsp;&nbsp;<font color="#00ff00">&bull;</font>Digitando algo na barra de busca e depois clicando em qualquer um dos namespaces te levar&aacute; a p&aacute;gina de cria&ccedil;&atilde;o ou edi&ccedil;&atilde;o dele, por exemplo, digitar "DescicloApp" na barra de busca, clicar em "Mais" e depois clicar no bot&atilde;o do Descion&aacute;rio te levar&aacute; a p&aacute;gina de cria&ccedil;&atilde;o do verbete DescicloApp no Descion&aacute;rio, mesma coisa com Desnot&iacute;cias e etc :D<br>
+<font color="#9400d3">&bull;</font>Colocado a p&aacute;gina de op&ccedil;&otilde;es:<br>
+&nbsp;&nbsp;<font color="#00ff00">&bull;</font>Por enquanto voc&ecirc; apenas pode escolher sua cor favorita pra ser as dos tra&ccedil;os da extens&atilde;o, sem precisar ser sempre o azul como antes, e escolher seu dom&iacute;nio favorito pra ser o padr&atilde;o, sem precisar trocar toda hora de .org pra ele.
 <br><br>
 <u><b>Vers&atilde;o 3.7</b></u>
 <br><br>
@@ -87,7 +101,7 @@ Uma atualiza&ccedil;&atilde;o ae:<br>
 <font color="#9400d3">&bull;</font>Algumas melhoras na interface.<br>
 <font color="#9400d3">&bull;</font>Colocado desnoticias.org nos dom&iacute;nios alternativos.<br>
 <font color="#9400d3">&bull;</font>Tirado o suporte de abrir as Mudan&ccedil;as recentes e P&aacute;ginas vigiadas dentro da extens&atilde;o (n&atilde;o funcionava mesmo...).<br>
-<font color="#9400d3">&bull;</font>Nova p&aacute;gina de FAQ, Changelog e Sobre (ah, v&aacute; &eacute; mesmo?).<br>
+<font color="#9400d3">&bull;</font>Nova p&aacute;gina de FAQ, Changelog e Sobre.<br>
 <font color="#9400d3">&bull;</font>Colocada fun&ccedil;&atilde;o de busca pela barra de endere&ccedil;os do Google Chrome:<br>
 &nbsp;&nbsp;<font color="#00ff00">&bull;</font>Para isso digite "dp" mais o nome do artigo que <a href="http://desciclopedia.org/wiki/Voc%C3%AA" target="_blank" title="Voc&ecirc;">voc&ecirc;</a> quer ver na Desciclop&eacute;dia e d&ecirc; enter, por exemplo, digitar "dp Chuck Norris" (sem aspas) na barra de endere&ccedil;os (<a href="javascript:" title="Ali onde voc&ecirc; digita os sites, caso voc&ecirc; seja burro e n&atilde;o saiba disso.">?</a>) te levar&aacute; ao artigo <a href="http://desciclopedia.org/wiki/Chuck_Norris" title="Chuck Norris">Chuck Norris</a> na Desciclop&eacute;dia :D<br>
 <font color="#9400d3">&bull;</font>Corre&ccedil;&atilde;o de bugs:<br>
@@ -220,7 +234,8 @@ s&atilde;o os &uacute;nicos Desc&iacute;clopes que eu tinha no Facebook na &eacu
 <div class="clear"></div>
 </div>
 <div id="rodape">
-<div style="float:left">&nbsp;&copy; 2010-2012 <a href="http://code.google.com/p/aloogle"><font color="#000000">Aloogle</font></a></div><div align="right"><a href="http://desciclopedia.org/wiki/All_your_base_are_belong_to_us" target="_blank"><font color="#000000">All your extension are belong to</font><a> <a href="http://desciclopedia.org/wiki/Usu%C3%A1rio:%C3%81s" target="_blank">me</a>.</div>
+<div style="float:left">&nbsp;&copy; 2010-2012 <a href="http://code.google.com/p/aloogle"><font color="#000000">Aloogle</font></a></div><div align="right"><a id="yourbase" class="script"><font color="#000000">All your extension are belong to</font><a> <a id="me" class="script">me</a>.</div>
 </div>
+<div style="display:none"><div id="voce" /><div id="servidor" /><div id="yourbase" /><div id="store" /></div>
 </body>
 </html>

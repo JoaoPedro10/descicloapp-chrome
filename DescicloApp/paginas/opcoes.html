@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Op&ccedil;&otilde;es - DescicloApp para Chrome</title>
+<link rel="shortcut icon" href="../icons/icon.png" /> 
+<link rel="author" href="https://plus.google.com/101361157875821775334/" />
+<link rel="stylesheet" href="../css/paginas.css" />
+<link rel="stylesheet" href="../css/button.css" />
+<link rel="stylesheet" href="../css/scrollbar.css" />
+<link rel="stylesheet" href="../css/select.css" />
+<link rel="stylesheet" href="../css/tooltip.css" />
+<script src="../js/jquery/modernizr-1.7.min.js"></script>
+<script src="../js/jquery/jquery.min.js"></script>
+<script src="../js/opcoes.js"></script>
+<script src="../js/notificacao.js"></script>
+<style type="text/css">
+body {
+	font-family: Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #3F6EC2;
+}
+
+hr {
+	border: 0px;
+	height: 1px;
+	background: #0000ff;
+}
+</style>
+</head>
+<body>
+<div id="navbar-container" style="background: url('../imagens/batata.png') no-repeat bottom #f1f1f1;">
+<div id="navbar-content-title"><img src="../icons/icon_48.png">DescicloApp</div>
+<ul id="navbar">
+<li id="faq" class="navbar-item">FAQ</li>
+<li id="changelog" class="navbar-item">Changelog</li>
+<li id="opcoes" class="navbar-item navbar-item-selected">Op&ccedil;&otilde;es</li>
+<li id="sobre" class="navbar-item">Sobre</li>
+</ul>
+</div>
+<div id="mainview">
+<div id="mainview-content">
+<div id="page-container">
+<div class="page" style="display:block">
+<h1>Op&ccedil;&otilde;es</h1>
+<h3>Qual sua cor favorita?</h3>
+<div class="tooltip5"><input name="background" type="color" value="#000001" id="background-color" class="pickme" /><span>Essa ser&aacute; a cor dos tra&ccedil;os da extens&atilde;o</span></div>
+<br>
+<hr>
+<h3>Qual seu dom&iacute;nio alternativo favorito?</h3>
+<select id="alternativo" style="width:200px;">
+<option value="desciclopedia.org">desciclopedia.org</option>
+<option value="desciclopedia.ws">desciclopedia.ws</option>
+<option value="pudim.info">pudim.info</option>
+<option value="vist.as">vist.as</option>
+<option value="pesquisa.la">pesquisa.la</option>
+<option value="desnoticias.org">desnoticias.org</option>
+<option value="sophia.desciclopedia.org">sophia.desciclopedia.org</option>
+<option value="roberto.desciclopedia.org">roberto.desciclopedia.org</option>
+</select><br>
+<hr>
+<button id="salvar">Salvar</button>
+</div>
+</body>
+</html>

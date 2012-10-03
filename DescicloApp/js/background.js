@@ -14,7 +14,7 @@ chrome.omnibox.onInputEntered.addListener(
 	function(text) {
 		console.log('inputEntered: ' + text);
 		//Nao consegui fazer abrir na mesma guia (_self)
-		window.open('http://desciclopedia.org/wiki/' + text, '_blank');
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/' + text, '_blank');
 });
 
 if(!localStorage.first){

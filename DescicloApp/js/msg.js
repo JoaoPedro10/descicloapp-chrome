@@ -1,6 +1,6 @@
-function $(id){  
+function $$(id){  
 		return document.getElementById(id);  
-	}  
+}		
 
 function enter(){
 	if(event.keyCode=='13'){
@@ -24,12 +24,34 @@ function editar(){
 		emailn()		
 }
 
+function restaurar() {
+  var favorite = localStorage["alternativo_favorito"];
+  if (!favorite) {
+    return;
+  }
+  var select = document.getElementById("alternativo");
+  for (var i = 0; i < select.children.length; i++) {
+    var child = select.children[i];
+    if (child.value == favorite) {
+      child.selected = "true";
+      break;
+    }
+  }
+}
+
 window.onload = function(){
-	$('voltar').onclick = function(){  
+	set_css = function() {
+		$('hr').css('background-color',localStorage.getItem('background-color'));
+	};
+	if (Modernizr.localstorage) {
+		set_css();
+	}
+	$$('voltar').onclick = function(){  
 		window.location="popup.html";
 	}
-	$('ir').onclick=ir;
-	$('editar').onclick=editar;
+	$$('ir').onclick=ir;
+	$$('editar').onclick=editar;
+	restaurar();
 }
 
 window.onkeypress = function(){

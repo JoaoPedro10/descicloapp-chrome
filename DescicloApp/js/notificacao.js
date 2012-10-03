@@ -11,7 +11,6 @@
 	function irn()
 	{
 		if (!verificarSuporte()) return;
-		if (webkitNotifications.checkPermission() == 0)
 		{
 //Quando eu tava fazendo essa parte da extensao (30/08/2012) o icone nao aparecia sendo que ta tudo certo, talvez seja um bug no Google Chrome ja que isso tambem tava acontecendo com outras extensoes que usam as notificacoes, por isso coloquei para pegar o icone por url mesmo
 			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
@@ -28,7 +27,6 @@
 	function editarn()
 	{
 		if (!verificarSuporte()) return;
-		if (webkitNotifications.checkPermission() == 0)
 		{
 			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
 			var titulo = "DescicloApp";
@@ -44,11 +42,25 @@
  	function pesquisarn()
 	{
 		if (!verificarSuporte()) return;
-		if (webkitNotifications.checkPermission() == 0)
 		{
 			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
 			var titulo = "DescicloApp";
-			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o que você quer pesquisar na (Xvideos) Desciclopédia, ou não";
+			var subTitulo = "Escreva algo primeiro: Digite na barra de texto o que você quer pesquisar na Desciclopédia, ou não";
+			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
+			notificacao.show();
+			setTimeout(function ()
+			{
+				notificacao.cancel()
+			}, 5000);
+		}
+	}
+	function salvarn()
+	{
+		if (!verificarSuporte()) return;
+		{
+			var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
+			var titulo = "DescicloApp";
+			var subTitulo = "Tudo salvo :D";
 			var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
 			notificacao.show();
 			setTimeout(function ()

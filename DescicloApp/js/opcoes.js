@@ -1,11 +1,8 @@
-function $$(id){  
-		return document.getElementById(id);  
-}
-
 function salvar() {
   var select = document.getElementById("alternativo");
   var alternativo = select.children[select.selectedIndex].value;
   localStorage["alternativo_favorito"] = alternativo;
+  localStorage["hr-color"] = document.getElementById("background-color").value;
   salvarn();
 }
 
@@ -23,30 +20,30 @@ function restaurar() {
     }
   }
 }
-	
+
 window.onload = function() {
 	set_css = function() {
-		$('hr').css('background-color',localStorage.getItem('background-color'));
+		$('#amostra').css('background-color',document.getElementById("background-color").value);
+		$('#amostra2').css('background-color',document.getElementById("background-color").value);
 	};
-	if (Modernizr.localstorage) {
+	if (Modernizr) {
 		$('.pickme').change(function() {
-			localStorage.setItem(this.id,this.value);
 			set_css();
 		});
 			set_css();
 	}
-	$$('faq').onclick = function(){  
+	$('#faq').click(function(){  
 		window.location="faq.html";
-	}
-	$$('changelog').onclick = function(){  
+	});
+	$('#changelog').click(function() {   
 		window.location="changelog.html";
-	}
-	$$('opcoes').onclick = function(){  
+	});
+	$('#opcoes').click(function() {  
 		window.location="opcoes.html";
-	}
-	$$('sobre').onclick = function(){  
+	});
+	$('#sobre').click(function() { 
 		window.location="sobre.html";
-	}
-	$$('salvar').onclick = salvar;
+	});
+	$('#salvar').click(function() { salvar() });
 	restaurar();
 }

@@ -1,7 +1,3 @@
-function $$(id){  
-		return document.getElementById(id);  
-}
-
 function voce(){
 	chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Voc%C3%AA'})
 }
@@ -75,41 +71,36 @@ function shareGooglePlus(){
 }
 
 window.onload=function(){
-	set_css = function() {
-		$('hr').css('background-color',localStorage.getItem('background-color'));
-	};
-	if (Modernizr.localstorage) {
-		set_css();
-	}
-	$$('faq').onclick = function(){  
+	$('hr').css('background-color',localStorage.getItem('hr-color'));
+	$('#faq').click(function(){  
 		window.location="faq.html";
-	}
-	$$('changelog').onclick = function(){  
+	});
+	$('#changelog').click(function() {   
 		window.location="changelog.html";
-	}
-	$$('opcoes').onclick = function(){  
+	});
+	$('#opcoes').click( function() {  
 		window.location="opcoes.html";
-	}
-	$$('sobre').onclick = function(){  
+	});
+	$('#sobre').click(function() { 
 		window.location="sobre.html";
-	}
-	$$('voce').onclick=voce;
-	$$('servidor').onclick=servidor;
-	$$('store').onclick=store;
-	$$('yourbase').onclick=yourbase;
-	$$('me').onclick=me;
-	$$('descicloapp').onclick=descicloApp;
-	$$('opera').onclick=opera;
-	$$('firefox').onclick=firefox;
-	$$('usuario').onclick=usuario;
-	$$('usuario').innerHTML = 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Usu&aacute;rio:&Aacute;s';
-	$$('flamewar').onclick=flamewar;
-	$$('discussao').onclick=discussao;
-	$$('johnny').onclick=johnny;
-	$$('sipho').onclick=sipho;
-	$$('ounao').onclick=ounao;
-	$$('dar').onclick=dar;
-	$$('sharefacebook').onclick=shareFacebook;
-	$$('sharetwitter').onclick=shareTwitter;
-	$$('sharegoogleplus').onclick=shareGooglePlus;
+	});
+	$('#voce').click(function() { voce() });
+	$('#servidor').click(function() { servidor() });
+	$('#store').click(function() { store() });
+	$('#yourbase').click(function() { yourbase() });
+	$('#me').click(function() { me() });
+	$('#descicloapp').click(function() { descicloApp() });
+	$('#opera').click(function() { opera() });
+	$('#firefox').click(function() { firefox() });
+	$('#usuario').click(function() { usuario() });
+	$('#usuario').html('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Usu&aacute;rio:&Aacute;s');
+	$('#flamewar').click(function() { flamewar() });
+	$('#discussao').click(function() { discussao() });
+	$('#johnny').click(function() { johnny() });
+	$('#sipho').click(function() { sipho() });
+	$('#ounao').click(function() { ounao() });
+	$('#dar').click(function() { dar() });
+	$('#sharefacebook').click(function() { shareFacebook() });
+	$('#sharetwitter').click(function() { shareTwitter() });
+	$('#sharegoogleplus').click(function() { shareGooglePlus() });
 }

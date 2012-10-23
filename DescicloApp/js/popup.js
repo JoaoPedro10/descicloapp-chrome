@@ -1,7 +1,3 @@
-function $$(id){  
-		return document.getElementById(id);  
-}  
-
 function enter(){
 if(event.keyCode=='13'){
 		window.open('http://' + document.getElementById('alternativo').value + '/wiki/' + document.getElementById('q').value) }
@@ -63,10 +59,10 @@ function recentes(){
 
 function mais(){
 	if (this.parentNode.nextSibling.childNodes[0].style.display != '') {
-		$$('mais').innerHTML = '<img src="imagens/cimawp7.png" width="16px"> Menos';
+		document.getElementById('mais').innerHTML = '<img src="imagens/cimawp7.png" width="16px"> Menos';
 		this.parentNode.nextSibling.childNodes[0].style.display = ''; }
 	else {
-	$$('mais').innerHTML = '<img src="imagens/baixowp7.png" width="16px"> Mais';
+	document.getElementById('mais').innerHTML = '<img src="imagens/baixowp7.png" width="16px"> Mais';
 	this.parentNode.nextSibling.childNodes[0].style.display = 'none';}
 }
 
@@ -176,39 +172,34 @@ function restaurar() {
 }
 
 window.onload = function(){
-		set_css = function() {
-			$('hr').css('background-color',localStorage.getItem('background-color'));
-		};
-		if (Modernizr.localstorage) {
-			set_css();
-		}
-		$$('ir').onclick=ir;
-		$$('editar').onclick=editar;
-		$$('pesquisar').onclick=pesquisar;
-		$$('irb').onclick=irb;
-		$$('pagina').onclick=pagina;
-		$$('discussao').onclick=discussao;
-		$$('contribuicao').onclick=contribuicao;
-		$$('vigiado').onclick=vigiado;
-		$$('carregar').onclick=carregar;
-		$$('mensagem').onclick=mensagem;
-		$$('recentes').onclick=recentes;
-		$$('mais').onclick=mais;
-		$$('desnoticias').onclick=desnoticias;
-		$$('descionario').onclick=descionario;
-		$$('deslivros').onclick=deslivros;
-		$$('despoesias').onclick=despoesias;
-		$$('descifras').onclick=descifras;
-		$$('desentrevistas').onclick=desentrevistas;
-		$$('descitacoes').onclick=descitacoes;
-		$$('deslistas').onclick=deslistas;
-		$$('desinopses').onclick=desinopses;
-		$$('fatos').onclick=fatos;
-		$$('facebook').onclick=facebook;
-		$$('twitter').onclick=twitter;
-		$$('blog').onclick=blog;
-		$$('ajuda').onclick=ajuda;
-		$$('abrir').onclick=abrir;
+		$('hr').css('background-color',localStorage.getItem('hr-color'));
+		$('#ir').click(function() { ir() });
+		$('#editar').click(function() { editar() });
+		$('#pesquisar').click(function() { pesquisar() });
+		$('#irb').click(function() { irb() });
+		$('#pagina').click(function() { pagina() });
+		$('#discussao').click(function() { discussao() });
+		$('#contribuicao').click(function() { contribuicao() });
+		$('#vigiado').click(function() { vigiado() });
+		$('#carregar').click(function() { carregar() });
+		$('#mensagem').click(function() { mensagem() });
+		$('#recentes').click(function() { recentes() });
+		document.getElementById('mais').onclick=mais;
+		$('#desnoticias').click(function() { desnoticias() });
+		$('#descionario').click(function() { descionario() });
+		$('#deslivros').click(function() { deslivros() });
+		$('#despoesias').click(function() { despoesias() });
+		$('#descifras').click(function() { descifras() });
+		$('#desentrevistas').click(function() { desentrevistas() });
+		$('#descitacoes').click(function() { descitacoes() });
+		$('#deslistas').click(function() { deslistas() });
+		$('#desinopses').click(function() { desinopses() });
+		$('#fatos').click(function() { fatos() });
+		$('#facebook').click(function() { facebook() });
+		$('#twitter').click(function() { twitter() });
+		$('#blog').click(function() { blog() });
+		$('#ajuda').click(function() { ajuda() });
+		$('#abrir').click(function() { abrir() });
 		restaurar();
 }
 

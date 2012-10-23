@@ -13,8 +13,7 @@ chrome.omnibox.onInputChanged.addListener(
 chrome.omnibox.onInputEntered.addListener(
 	function(text) {
 		console.log('inputEntered: ' + text);
-		//Nao consegui fazer abrir na mesma guia (_self)
-		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/' + text, '_blank');
+		chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/' + text});
 });
 
 if(!localStorage.first){

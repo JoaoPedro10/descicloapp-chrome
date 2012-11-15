@@ -15,6 +15,18 @@ chrome.omnibox.onInputEntered.addListener(
 		console.log('inputEntered: ' + text);
 		chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/' + text});
 });
+  
+function buscadescicloapp(info)
+{
+	var textoselecionado = info.selectionText;
+	chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/index.php?title=Especial%3ABusca&search=' + textoselecionado})
+}
+
+chrome.contextMenus.create({
+	title: "Pesquisar '%s' na Desciclop\u00E9dia",
+	contexts:["selection"],
+	onclick: buscadescicloapp
+});
 
 if(!localStorage.first){
     chrome.tabs.create({

@@ -15,4 +15,5 @@ input.text:hover {
 input.text:focus {
 	background: #e4e4e4;
 	border: #000000 solid 2px;
+	outline: none;
 }

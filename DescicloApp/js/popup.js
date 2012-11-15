@@ -200,6 +200,7 @@ window.onload = function(){
 		$('#blog').click(function() { blog() });
 		$('#ajuda').click(function() { ajuda() });
 		$('#abrir').click(function() { abrir() });
+		document.getElementById('q').focus();
 		restaurar();
 }
 

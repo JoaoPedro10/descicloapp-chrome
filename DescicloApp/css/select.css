@@ -24,6 +24,7 @@ select {
 	padding-top: 2px;
 	padding-bottom: 2px;
 	text-overflow: ellipsis;
+	outline: none;
 }
 
 html[dir='rtl'] select {

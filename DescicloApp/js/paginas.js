@@ -90,6 +90,7 @@ window.onload=function(){
 	$('#yourbase').click(function() { yourbase() });
 	$('#me').click(function() { me() });
 	$('#descicloapp').click(function() { descicloApp() });
+	$('#info').click(function() { descicloApp() });
 	$('#opera').click(function() { opera() });
 	$('#firefox').click(function() { firefox() });
 	$('#usuario').click(function() { usuario() });

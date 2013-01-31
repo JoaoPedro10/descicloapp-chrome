@@ -21,6 +21,10 @@ function restaurar() {
   }
 }
 
+function descicloApp(){
+	chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Usu%C3%A1rio:%C3%81s/DescicloApp'})
+}
+
 window.onload = function() {
 	set_css = function() {
 		$('#amostra').css('background-color',document.getElementById("background-color").value);
@@ -44,6 +48,7 @@ window.onload = function() {
 	$('#sobre').click(function() { 
 		window.location="sobre.html";
 	});
+	$('#descicloapp').click(function() { descicloApp() });
 	$('#salvar').click(function() { salvar() });
 	restaurar();
 }

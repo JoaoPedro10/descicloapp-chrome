@@ -72,14 +72,14 @@ function boteco(){
 
 function aa(){
 	if(q.value != "") {
-		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&preload=Predefinição%3AForumheader%2FAlcoólicos+Anônimos&editintro=&title=Forum%3A' + document.getElementById('q').value + '&create=Adicionar+novo+tópico'}) }
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&preload= Predefini%C3%A7%C3%A3o%3AForumheader%2FAlco%C3%B3licos+An%C3%B4nimos&editintro=&title=Forum%3A' + document.getElementById('q').value + '&create=Adicionar+novo+t%C3%B3pico'}) }
 	else {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Forum:Alco%C3%B3licos_An%C3%B4nimos'}) }
 }
 
 function truco(){
 	if(q.value != "") {
-		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&preload=Predefini%C3%A7%C3%A3o%3AForumheader%2FOfftopic&title=Forum%3A' + + document.getElementById('q').value + '&create=Adicionar+novo+t%C3%B3pico'}) }
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&preload=Predefini%C3%A7%C3%A3o%3AForumheader%2FOfftopic&title=Forum%3A' +  document.getElementById('q').value + '&create=Adicionar+novo+t%C3%B3pico'}) }
 	else {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Forum:Mesa_de_Truco'}) }
 }
@@ -100,21 +100,21 @@ function descionario(){
 
 function deslivros(){
 	if(q.value != "") {
-		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Deslivros:' + document.getElementById('q').value}) }
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&preload=Predefini%C3%A7%C3%A3o%3ANovo+deslivro&title=Deslivros%3A' + document.getElementById('q').value + '&create=Criar+p%C3%A1gina'}) }
 	else {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Deslivros:P%C3%A1gina_principal'}) }
 }
 
 function despoesias(){
 	if(q.value != "") {
-		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Despoesias:' + document.getElementById('q').value}) }
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&preload=Predefini%C3%A7%C3%A3o%3ANova+despoesia&title=Despoesias%3A' + document.getElementById('q').value + '&create=Criar+p%C3%A1gina'}) }
 	else {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Despoesias:P%C3%A1gina_principal'}) }
 }
 
 function descifras(){
 	if(q.value != "") {
-		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Descifras:' + document.getElementById('q').value}) }
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&preload=Predefini%C3%A7%C3%A3o%3ANova+descifra&title=Descifras%3A' + document.getElementById('q').value + '&create=Criar+p%C3%A1gina'}) }
 	else {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Descifras:P%C3%A1gina_principal'}) }
 }
@@ -135,16 +135,9 @@ function descitacoes(){
 
 function deslistas(){
 	if(q.value != "") {
-		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Deslistas:' + document.getElementById('q').value}) }
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?action=edit&preload=Predefini%C3%A7%C3%A3o%3ADeslistas%2Fpreload&title=Deslistas%3A' + document.getElementById('q').value + '&create=Criar+p%C3%A1gina'}) }
 	else {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Deslistas:P%C3%A1gina_principal'}) }
-}
-
-function desinopses(){
-	if(q.value != "") {
-		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Desinopses:' + document.getElementById('q').value}) }
-	else {
-		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Desinopses:P%C3%A1gina_principal'}) }
 }
 
 function fatos(){
@@ -214,7 +207,6 @@ window.onload = function(){
 		$('#desentrevistas').click(function() { desentrevistas() });
 		$('#descitacoes').click(function() { descitacoes() });
 		$('#deslistas').click(function() { deslistas() });
-		$('#desinopses').click(function() { desinopses() });
 		$('#fatos').click(function() { fatos() });
 		$('#facebook').click(function() { facebook() });
 		$('#twitter').click(function() { twitter() });

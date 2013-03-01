@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="../css/scrollbar.css" />
 <link rel="stylesheet" href="../css/select.css" />
 <link rel="stylesheet" href="../css/tooltip.css" />
-<script src="../js/jquery/modernizr.min.js"></script>
-<script src="../js/jquery/jquery.min.js"></script>
+<script src="../js/jquery/modernizr-2.6.2.min.js"></script>
+<script src="../js/jquery/jquery-1.9.1.min.js"></script>
 <script src="../js/opcoes.js"></script>
 <script src="../js/notificacao.js"></script>
 <style type="text/css">
@@ -32,7 +32,21 @@ a:visited {
 hr {
 	border: 0px;
 	height: 1px;
-	background: #0000ff;
+	background: #000000;
+}
+
+#app-desciclopedia {
+	background: #ffff00;
+	font-weight: bold;
+}
+
+input[type='text'] {
+	-webkit-border-radius: 2px;
+}
+
+input[type='text']:focus {
+	border-color: #0000ff;
+	outline: none;
 }
 </style>
 </head>
@@ -52,7 +66,7 @@ hr {
 <div class="page" style="display:block">
 <h1>Op&ccedil;&otilde;es</h1>
 <h3>Qual &eacute; sua cor favorita?</h3>
-<div class="tooltip5"><input type="color" id="background-color" class="pickme" /><span>Essa ser&aacute; a cor dos tra&ccedil;os da extens&atilde;o</span></div>
+<div class="tooltip5"><input type="color" id="hr-color" class="pickme" /><span>Essa ser&aacute; a cor dos tra&ccedil;os da extens&atilde;o</span></div>
 <br>
 <hr id="amostra">
 <h3>Qual &eacute; seu dom&iacute;nio alternativo favorito?</h3>
@@ -67,7 +81,11 @@ hr {
 <option value="roberto.desciclopedia.org">roberto.desciclopedia.org</option>
 </select><br>
 <hr id="amostra2">
+<h3>Qual &eacute; seu nome de usu&aacute;rio?</h3>
+<div class="tooltip5"><input type="text" id="username" /><span>Deixe em branco caso voc&ecirc; n&atilde;o seja usu&aacute;rio da Desciclop&eacute;dia</span></div>
+<hr id="amostra3">
 <button id="salvar">Salvar</button>
+<br><br><div id="app-desciclopedia"></div>
 </div>
 </body>
 </html>

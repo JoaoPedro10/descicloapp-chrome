@@ -30,7 +30,7 @@ chrome.contextMenus.create({
 
 if(!localStorage.first){
     chrome.tabs.create({
-       url : "paginas/changelog.html"
+       url : "paginas/opcoes.html"
     });
     localStorage.first = "true";
 }

@@ -18,7 +18,7 @@ function editar(){
 }
 
 function pesquisar(){
-	if(q.value != "") {
+ 	if(q.value != "") {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/index.php?title=Especial%3ABusca&search=' + document.getElementById('q').value}) }
 	else {
 		pesquisarn() }
@@ -29,16 +29,25 @@ function irb(){
 }
 
 function pagina(){
+	if(q.value != "") {
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Usu%C3%A1rio:' + document.getElementById('q').value}) }
+	else {
 	//Eu usei window.open() porque com ele demora mais pra aparecer a url, dando a impressao de que a extensao descobriu sozinha o username
-	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_p%C3%A1gina')
+	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_p%C3%A1gina') }
 }
 
 function discussao(){
-	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_discuss%C3%A3o')
+	if(q.value != "") {
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Usu%C3%A1rio_discuss%C3%A3o:' + document.getElementById('q').value}) }
+	else {
+	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_discuss%C3%A3o') }
 }
 
 function contribuicao(){
-	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Special:MyContributions')
+	if(q.value != "") {
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Contribui%C3%A7%C3%B5es/' + document.getElementById('q').value}) }
+	else {
+	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Special:MyContributions') }
 }
 
 function vigiado(){
@@ -54,7 +63,10 @@ function mensagem(){
 }
 
 function recentes(){
-	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Special:Recentchanges/250'})
+	if(q.value != "") {
+		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Special:Recentchanges/' + document.getElementById('q').value}) }
+	else {
+	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Special:Recentchanges/250'}) }
 }
 
 function mais(){
@@ -184,6 +196,9 @@ function restaurar() {
 
 window.onload = function(){
 		$('hr').css('background-color',localStorage.getItem('hr-color'));
+		$('#hifen').html(localStorage.getItem('hifen'));
+		$('#username').click(function()  { chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Usu%C3%A1rio:' + localStorage.getItem('username')}); });
+		$('#username').html(localStorage.getItem('username'));
 		$('#ir').click(function() { ir() });
 		$('#editar').click(function() { editar() });
 		$('#pesquisar').click(function() { pesquisar() });

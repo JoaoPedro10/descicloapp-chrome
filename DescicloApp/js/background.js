@@ -28,7 +28,7 @@ chrome.contextMenus.create({
 	onclick: buscadescicloapp
 });
 
-if(!localStorage.opces){
+if(!localStorage.opcoes){
     chrome.tabs.create({
        url : "paginas/opcoes.html"
     });

@@ -1,3 +1,8 @@
+var iricone=localStorage.getItem('iricone');
+var editaricone=localStorage.getItem('editaricone');
+var pesquisaricone=localStorage.getItem('pesquisaricone');
+
+
 function enter(){
 if(event.keyCode=='13'){
 		window.open('http://' + document.getElementById('alternativo').value + '/wiki/' + document.getElementById('q').value) }
@@ -175,10 +180,6 @@ function ajuda(){
 	window.open('paginas/faq.html', '_blank')
 }
 
-function abrir(){
-	window.open('janela.html', '', 'width=345,height=421'); window.close();
-}
-
 function restaurar() {
   var favorito = localStorage["alternativo_favorito"];
   if (!favorito) {
@@ -195,7 +196,10 @@ function restaurar() {
 }
 
 window.onload = function(){
-		$('hr').css('background-color',localStorage.getItem('hr-color'));
+		$('hr').css('background-color',localStorage.getItem('cor-favorita'));
+		$('#ir').css({'background-image':'url(' + iricone + ')', 'background-color':localStorage.getItem('cor-favorita'), 'background-repeat': 'no-repeat', 'background-position': 'center'});
+		$('#editar').css({'background-image':'url(' + editaricone + ')', 'background-color':localStorage.getItem('cor-favorita'), 'background-repeat': 'no-repeat', 'background-position': 'center'});
+		$('#pesquisar').css({'background-image':'url(' + pesquisaricone + ')', 'background-color':localStorage.getItem('cor-favorita'), 'background-repeat': 'no-repeat', 'background-position': 'center'});
 		$('#hifen').html(localStorage.getItem('hifen'));
 		$('#username').click(function()  { chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Usu%C3%A1rio:' + localStorage.getItem('username')}); });
 		$('#username').html(localStorage.getItem('username'));
@@ -227,8 +231,8 @@ window.onload = function(){
 		$('#twitter').click(function() { twitter() });
 		$('#blog').click(function() { blog() });
 		$('#ajuda').click(function() { ajuda() });
-		$('#abrir').click(function() { abrir() });
 		document.getElementById('q').focus();
+		if(localStorage.getItem('jadesativou') != "true") { $('#apn-options-menu').css({'display':'none'}); } else { $('#apn-options-menu').css({'display':''}); };
 		restaurar();
 }
 

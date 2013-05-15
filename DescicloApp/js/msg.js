@@ -34,7 +34,7 @@ function restaurar() {
 }
 
 window.onload = function(){
-	$('hr').css('background-color',localStorage.getItem('hr-color'));
+	$('hr').css('background-color',localStorage.getItem('cor-favorita'));
 	$('#voltar').click(function(){  
 		window.location="popup.html";
 	});

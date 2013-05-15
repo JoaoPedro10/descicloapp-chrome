@@ -34,12 +34,8 @@ function usuario(){
 	chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Usu%C3%A1rio:%C3%81s'});
 }
 
-function flamewar(){
-	chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Flamewar'})
-}
-
-function discussao(){
-	chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Usu%C3%A1rio_Discuss%C3%A3o:%C3%81s'})
+function mensagem(){
+	new Messi('<iframe id="JotFormIFrame" allowtransparency="true" src="http://aloogle.tumblr.com/descicloapp/feedback" frameborder="0" style="width:100%; height:600px; border:none;" scrolling="no"></iframe>', {title: 'Feedback'})
 }
 
 function johnny(){
@@ -71,7 +67,7 @@ function shareGooglePlus(){
 }
 
 window.onload=function(){
-	$('hr').css('background-color',localStorage.getItem('hr-color'));
+	$('hr').css('background-color',localStorage.getItem('cor-favorita'));
 	$('#faq').click(function(){  
 		window.location="faq.html";
 	});
@@ -95,8 +91,7 @@ window.onload=function(){
 	$('#firefox').click(function() { firefox() });
 	$('#usuario').click(function() { usuario() });
 	$('#usuario').html('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Usu&aacute;rio:&Aacute;s');
-	$('#flamewar').click(function() { flamewar() });
-	$('#discussao').click(function() { discussao() });
+	$('#mensagem').click(function() { mensagem() });
 	$('#johnny').click(function() { johnny() });
 	$('#sipho').click(function() { sipho() });
 	$('#ounao').click(function() { ounao() });

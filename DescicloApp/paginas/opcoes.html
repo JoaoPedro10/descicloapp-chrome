@@ -8,8 +8,11 @@
 <link rel="stylesheet" href="../css/scrollbar.css" />
 <link rel="stylesheet" href="../css/select.css" />
 <link rel="stylesheet" href="../css/tooltip.css" />
+<link rel="stylesheet" href="../css/inputradio.css" />
+<link rel="stylesheet" href="../css/jquery/messi.css" />
 <script src="../js/jquery/modernizr-2.6.2.min.js"></script>
 <script src="../js/jquery/jquery-1.9.1.min.js"></script>
+<script src="../js/jquery/messi.js"></script>
 <script src="../js/opcoes.js"></script>
 <script src="../js/notificacao.js"></script>
 <style type="text/css">
@@ -36,8 +39,15 @@ hr {
 }
 
 #app-desciclopedia {
-	background: #ffff00;
-	font-weight: bold;
+	background: #f9edbe;
+	border: 1px solid #f0c36d;
+	-webkit-border-radius: 2px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	position: absolute;
+	top: -5px;
+	font-size: 85%;
+	line-height: 29px;
+	margin-left: 100px;
 }
 
 input[type='text'] {
@@ -64,12 +74,13 @@ input[type='text']:focus {
 <div id="mainview-content">
 <div id="page-container">
 <div class="page" style="display:block">
+<div id="app-desciclopedia"></div>
 <h1>Op&ccedil;&otilde;es</h1>
 <h3>Qual &eacute; sua cor favorita?</h3>
-<div class="tooltip5"><input type="color" id="hr-color" class="pickme" /><span>Essa ser&aacute; a cor dos tra&ccedil;os da extens&atilde;o</span></div>
-<hr id="amostra">
+<div><input type="color" id="cor-favorita" class="pickme" /></div><br> com &iacute;cones:<br><br><form><label><input type="radio" name="coricone" value="imagens/buscawp72.png"  id="coricone" checked="true"> Preto</label> <label><input type="radio" name="coricone"  id="coricone2" value="imagens/buscawp72b.png"> Branco</label> </form>
+<hr>
 <h3>Qual &eacute; seu dom&iacute;nio alternativo favorito?</h3>
-<select id="alternativo" style="width:200px;">
+<div class="tooltip5"><select id="alternativo" style="width:200px;">
 <option value="desciclopedia.org">desciclopedia.org</option>
 <option value="desciclopedia.ws">desciclopedia.ws</option>
 <option value="pudim.info">pudim.info</option>
@@ -78,13 +89,20 @@ input[type='text']:focus {
 <option value="desnoticias.org">desnoticias.org</option>
 <option value="sophia.desciclopedia.org">sophia.desciclopedia.org</option>
 <option value="roberto.desciclopedia.org">roberto.desciclopedia.org</option>
-</select><br>
-<hr id="amostra2">
+</select><span>pesquisa.la &eacute; o melhor por ser o mais est&aacute;vel</span></div>
+<hr>
 <h3>Qual &eacute; seu nome de usu&aacute;rio?</h3>
 <div class="tooltip5"><input type="text" id="username" /><span>Deixe em branco caso voc&ecirc; n&atilde;o seja usu&aacute;rio da Desciclop&eacute;dia</span></div>
-<hr id="amostra3">
+<hr>
+<h3>DescicloToolbar</h3>
+<button id="escolha">Escolher quais bot&otilde;es devem aparecer</button><br><br>
+<label><input type="checkbox" id="desciclotoolbar"> Habilitar a DescicloToolbar</label><br>
+<label><input type="checkbox" id="barrabusca"> Habilitar a barra de buscas</label><br>
+<label><input type="checkbox" id="botaomais"> Usar bot&atilde;o "Mais" ao inv&eacute;s dos bot&otilde;es de namespaces</label><br>
+<label><input type="checkbox" id="botaofeedback"> Habilitar o bot&atilde;o feedback</label>
+<hr>
 <button id="salvar">Salvar</button>
-<br><br><div id="app-desciclopedia"></div>
+<br><br>
 </div>
 </body>
 </html>

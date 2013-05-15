@@ -28,9 +28,21 @@ chrome.contextMenus.create({
 	onclick: buscadescicloapp
 });
 
-if(!localStorage.opcoes){
-    chrome.tabs.create({
-       url : "paginas/opcoes.html"
-    });
-    localStorage.opcoes = "true";
+if(!localStorage.primeira){
+    chrome.tabs.create({url: "paginas/opcoes.html"});
+    chrome.tabs.create({url: "paginas/toolbar.html"});
+    localStorage.primeira = "true";
+}
+
+if(!localStorage.storagepadrao){
+	localStorage["alternativo_favorito"] = "desciclopedia.org";
+	localStorage["cor-favorita"] = "#00ffff";
+	localStorage["coricone"] = "imagens/buscawp72.png";
+	localStorage["iricone"] = "imagens/avancarwp7.png";
+	localStorage["editaricone"] = "imagens/novowp7.png";
+	localStorage["pesquisaricone"] = "imagens/buscawp7.png";
+	localStorage["botaomais"] = "true";
+	localStorage["barrabusca"] = "true";
+	localStorage["botaofeedback"] = "true";
+    localStorage.storagepadrao = "true";
 }

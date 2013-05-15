@@ -30,7 +30,6 @@ body {
 	padding: 2px 4px;
 	vertical-align:middle;
 	-webkit-border-radius: 3px;
-	-webkit-transition: all 0.5s;
 }
 
 .menuitem:hover {
@@ -39,7 +38,6 @@ body {
 	cursor: pointer;
 	border: #000000 solid 1px;
 	background:url(imagens/preto_real_player.png);
-	-webkit-transition: all 0.5s;
 }
 
 .menuitem:active {
@@ -90,7 +88,7 @@ div.sombra:active {
 <option value="desnoticias.org">desnoticias.org</option>
 <option value="sophia.desciclopedia.org">sophia.</option>
 <option value="roberto.desciclopedia.org">roberto.</option>
-</select></div><input type="text" class="text" id="q" style="float:left; width: 175px; -webkit-border-radius: 0px;" autocomplete="on" placeholder="Escreva algo..." name="q" /><div class="tooltip"><span>Ir a esta p&aacute;gina</span><input type="submit" id="ir" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url(imagens/avancarwp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; float:left; -webkit-border-radius:0px;" class="azul" value="" /></div><div class="tooltip"><span>Editar ou criar essa p&aacute;gina</span><input type="submit" id="editar" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url(imagens/novowp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; float:left; -webkit-border-radius: 0px;" class="azul" value="" /></div><div class="tooltip"><span>Pesquisar</span><input type="submit" id="pesquisar" name="pesquisar" style="width:25px; height:22px; border: #000000 solid 1px; float:left; -webkit-border-bottom-right-radius: 10px; -webkit-border-top-right-radius: 10px; background-image:url(imagens/buscawp7.png); background-repeat: no-repeat; background-position: center; background-size: 35px; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px;" class="azul" value="" /></div></tr></table>
+</select></div><input type="text" class="text" id="q" style="float:left; width: 175px; -webkit-border-radius: 0px;" autocomplete="on" placeholder="Escreva algo..." name="q" /><div class="tooltip"><span>Ir a esta p&aacute;gina</span><input type="submit" id="ir" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url(imagens/avancarwp7.png); background-repeat: no-repeat; background-position: center; float:left; -webkit-border-radius:0px;" class="azul" value="" /></div><div class="tooltip"><span>Editar ou criar essa p&aacute;gina</span><input type="submit" id="editar" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url(imagens/novowp7.png); background-repeat: no-repeat; background-position: center; float:left; -webkit-border-radius: 0px;" class="azul" value="" /></div><div class="tooltip"><span>Pesquisar</span><input type="submit" id="pesquisar" name="pesquisar" style="width:25px; height:22px; border: #000000 solid 1px; float:left; -webkit-border-bottom-right-radius: 10px; -webkit-border-top-right-radius: 10px; background-image:url(imagens/buscawp7.png); background-repeat: no-repeat; background-position: center; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px;" class="azul" value="" /></div></tr></table>
 <br><br>
 	<div id="irb" class="menuitem">
 		<img src="icons/icon.ico"> Ir a Desciclop&eacute;dia
@@ -125,16 +123,16 @@ div.sombra:active {
 
 <div class="tooltip3 sombra" style="float:left"><a id="facebook"><img src="imagens/facebook.png" height="16px"></a><span>Facebook</span></div>&nbsp;&nbsp;<div class="tooltip3 sombra" style="float:left"><a id="twitter"><img src="imagens/twitter.png" height="16px"></a><span>Twitter</span></div><div id="ajuda" class="tooltip2 sombra" style="float: right;"><img src="imagens/ajuda.png" width="16px" height="16px"><span>Ajuda</span></div><a id="apn-options-menu" style="float: right;"><div id="tb-hide" class="tooltip2 sombra" style="float: right;"><img src="imagens/x_ativo.png" width="18px" height="18px"><span id="tb-control-label">Ocultar DescicloToolbar</span></div><div id="tb-show" class="tooltip2 sombra" style="float: right;"><img src="imagens/x.png" width="18px" height="18px"><span id="tb-control-label">Mostrar DescicloToolbar</div></a>
 <!-- codigo da DescicloToolbar -->
-        <script type="text/javascript" src="lib/jquery.js"></script>
-        <script type="text/javascript" src="lib/constant.js"></script>
-        <script type="text/javascript" src="lib/default-config.js"></script>
-        <script type="text/javascript" src="config/tb-config.js"></script>
-        <script type="text/javascript" src="lib/protocol.js"></script>
-        <script type="text/javascript" src="lib/tb-message.js"></script>
-        <script type="text/javascript" src="background/localStorage.js"></script>
-        <script type="text/javascript" src="background/preference.js"></script>
-        <script type="text/javascript" src="background/browser-action.js"></script>
-        <script type="text/javascript" src="lib/i18n.js"></script>
-        <script type="text/javascript" src="tb_ux/chrome-options.js"></script>
+<script type="text/javascript" src="toolbar/lib/jquery.js"></script>
+<script type="text/javascript" src="toolbar/lib/constant.js"></script>
+<script type="text/javascript" src="toolbar/lib/default-config.js"></script>
+<script type="text/javascript" src="toolbar/config/tb-config.js"></script>
+<script type="text/javascript" src="toolbar/lib/protocol.js"></script>
+<script type="text/javascript" src="toolbar/lib/tb-message.js"></script>
+<script type="text/javascript" src="toolbar/background/localStorage.js"></script>
+<script type="text/javascript" src="toolbar/background/preference.js"></script>
+<script type="text/javascript" src="toolbar/background/browser-action.js"></script>
+<script type="text/javascript" src="toolbar/lib/i18n.js"></script>
+<script type="text/javascript" src="toolbar/tb_ux/chrome-options.js"></script>
 </body>
 </html>

@@ -1,45 +1,47 @@
 {
-   "background": {
-      "page": "background/background.html"
-   },
-   "browser_action": {
-      "default_icon": "icons/icon.png",
-      "default_popup": "popup.html",
-      "default_title": "Desciclop\u00E9dia"
-   },
+	"name": "DescicloApp",
+	"description": "Uma extens\u00E3o para Google Chrome, Mozilla Firefox e Opera para acessar a Desciclop\u00E9dia com mais facilidade.",
+	"version": "5.0",
+	"manifest_version": 2,
+	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
+	"permissions": [ "contextMenus", "notifications", "tabs", "unlimitedStorage", "http://*/*", "https://*/*" ],
+	"options_page": "paginas/opcoes.html",
+	"background": {
+	"page":
+		"toolbar/background/background.html"
+	},
+	"icons": {
+		"16": "icons/icon.ico",
+		"32": "icons/icon_32.png",
+		"48": "icons/icon_48.png",
+		"64": "icons/icon_64.png",
+		"128": "icons/icon_128.png"
+	},
+	"omnibox": { 
+		"keyword" : "dp" 
+	},
    "content_scripts": [ {
-      "js": [ "lib/jquery.js", "lib/constant.js", "lib/default-config.js", "config/tb-config.js", "config/widget-config.js", "lib/protocol.js", "lib/tb-message.js", "lib/state-machine.js", "lib/window-position.js", "content_script/toolbar.js", "content_script/widget.js", "content_script/injector.js" ],
+      "js": [ "toolbar/lib/jquery.js", "toolbar/lib/constant.js", "toolbar/lib/default-config.js", "toolbar/config/tb-config.js", "toolbar/config/widget-config.js", "toolbar/lib/protocol.js", "toolbar/lib/tb-message.js", "toolbar/lib/state-machine.js", "toolbar/lib/window-position.js", "toolbar/content_script/toolbar.js", "toolbar/content_script/widget.js", "toolbar/content_script/injector.js" ],
       "matches": [ "*://*/*" ],
       "run_at": "document_start"
    }, {
-      "css": [ "content_script/hack/facebook.css" ],
-      "matches": [ "*://*.facebook.com/*", "*://*.twitter.com/*" ]
+      "css": [ "toolbar/content_script/hack/facebook.css" ],
+      "matches": [ "*://*.facebook.com/*" ]
    }, {
-      "css": [ "content_script/hack/relative.css" ],
+      "css": [ "toolbar/content_script/hack/relative.css" ],
       "matches": [ "*://*.google.com/*", "*://*.google.com.br/*", "*://*.ask.com/", "*://*.bagsbuy.com/*", "*://*.csaa.com/*", "*://*.childrenschorus.org/*", "*://*.wikipedia.org/*", "*://*.mercurynews.com/*", "*://*.usnews.com/*", "*://*.desciclopedia.org/*", "*://*.desciclopedia.ws/*", "*://*.pudim.info/*", "*://vist.as/*", "*://pesquisa.la/*", "*://desnoticias.org/*" ],
       "run_at": "document_start"
    }, {
-      "css": [ "content_script/hack/static.css" ],
+      "css": [ "toolbar/content_script/hack/static.css" ],
       "matches": [ "*://*.google.com/imgres*", "*://images.google.com/*", "*://codesearch.google.com/*" ],
       "run_at": "document_start"
    } ],
-   "description": "Uma extens\u00E3o para Google Chrome, Mozilla Firefox e Opera para acessar a Desciclop\u00E9dia com mais facilidade. Vers\u00E3o 5.0 beta",
-   "homepage_url": "http://desciclopedia.org/wiki/DescicloApp",
-   "icons": {
-      "128": "icons/icon_128.png",
-      "16": "icons/icon.ico",
-      "32": "icons/icon_32.png",
-      "48": "icons/icon_48.png",
-      "64": "icons/icon_64.png"
-   },
-   "manifest_version": 2,
-   "name": "DescicloApp",
-   "omnibox": {
-      "keyword": "dp"
-   },
-   "options_page": "paginas/opcoes.html",
-   "permissions": [ "contextMenus", "management", "notifications", "tabs", "unlimitedStorage", "http://*/*", "https://*/*" ],
-   "update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
-   "version": "5.0",
-   "web_accessible_resources": [ "config/skin/css/containers.css", "config/skin/toolbar.html", "widgets/recentes/recentes.html", "widgets/mensagem/mensagem.html" ]
+	"homepage_url": "http://desciclopedia.org/wiki/DescicloApp",
+	"web_accessible_resources": [ "toolbar/config/skin/css/containers.css", "toolbar/config/skin/toolbar.html", "toolbar/widgets/mensagem/mensagem.html", "toolbar/widgets/recentes/recentes.html", "toolbar/widgets/mais/mais.html", "toolbar/widgets/feedback/feedback.html"],
+	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
+	"browser_action": {
+		"default_icon": "icons/icon.png",
+		"default_title": "Desciclop\u00E9dia",
+		"default_popup": "popup.html"
+	}
 }

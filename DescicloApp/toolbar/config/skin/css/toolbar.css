@@ -86,7 +86,7 @@ Toolbar Items
         total height 26px including border
     
 *************************************************/
-div.apn-toolbar-item {
+div.aloogle-toolbar-item {
     height: 24px;
     display: inline-block;
     margin: 0 1px;
@@ -189,7 +189,7 @@ div.html-button iframe {
 /* use this instead of display: none, because the toolbar reel resize
  * code is fragile and relies on this element being a part of the flow
  */
-#toolbar-partner-logo.apn-hidden-logo {
+#toolbar-partner-logo.aloogle-hidden-logo {
     width: 0px;
     visibility: hidden;
     margin-left: 0;

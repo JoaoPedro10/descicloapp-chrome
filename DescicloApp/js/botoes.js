@@ -4,6 +4,7 @@ function salvar() {
 	localStorage["botaocontribuicoes"] = document.getElementById("contribuicoes").checked;
 	localStorage["botaovigiadas"] = document.getElementById("vigiadas").checked;
 	localStorage["botaocarregar"] = document.getElementById("carregar").checked;
+	localStorage["botaoaleatorio"] = document.getElementById("aleatorio").checked;
 	localStorage["botaomensagem"] = document.getElementById("mensagem").checked;
 	localStorage["botaorecentes"] = document.getElementById("recentes").checked;
 	localStorage["botaoboteco"] = document.getElementById("boteco").checked;
@@ -29,6 +30,7 @@ window.onload = function() {
 	if(localStorage.getItem('botaocontribuicoes') != "false") { document.getElementById("contribuicoes").checked = true; } else { document.getElementById("contribuicoes").checked = false; };
 	if(localStorage.getItem('botaovigiadas') != "false") { document.getElementById("vigiadas").checked = true; } else { document.getElementById("vigiadas").checked = false; };
 	if(localStorage.getItem('botaocarregar') != "false") { document.getElementById("carregar").checked = true; } else { document.getElementById("carregar").checked = false; };
+	if(localStorage.getItem('botaoaleatorio') != "false") { document.getElementById("aleatorio").checked = true; } else { document.getElementById("aleatorio").checked = false; };
 	if(localStorage.getItem('botaomensagem') != "false") { document.getElementById("mensagem").checked = true; } else { document.getElementById("mensagem").checked = false; };
 	if(localStorage.getItem('botaorecentes') != "false") { document.getElementById("recentes").checked = true; } else { document.getElementById("recentes").checked = false; };
 	if(localStorage.getItem('botaoboteco') != "false") { document.getElementById("boteco").checked = true; } else { document.getElementById("boteco").checked = false; };

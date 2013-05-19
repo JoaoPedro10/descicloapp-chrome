@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2010-2012 APN, LLC. All rights reserved
+    Copyright (C) 2010-2012 aloogle, LLC. All rights reserved
     Ask.com
 */
 
@@ -53,8 +53,8 @@
             //Called when we confirm that BG has initialized
             //loads the toolbar frame and checks if DNSHandler for this window should be set/unset
             function init() {
-                document.getElementById('apn-' + ATB.CONSTANT.PID + '-toolbar-iframe')
-                        .setAttribute("src", "chrome://apn-" + ATB.CONSTANT.PID + "-toolbar/toolbar/content/config/skin/toolbar.html");
+                document.getElementById('aloogle-' + ATB.CONSTANT.PID + '-toolbar-iframe')
+                        .setAttribute("src", "chrome://aloogle-" + ATB.CONSTANT.PID + "-toolbar/toolbar/content/config/skin/toolbar.html");
 
                 //add newTab oncommand attribute here to make sure that preferences are set
                 var newTabCmd = parent.document.getElementById("cmd_newNavigatorTab");
@@ -125,13 +125,13 @@
                 var bgIframe = null;
 
                 //Load the toolbar iframe if bg is already present, otherwise create BG Iframe first
-                if ( bgDoc.getElementById("apn-" + ATB.CONSTANT.PID + "-iframe") ) {
+                if ( bgDoc.getElementById("aloogle-" + ATB.CONSTANT.PID + "-iframe") ) {
                     init();
                 } else {
                     var xulBrowser = bgDoc.createElement( "iframe");
-                    xulBrowser.setAttribute("id", "apn-" + ATB.CONSTANT.PID + "-iframe"); //For our window to have access to chrome
+                    xulBrowser.setAttribute("id", "aloogle-" + ATB.CONSTANT.PID + "-iframe"); //For our window to have access to chrome
                     xulBrowser.setAttribute("type", "chrome"); //For our window to have access to chrome
-                    xulBrowser.setAttribute("src", "chrome://apn-" + ATB.CONSTANT.PID + "-toolbar/toolbar/content/background/background.html");
+                    xulBrowser.setAttribute("src", "chrome://aloogle-" + ATB.CONSTANT.PID + "-toolbar/toolbar/content/background/background.html");
                     bgDoc.documentElement.appendChild(xulBrowser);
                     console.log("\nSuccessfuly added the iframe to hidden window.\n");
 
@@ -140,7 +140,7 @@
                 }
 
                 //Set a reference to the bgIframe
-                bgIframe = bgDoc.getElementById("apn-" + ATB.CONSTANT.PID + "-iframe");
+                bgIframe = bgDoc.getElementById("aloogle-" + ATB.CONSTANT.PID + "-iframe");
                 window.addEventListener("load", function () {
                     try {
                         top.gBrowser.addTabsProgressListener(ATB.webProgressListener, Components.interfaces.nsIWebProgress.NOTIFY_LOCATION);
@@ -245,7 +245,7 @@
                 tipElement = tipElement.parentNode;
               }
 
-              var tipNode = document.getElementById("apn-toolbar-tooltip");
+              var tipNode = document.getElementById("aloogle-toolbar-tooltip");
               tipNode.style.direction = direction;
 
               [titleText, XLinkTitleText, SVGTitleText].forEach(function (t) {

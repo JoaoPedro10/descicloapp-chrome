@@ -28,9 +28,9 @@ var Toolbar = {
         // would like to use the normal macro replacement, but we
         // don't have direct access to the localstorage/prefs
         if (!this.id)
-            this.id = "apn-" + (tbid || "null") + "-toolbar";
+            this.id = "aloogle-" + (tbid || "null") + "-toolbar";
         if (!this.styleid)
-            this.styleid = "apn-" + (tbid || "null") + "-stylesheet";
+            this.styleid = "aloogle-" + (tbid || "null") + "-stylesheet";
 
         var doc = $(document.documentElement), toolbar, link;
 
@@ -57,7 +57,7 @@ var Toolbar = {
             doc.append($('<iframe>',
                          { id: this.id,
                            src: chrome.extension.getURL('toolbar/config/skin/toolbar.html'),
-                           "class": "apn-toolbar SkipThisFixedPosition",
+                           "class": "aloogle-toolbar SkipThisFixedPosition",
                            style: "top: " + (this.positionData.ourTop || 0) + "px;"
                          }));
 
@@ -89,14 +89,14 @@ var Toolbar = {
             $(document.documentElement).append(style);
         }
 
-        $('[apn-was-fixed-top]').each(function (index, element) {
+        $('[aloogle-was-fixed-top]').each(function (index, element) {
             var e = $(this);
             e.css("position", "fixed");
-            e.css("top", e.attr("apn-was-fixed-top"));
+            e.css("top", e.attr("aloogle-was-fixed-top"));
         });
-        $('[apn-was-fixed-bottom]').each(function (index, element) {
+        $('[aloogle-was-fixed-bottom]').each(function (index, element) {
             var e = $(this);
-            e.css("bottom", e.attr("apn-was-fixed-bottom"));
+            e.css("bottom", e.attr("aloogle-was-fixed-bottom"));
         });
 
     },
@@ -104,7 +104,7 @@ var Toolbar = {
         // would like to use the normal macro replacement, but we
         // don't have direct access to the localstorage/prefs
         if (!this.id)
-            this.id = "apn-" + (tbid || "null") + "-toolbar";
+            this.id = "aloogle-" + (tbid || "null") + "-toolbar";
 
         return document.getElementById(this.id);
     },
@@ -155,18 +155,18 @@ var Toolbar = {
                     $elePos = $elem.css("position"),
                     newCssPosValueStr; 
 
-                if(element.getAttribute("data-apn-toolbar-adjusted")){
+                if(element.getAttribute("data-aloogle-toolbar-adjusted")){
                     if(pageInitBool && $elePos === "absolute"){
                         console.log(parseInt($elem.css("top"),10),newTop,pageInitBool,toolbarHeight,this);
                         //console.log(toolbarHeight,element);
 
                         newCssPosValueStr = ( parseInt($elem.css("top"),10) + newTop )+"px";
-                        element.style.top = element.getAttribute("data-apn-toolbar-adjusted");
+                        element.style.top = element.getAttribute("data-aloogle-toolbar-adjusted");
                         element.setAttribute("data-"+ATB.CONSTANT.EXT_PKG_ID+"_set","top");
-                        element.setAttribute("data-"+ATB.CONSTANT.EXT_PKG_ID+"_set_top",element.getAttribute("data-apn-toolbar-adjusted"));
+                        element.setAttribute("data-"+ATB.CONSTANT.EXT_PKG_ID+"_set_top",element.getAttribute("data-aloogle-toolbar-adjusted"));
                         return;
                     } else if(/*toolbarPixelOffset && */$elePos === "fixed"){
-                        element.style.top = element.getAttribute("data-apn-toolbar-adjusted");
+                        element.style.top = element.getAttribute("data-aloogle-toolbar-adjusted");
                         element.setAttribute("data-"+ATB.CONSTANT.EXT_PKG_ID+"_set","top");
                         element.setAttribute("data-"+ATB.CONSTANT.EXT_PKG_ID+"_set_top",newCssPosValueStr);
                         return;
@@ -214,7 +214,7 @@ var Toolbar = {
                             /*
                         } else if(pixelBottomBool && styleBottomDoesntContainPercentage) {
                             */
-                            this.setAttribute("data-apn-toolbar-adjusted",newCssPosValueStr);
+                            this.setAttribute("data-aloogle-toolbar-adjusted",newCssPosValueStr);
 
                         }
                     } else if($elePos === "absolute") {
@@ -275,7 +275,7 @@ var Toolbar = {
                                 this.setAttribute("data-"+ATB.CONSTANT.EXT_PKG_ID+"_set_bottom",newCssPosValueStr);
                             }
 
-                            this.setAttribute("data-apn-toolbar-adjusted",newCssPosValueStr);
+                            this.setAttribute("data-aloogle-toolbar-adjusted",newCssPosValueStr);
 
                         } else {
                             /*
@@ -356,8 +356,8 @@ var Toolbar = {
                         var $muEventTarget = $(mutationEv[i].target),
                             targetPosCss = $muEventTarget.css("position");
 
-                        if (!$muEventTarget.hasClass("apn-toolbar") || 
-                                $muEventTarget.hasClass("apn-widget") || 
+                        if (!$muEventTarget.hasClass("aloogle-toolbar") || 
+                                $muEventTarget.hasClass("aloogle-widget") || 
                                 $muEventTarget.hasClass("SkipThisFixedPosition") 
                             ) {
                             /* 
@@ -417,8 +417,8 @@ var Toolbar = {
         setTimeout(Toolbar._unstyle, 50);
     },
     _unstyle: function () {
-        if ($("#apn-toolbar").attr("style")) {
-            $("#apn-toolbar").attr("style", null);
+        if ($("#aloogle-toolbar").attr("style")) {
+            $("#aloogle-toolbar").attr("style", null);
         } else {
             setTimeout(Toolbar._unstyle, 50);
         }

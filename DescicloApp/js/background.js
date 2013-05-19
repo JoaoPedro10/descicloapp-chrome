@@ -16,6 +16,18 @@ chrome.omnibox.onInputEntered.addListener(
 		chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/' + text});
 });
   
+function irdescicloapp(info)
+{
+	var textoselecionado = info.selectionText;
+	chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/wiki/' + textoselecionado})
+}
+
+function editardescicloapp(info)
+{
+	var textoselecionado = info.selectionText;
+	chrome.tabs.create({url: 'http://' + localStorage.getItem('alternativo_favorito') + '/index.php?title=' + textoselecionado + '&action=edit'})
+}
+
 function buscadescicloapp(info)
 {
 	var textoselecionado = info.selectionText;
@@ -23,10 +35,29 @@ function buscadescicloapp(info)
 }
 
 chrome.contextMenus.create({
+	title: "Ir a '%s' na Desciclop\u00E9dia",
+	contexts:["selection"],
+	onclick: irdescicloapp
+});
+
+chrome.contextMenus.create({
+	title: "Editar '%s' na Desciclop\u00E9dia",
+	contexts:["selection"],
+	onclick: editardescicloapp
+});
+
+chrome.contextMenus.create({
 	title: "Pesquisar '%s' na Desciclop\u00E9dia",
 	contexts:["selection"],
 	onclick: buscadescicloapp
 });
+
+if(!localStorage.atualizacao51){
+    var pagina = "../paginas/atualizacao.html";
+	var notificacao = webkitNotifications.createHTMLNotification(pagina);
+	notificacao.show();
+    localStorage.atualizacao51 = "true";
+}
 
 if(!localStorage.primeira){
     chrome.tabs.create({url: "paginas/opcoes.html"});

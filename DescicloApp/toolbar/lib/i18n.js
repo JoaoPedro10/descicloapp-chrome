@@ -2,7 +2,7 @@
  * i18n, is a lazy loader for updating the dom with localized text
  *
  * i18n(element[, dictionaryName[, langCode]]);
- * @author Ann E. Win, APN
+ * @author Ann E. Win, aloogle
  */
 
 /**

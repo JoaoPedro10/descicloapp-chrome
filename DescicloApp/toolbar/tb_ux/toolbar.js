@@ -270,7 +270,7 @@ var ATB = (function(ATB) {
     */
     UX.getButtonPositionIndex = function(id) {
         var index;
-        $(".apn-toolbar-item").each(function(i, el) {
+        $(".aloogle-toolbar-item").each(function(i, el) {
             if( $(el).attr("id") == (id + "-button") ) {
                 index = i;
                 return;

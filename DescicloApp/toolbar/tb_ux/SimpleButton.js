@@ -14,7 +14,7 @@ function SimpleButton(config) {
         label = $("<div>", { "class": "button-label", text: style.label }).addClass(style.label ? null : "empty"),
         content = $("<div>", { "class": "button-content clearfix" }).append(icon, label);
 
-    this.$el = $("<div>", { "class": "apn-toolbar-item button simple-button clickable",
+    this.$el = $("<div>", { "class": "aloogle-toolbar-item button simple-button clickable",
                             id: config.id +"-button",
                             title: title
                           }).append(content);

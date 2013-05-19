@@ -18,9 +18,9 @@ div#left-dock { background-image: none; } /* removes the curve */
 
 div.button-icon>img { height: 16px; margin: 2px 0; }
 
-#com\.apn\.weather-button .button-icon>img,
-#com\.apn\.youtube-popup-button .button-icon>img,
-#com\.apn\.ask-homepage-navigation-button .button-icon>img {
+#com\.aloogle\.weather-button .button-icon>img,
+#com\.aloogle\.youtube-popup-button .button-icon>img,
+#com\.aloogle\.ask-homepage-navigation-button .button-icon>img {
     height: 20px; margin: 0;
 }
 

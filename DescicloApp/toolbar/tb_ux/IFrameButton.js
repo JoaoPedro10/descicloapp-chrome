@@ -57,7 +57,7 @@ function IFrameButton(config) {
     }
 	
     this.$el = $("<div>",
-                 { "class": "apn-toolbar-item html-button",
+                 { "class": "aloogle-toolbar-item html-button",
                    id: config.id +"-button",
                    title: config.button.style.label
                  }).append($content);
@@ -68,7 +68,7 @@ function IFrameButton(config) {
     if ($.browser.mozilla) {
         var MM;
         function loadCS(path) {
-            MM.loadFrameScript("chrome://apn-" + ATB.CONSTANT.PID + "-toolbar/content/" + path, true);
+            MM.loadFrameScript("chrome://aloogle-" + ATB.CONSTANT.PID + "-toolbar/content/" + path, true);
         }
 
         var injected = false;

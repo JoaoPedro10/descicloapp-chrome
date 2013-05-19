@@ -10,31 +10,8 @@
 
 var ATB = ATB || {};
 
-/**
- * In Mozilla Firefox, our toolbar widgets load in a "sandboxed" XUL browser.  We use
- * "frame scripts" (scripts loaded in a privileged context) to communicate between the
- * privileged toolbar and the sandboxed widgets.  This flag indicates whether we are in
- * a frame script to begin with (as this file is the first frame script loaded).
- * 
- * In Google Chrome and Internet Explorer, this will always be false. 
- */
-ATB.USE_CONTENT = (function() {
-    var n = (typeof content != "undefined") && content && content.navigator ? content.navigator : navigator;
-    var ua = n.userAgent.toLowerCase();
-    return ua.indexOf("compatible") < 0 &&
-           /(mozilla)(?:.*? rv:([\w.]+))?/.exec(ua) &&
-           typeof sendAsyncMessage == "function";
-})();
+ATB.USE_CONTENT = (function() {})();
 
-/**
- * Configuration of the toolbar. These values are need for the logic of the
- * extension. If you want to change them, please edit config/tb-config instead;
- * When you create a new config value, create it here and NOT in tb-config
- *
- * The weird pattern allow the autocompletion to work correctly
- *
- * @namespace
- */
 ATB.CONFIG = ATB.CONFIG || {};
 
 /**
@@ -43,18 +20,9 @@ ATB.CONFIG = ATB.CONFIG || {};
  * @default {}
  * @type Object ( map)
  */
-ATB.CONFIG.AUTHORIZED_DOMAIN = {
-    "10.0.38.28": true,
-    "apnwidgets.ask.com": true
-};
+ATB.CONFIG.AUTHORIZED_DOMAIN = {};
 
-/**
- * List of domain that shouldn't display the toolbar
- * Use window.location.hostname to write the value
- * @default {}
- * @type Object
- */
-ATB.CONFIG.BLACK_LIST_DOMAIN = {};
+ATB.CONFIG.BLACK_LIST_DOMAIN = { };
 
 
 
@@ -97,7 +65,7 @@ ATB.CONFIG.TB = {
      * @type String
      * @default style-atb
      */
-    STYLE_ID: 'apn-body-style',
+    STYLE_ID: 'aloogle-body-style',
 
     DEFAULT_THEME: 'vanilla'
 };

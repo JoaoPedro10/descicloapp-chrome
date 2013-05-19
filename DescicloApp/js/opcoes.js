@@ -10,7 +10,7 @@ function salvar() {
   localStorage["username"] = document.getElementById("username").value;
   if(document.getElementById("desciclotoolbar").checked == true) { localStorage["pref_tb_is_visible"] = true; } else { localStorage["pref_tb_is_visible"] = false; if(!localStorage.jadesativou){ new Messi('<iframe id="JotFormIFrame" allowtransparency="true" src="http://aloogle.tumblr.com/descicloapp/feedbackdptoolbar" frameborder="0" style="width:100%; height:550px; border:none;" scrolling="no"></iframe>', {title: 'DescicloToolbar'}); localStorage.jadesativou = "true"; };};
   if(document.getElementById("botaofeedback").checked == true) { localStorage["botaofeedback"] = true; } else { localStorage["botaofeedback"] = false; if(!localStorage.feedback){ new Messi('<iframe id="JotFormIFrame" allowtransparency="true" src="http://aloogle.tumblr.com/descicloapp/feedbackbotaodesativado" frameborder="0" style="width:100%; height:550px; border:none;" scrolling="no"></iframe>', {title: 'Feedback'}); localStorage.feedback = "true"; };};
-  $('#app-desciclopedia').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quer ter um atalho/&iacute;cone da Desciclop&eacute;dia na Nova guia que te leva a p&aacute;gina inicial? <a href="http://desciclopedia.org/wiki/Usu%C3%A1rio:%C3%81s/DescicloApp/Chrome/App" target="_blank">Clique aqui</a>!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+  $('#app-desciclopedia').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quer ter um aplicativo da Desciclop&eacute;dia na Nova guia? <a href="http://desciclopedia.org/wiki/Usu%C3%A1rio:%C3%81s/DescicloApp/Chrome/App" target="_blank">Clique aqui</a>!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
   salvarn();
 }
 
@@ -63,7 +63,7 @@ window.onload = function() {
 	document.getElementById("cor-favorita").value = localStorage.getItem('cor-favorita');
 	document.getElementById("username").value = localStorage.getItem('username');
 	$('hr').css('background-color',localStorage.getItem('cor-favorita'));
-	$('#escolha').click(function() { new Messi('<iframe src="botoes.html" frameborder="0" style="width:100%; height:500px; border:none;" scrolling="no"></iframe>', {buttons: [{id: 0, label: 'Fechar', val: 'X'}]} )});
+	$('#escolha').click(function() { new Messi('<iframe src="botoes.html" frameborder="0" style="width:100%; height:515px; border:none;" scrolling="no"></iframe>', {buttons: [{id: 0, label: 'Fechar', val: 'X'}]} )});
 	$('#desciclotoolbar').click(function() {if(document.getElementById("desciclotoolbar").checked == false) { document.getElementById("botaomais").disabled = true; document.getElementById("barrabusca").disabled = true; document.getElementById("botaofeedback").disabled = true; } else { document.getElementById("botaomais").disabled = false; document.getElementById("barrabusca").disabled = false; document.getElementById("botaofeedback").disabled = false; };})
 	$('#descicloapp').click(function() { descicloApp() });
 	$('#salvar').click(function() { salvar() });

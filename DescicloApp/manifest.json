@@ -1,14 +1,14 @@
 {
 	"name": "DescicloApp",
 	"description": "Uma extens\u00E3o para Google Chrome, Mozilla Firefox e Opera para acessar a Desciclop\u00E9dia com mais facilidade.",
-	"version": "5.0",
+	"version": "5.1",
 	"manifest_version": 2,
 	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
 	"permissions": [ "contextMenus", "notifications", "tabs", "unlimitedStorage", "http://*/*", "https://*/*" ],
 	"options_page": "paginas/opcoes.html",
 	"background": {
 	"page":
-		"toolbar/background/background.html"
+		"background.html"
 	},
 	"icons": {
 		"16": "icons/icon.ico",
@@ -20,22 +20,30 @@
 	"omnibox": { 
 		"keyword" : "dp" 
 	},
-   "content_scripts": [ {
-      "js": [ "toolbar/lib/jquery.js", "toolbar/lib/constant.js", "toolbar/lib/default-config.js", "toolbar/config/tb-config.js", "toolbar/config/widget-config.js", "toolbar/lib/protocol.js", "toolbar/lib/tb-message.js", "toolbar/lib/state-machine.js", "toolbar/lib/window-position.js", "toolbar/content_script/toolbar.js", "toolbar/content_script/widget.js", "toolbar/content_script/injector.js" ],
-      "matches": [ "*://*/*" ],
-      "run_at": "document_start"
-   }, {
-      "css": [ "toolbar/content_script/hack/facebook.css" ],
-      "matches": [ "*://*.facebook.com/*" ]
-   }, {
-      "css": [ "toolbar/content_script/hack/relative.css" ],
-      "matches": [ "*://*.google.com/*", "*://*.google.com.br/*", "*://*.ask.com/", "*://*.bagsbuy.com/*", "*://*.csaa.com/*", "*://*.childrenschorus.org/*", "*://*.wikipedia.org/*", "*://*.mercurynews.com/*", "*://*.usnews.com/*", "*://*.desciclopedia.org/*", "*://*.desciclopedia.ws/*", "*://*.pudim.info/*", "*://vist.as/*", "*://pesquisa.la/*", "*://desnoticias.org/*" ],
-      "run_at": "document_start"
-   }, {
-      "css": [ "toolbar/content_script/hack/static.css" ],
-      "matches": [ "*://*.google.com/imgres*", "*://images.google.com/*", "*://codesearch.google.com/*" ],
-      "run_at": "document_start"
-   } ],
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {
+				"default": "Ctrl+D",
+				"mac": "Command+D"
+			}
+		}
+	},
+	"content_scripts": [ {
+		"js": [ "toolbar/lib/jquery.js", "toolbar/lib/constant.js", "toolbar/lib/default-config.js", "toolbar/config/tb-config.js", "toolbar/config/widget-config.js", "toolbar/lib/protocol.js", "toolbar/lib/tb-message.js", "toolbar/lib/state-machine.js", "toolbar/lib/window-position.js", "toolbar/content_script/toolbar.js", "toolbar/content_script/widget.js", "toolbar/content_script/injector.js" ],
+		"matches": [ "*://*/*" ],
+		"run_at": "document_start"
+	}, {
+		"css": [ "toolbar/content_script/hack/facebook.css" ],
+		"matches": [ "*://*.facebook.com/*" ]
+	}, {
+		"css": [ "toolbar/content_script/hack/relative.css" ],
+		"matches": [ "*://*.google.com/*", "*://*.google.com.br/*", "*://*.wikipedia.org/*", "*://*.desciclopedia.org/*", "*://*.desciclopedia.ws/*", "*://*.pudim.info/*", "*://vist.as/*", "*://pesquisa.la/*", "*://desnoticias.org/*" ],
+		"run_at": "document_start"
+	}, {
+		"css": [ "toolbar/content_script/hack/static.css" ],
+		"matches": [ "*://*.google.com/imgres*", "*://images.google.com/*", "*://codesearch.google.com/*" ],
+		"run_at": "document_start"
+	} ],
 	"homepage_url": "http://desciclopedia.org/wiki/DescicloApp",
 	"web_accessible_resources": [ "toolbar/config/skin/css/containers.css", "toolbar/config/skin/toolbar.html", "toolbar/widgets/mensagem/mensagem.html", "toolbar/widgets/recentes/recentes.html", "toolbar/widgets/mais/mais.html", "toolbar/widgets/feedback/feedback.html"],
 	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",

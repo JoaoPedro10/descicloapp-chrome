@@ -301,7 +301,7 @@ var Protocol = (function (window) {
                             enumWindows(ATB.CONSTANT.PID + ":widget-hosted-popup", message, function(currentWindow, messageLocal) {
                                 // Relay from background to widget
                                 var popupBrowser = currentWindow.document.getElementById(ATB.CONSTANT.WID_POPUP_IFRAME_ID);
-                                popupBrowser.messageManager.sendAsyncMessage("APNMessage", messageLocal);
+                                popupBrowser.messageManager.sendAsyncMessage("aloogleMessage", messageLocal);
                             });
                         } else {
                             chrome.tabs.sendRequest(sender.tab ? sender.tab.id : 0, message);
@@ -353,7 +353,7 @@ var Protocol = (function (window) {
                             break;
                         case WIDGET:
                             if (ATB.USE_CONTENT) {
-                                sendAsyncMessage("APNMessage", message);
+                                sendAsyncMessage("aloogleMessage", message);
                             }
                             else {
                                 parent.postMessage(JSON.stringify(message), "*");
@@ -382,12 +382,12 @@ var Protocol = (function (window) {
                 }
 
                 if (ATB.USE_CONTENT) {
-                    addMessageListener("APNMessage", function(m) {
+                    addMessageListener("aloogleMessage", function(m) {
                         func(m.json);
                     });
                 }
                 else if (window.messageManager) {
-                    window.messageManager.addMessageListener("APNMessage", function(arg0, arg1) {
+                    window.messageManager.addMessageListener("aloogleMessage", function(arg0, arg1) {
                         func(arg0.json);
                     });
                 }

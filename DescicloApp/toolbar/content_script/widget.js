@@ -87,7 +87,7 @@ function WidgetConstructor () {
             }
             //create object
             var $widget = $("<iframe>", { id: ATB.CONFIG.WIDGET.IFRAME_ID,
-                                          "class": "apn-widget"
+                                          "class": "aloogle-widget"
                                         }).data("widgetID", id);
             // Don't bubble clicks on the widget
             $widget.click (function (event) {

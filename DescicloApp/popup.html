@@ -21,7 +21,7 @@ body {
 	font-size: 12px;
 	width: 305px;
 	color: #000000;
-	background:url(imagens/batata.png) no-repeat center;
+	background:url('imagens/batata.png') no-repeat center;
 }
 
 .menuitem {
@@ -37,14 +37,14 @@ body {
 	text-decoration:none;
 	cursor: pointer;
 	border: #000000 solid 1px;
-	background:url(imagens/preto_real_player.png);
+	background:url('imagens/preto_real_player.png');
 }
 
 .menuitem:active {
 	color: #ffffff;
 	text-decoration:none;
 	cursor: pointer;
-	background:url(imagens/preto_real_player_active.png);
+	background:url('imagens/preto_real_player_active.png');
 }
 
 .menuitem img {
@@ -54,11 +54,34 @@ body {
 }
 
 .seta {
-	background:url(imagens/frente.png) no-repeat center right;
+	background:url('imagens/frente.png') no-repeat center right;
 }
 
 .seta:hover {
-	background:url(imagens/frente_mouse.png) no-repeat center right;
+	background:url('imagens/frente_mouse.png') no-repeat center right;
+}
+
+#seta2 {
+	height:20px;
+	width:20px;
+	background: url('imagens/frente.png') no-repeat;
+}
+
+#seta2:hover {
+	background: url('imagens/frente_mouse.png') no-repeat;
+}
+
+#recentes {
+	width: 265px;
+	-webkit-border-bottom-right-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+}
+
+#recentespopup {
+	width: 20px;
+	float:right;
+	-webkit-border-bottom-left-radius: 0px;
+	-webkit-border-top-left-radius: 0px;
 }
 
 div.sombra {
@@ -76,7 +99,7 @@ div.sombra:active {
 </style>
 </head>
 <body>
-<div align="center" style="cursor: default;"><b>DescicloApp</b><a id="hifen" style="cursor: default;"></a><a id="username" style="cursor: pointer;"></a></div>
+<div align="center" style="cursor: default;"><b>DescicloApp</b><a id="hifen" style="cursor: default; text-decoration: none;"></a><a id="username" style="cursor: pointer;"></a></div>
 <br><br>
 <table height="25px">
 <tr><div class="tooltip4"><span>Escolha o dom&iacute;nio alternativo</span><select id="alternativo" style="height:22px;width:50px; -webkit-border-top-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float:left;">
@@ -108,11 +131,14 @@ div.sombra:active {
 	</div>
 	<div id="carregar" class="menuitem">
 		<img src="imagens/upload.png" width="16px"> Carregar arquivo
-	</div> 
+	</div>
+	<div id="aleatorio" class="menuitem">
+		<img src="imagens/aleatorio.png" width="16px"> P&aacute;gina aleat&oacute;ria
+	</div>
 	<div id="mensagem" class="menuitem"><div class="seta">
 		<img src="imagens/enviarmensagem.png" width="16px" height="16px"> Enviar mensagem </div>
 	</div>
-	<div id="recentes" class="menuitem">
+	<div class="tooltip2"><span>Abrir dentro da extens&atilde;o</span><div id="recentespopup" class="menuitem"><div id="seta2"></div></div></div><div id="recentes" class="menuitem">
 		<img src="imagens/mrwp7.png" width="16px" height="16px"> Mudan&ccedil;as recentes
 	</div>
 	<div class="menuitem"><div id="mais"><img src="imagens/baixowp7.png" width="16px"> Mais</div>
@@ -132,7 +158,7 @@ div.sombra:active {
 <script type="text/javascript" src="toolbar/background/localStorage.js"></script>
 <script type="text/javascript" src="toolbar/background/preference.js"></script>
 <script type="text/javascript" src="toolbar/background/browser-action.js"></script>
-<script type="text/javascript" src="toolbar/lib/i18n.js"></script>
 <script type="text/javascript" src="toolbar/tb_ux/chrome-options.js"></script>
+<script type="text/javascript" src="toolbar/lib/i18n.js"></script>
 </body>
 </html>

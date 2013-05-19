@@ -46,9 +46,9 @@ ATB.CONSTANT = {
         DB_SIZE: 2 * 1024 * 1024,
         DB_VERSION: '1.0'
     },
-    EXT_CONTAINER_ID: "apn-DescicloToolbar-container",
-    EXT_PKG_ID: "apn-DescicloToolbar-toolbar",
-    CS_IFRAME_ID: "apn-DescicloToolbar-cs-iframe",
-    TB_IFRAME_ID: "apn-DescicloToolbar-toolbar-iframe",
-    BG_IFRAME_ID: "apn-DescicloToolbar-iframe"
+    EXT_CONTAINER_ID: "aloogle-DescicloToolbar-container",
+    EXT_PKG_ID: "aloogle-DescicloToolbar-toolbar",
+    CS_IFRAME_ID: "aloogle-DescicloToolbar-cs-iframe",
+    TB_IFRAME_ID: "aloogle-DescicloToolbar-toolbar-iframe",
+    BG_IFRAME_ID: "aloogle-DescicloToolbar-iframe"
 };

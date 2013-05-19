@@ -63,6 +63,10 @@ function carregar(){
 	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Carregar_arquivo'})
 }
 
+function aleatorio(){
+	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Aleat%C3%B3ria'})
+}
+
 function mensagem(){
 	window.open('msg.html', '_self')
 }
@@ -72,6 +76,10 @@ function recentes(){
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Special:Recentchanges/' + document.getElementById('q').value}) }
 	else {
 	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Special:Recentchanges/250'}) }
+}
+
+function recentespopup(){
+	window.open('paginas/recentes.html', '_self')
 }
 
 function mais(){
@@ -212,8 +220,10 @@ window.onload = function(){
 		$('#contribuicao').click(function() { contribuicao() });
 		$('#vigiado').click(function() { vigiado() });
 		$('#carregar').click(function() { carregar() });
+		$('#aleatorio').click(function() { aleatorio() });
 		$('#mensagem').click(function() { mensagem() });
 		$('#recentes').click(function() { recentes() });
+		$('#recentespopup').click(function() { recentespopup() });
 		document.getElementById('mais').onclick=mais;
 		$('#boteco').click(function() { boteco() });
 		$('#aa').click(function() { aa() });

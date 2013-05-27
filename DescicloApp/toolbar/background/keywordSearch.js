@@ -1,2 +1,0 @@
-ATB.Message.receiveGetSAToggled() {
-};

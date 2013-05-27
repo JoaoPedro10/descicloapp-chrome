@@ -1,1 +1,0 @@
-window.onload = function(){		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Special:Recentchanges/250', '_self')}

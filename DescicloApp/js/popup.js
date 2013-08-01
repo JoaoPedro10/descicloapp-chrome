@@ -2,7 +2,6 @@ var iricone=localStorage.getItem('iricone');
 var editaricone=localStorage.getItem('editaricone');
 var pesquisaricone=localStorage.getItem('pesquisaricone');
 
-
 function enter(){
 if(event.keyCode=='13'){
 		window.open('http://' + document.getElementById('alternativo').value + '/wiki/' + document.getElementById('q').value) }

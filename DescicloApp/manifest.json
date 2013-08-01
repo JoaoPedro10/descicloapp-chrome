@@ -1,7 +1,7 @@
 {
 	"name": "DescicloApp",
 	"description": "Uma extens\u00E3o para Google Chrome, Mozilla Firefox e Opera para acessar a Desciclop\u00E9dia com mais facilidade.",
-	"version": "5.1.2",
+	"version": "5.3",
 	"manifest_version": 2,
 	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
 	"permissions": [ "contextMenus", "notifications", "tabs", "unlimitedStorage", "http://*/*", "https://*/*" ],
@@ -11,7 +11,7 @@
 		"background.html"
 	},
 	"icons": {
-		"16": "icons/icon.ico",
+		"16": "icons/icon_16.png",
 		"32": "icons/icon_32.png",
 		"48": "icons/icon_48.png",
 		"64": "icons/icon_64.png",
@@ -23,10 +23,12 @@
 	"commands": {
 		"_execute_browser_action": {
 			"suggested_key": {
-				"default": "Ctrl+D",
-				"mac": "Command+D"
+				"default": "Ctrl+Shift+Y"
 			}
 		}
+	},
+	"chrome_url_overrides": {
+		"newtab": "paginas/novaguia.html"
 	},
 	"content_scripts": [ {
 		"js": [ "toolbar/lib/jquery.js", "toolbar/lib/constant.js", "toolbar/lib/default-config.js", "toolbar/config/tb-config.js", "toolbar/config/widget-config.js", "toolbar/lib/protocol.js", "toolbar/lib/tb-message.js", "toolbar/lib/state-machine.js", "toolbar/lib/window-position.js", "toolbar/content_script/toolbar.js", "toolbar/content_script/widget.js", "toolbar/content_script/injector.js" ],

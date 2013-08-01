@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>Op&ccedil;&otilde;es - DescicloApp para Chrome</title>
-<link rel="shortcut icon" href="../icons/icon.ico" /> 
+<link rel="shortcut icon" href="../icons/icon_16.png" /> 
 <link rel="author" href="https://plus.google.com/101361157875821775334/" />
 <link rel="stylesheet" href="../css/paginas.css" />
 <link rel="stylesheet" href="../css/button.css" />
@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="../css/tooltip.css" />
 <link rel="stylesheet" href="../css/inputradio.css" />
 <link rel="stylesheet" href="../css/jquery/messi.css" />
-<script src="../js/jquery/modernizr-2.6.2.min.js"></script>
 <script src="../js/jquery/jquery-1.9.1.min.js"></script>
 <script src="../js/jquery/messi.js"></script>
 <script src="../js/opcoes.js"></script>
@@ -48,6 +47,7 @@ hr {
 	font-size: 85%;
 	line-height: 29px;
 	margin-left: 150px;
+	position: fixed;
 }
 
 input[type='text'] {
@@ -58,26 +58,49 @@ input[type='text']:focus {
 	border-color: #0000ff;
 	outline: none;
 }
+
+#salvar {
+	background: #0000ff;
+	color: #ffffff;
+	font-weight: bold;
+	height: 75px;
+	width: 75px;
+	border: #000000 solid 1px;
+	right: 7;
+	top: 7;
+	-webkit-border-radius: 75px;
+	position: fixed;
+}
+
+#salvar:hover {
+	-webkit-box-shadow: 0 0 25px #888;
+	-webkit-transition: 250ms;
+}
+
+#salvar:active {
+	-webkit-box-shadow: inset 0 0 25px #888;
+}
 </style>
 </head>
 <body>
 <div id="navbar-container" style="background: url('../imagens/batata.png') no-repeat bottom #f1f1f1;">
 <div id="navbar-content-title"><div id="descicloapp"><img src="../icons/icon_48.png"><br>DescicloApp</div></div>
 <ul id="navbar">
-<li id="faq" class="navbar-item" unselectable="on">FAQ</li>
-<li id="changelog" class="navbar-item" unselectable="on">Changelog</li>
-<li id="opcoes" class="navbar-item navbar-item-selected" unselectable="on">Op&ccedil;&otilde;es</li>
-<li id="sobre" class="navbar-item" unselectable="on">Sobre</li>
+<li id="faq" class="navbar-item">FAQ</li>
+<li id="changelog" class="navbar-item">Changelog</li>
+<li id="opcoes" class="navbar-item navbar-item-selected">Op&ccedil;&otilde;es</li>
+<li id="sobre" class="navbar-item">Sobre</li>
 </ul>
 </div>
 <div id="mainview">
 <div id="mainview-content">
+<button id="salvar">Salvar</button>
 <div id="page-container">
 <div class="page" style="display:block">
 <div id="app-desciclopedia"></div>
 <h1>Op&ccedil;&otilde;es</h1>
 <h3>Qual &eacute; sua cor favorita?</h3>
-<div><input type="color" id="cor-favorita" class="pickme" /></div><br> com &iacute;cones:<br><br><form><label><input type="radio" name="coricone" value="imagens/buscawp72.png"  id="coricone" checked="true"> Preto</label> <label><input type="radio" name="coricone"  id="coricone2" value="imagens/buscawp72b.png"> Branco</label> </form>
+<div><input type="color" id="cor-favorita" class="corfavorita" /></div><br> com &iacute;cones:<br><br><form><label><input type="radio" name="coricone" value="imagens/buscawp72.png"  id="coricone" checked="true" class="coriconep"> Preto</label> <label><input type="radio" name="coricone"  id="coricone2" value="imagens/buscawp72b.png" class="coriconeb"> Branco</label> </form>
 <hr>
 <h3>Qual &eacute; seu dom&iacute;nio alternativo favorito?</h3>
 <div class="tooltip5"><select id="alternativo" style="width:200px;">
@@ -94,6 +117,12 @@ input[type='text']:focus {
 <h3>Qual &eacute; seu nome de usu&aacute;rio?</h3>
 <div class="tooltip5"><input type="text" id="username" /><span>Deixe em branco caso voc&ecirc; n&atilde;o seja usu&aacute;rio da Desciclop&eacute;dia</span></div>
 <hr>
+<h3>Habilitar a busca do DescicloApp no menu contexto?</h3>
+<div><form><label><input type="radio" name="buscacontexto" id="buscacontextosim" checked="true" class="contextoaviso" value="true"> Sim</label> <label><input type="radio" name="buscacontexto" id="buscacontextonao" class="contextoaviso" value="false"> N&atilde;o</label> </form><div id="contextoavisot"></div></div>
+<hr>
+<h3>Abrir um artigo aleat&oacute;rio na nova guia?</h3>
+<div><form><label><input type="radio" name="descicloguia" id="descicloguiasim" checked="true" value="true"> Sim</label> <label><input type="radio" name="descicloguia" id="descicloguianao" value="false"> N&atilde;o</label> </form></div>
+<hr>
 <h3>DescicloToolbar</h3>
 <button id="escolha">Escolher quais bot&otilde;es devem aparecer</button><br><br>
 <label><input type="checkbox" id="desciclotoolbar"> Habilitar a DescicloToolbar</label><br>
@@ -101,8 +130,7 @@ input[type='text']:focus {
 <label><input type="checkbox" id="botaomais"> Usar bot&atilde;o "Mais" ao inv&eacute;s dos bot&otilde;es de namespaces</label><br>
 <label><input type="checkbox" id="botaofeedback"> Habilitar o bot&atilde;o feedback</label>
 <hr>
-<button id="salvar">Salvar</button>
 <br><br>
-</div>
+</div></div></div></div>
 </body>
 </html>

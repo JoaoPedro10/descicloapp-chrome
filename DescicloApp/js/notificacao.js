@@ -1,48 +1,15 @@
 function irn() {
-//Quando eu tava fazendo essa parte da extensao (30/08/2012) o icone nao aparecia sendo que ta tudo certo, talvez seja um bug no Google Chrome ja que isso tambem tava acontecendo com outras extensoes que usam as notificacoes, por isso coloquei para pegar o icone por url mesmo
-//Ate hoje (10/05/2013) da no mesmo
-		var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
-		var titulo = "DescicloApp";
-		var subTitulo = "Escreva algo primeiro: Digite na barra de texto que p\u00E1gina voc\u00EA quer ir na Desciclop\u00E9dia, poser";
-		var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
-		notificacao.show();
-		setTimeout(function () {
-			notificacao.cancel()
-	}, 5000);
+	chrome.notifications.create("ir", {	type : "basic", iconUrl: "../icons/icon_ir.png", title: "DescicloApp", message: "Escreva algo primeiro: Digite na barra de texto que p\u00E1gina voc\u00EA quer ir na Desciclop\u00E9dia, poser", priority: 2}, function() {});
 }
 	
 function editarn() {
-		var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
-		var titulo = "DescicloApp";
-		var subTitulo = "Escreva algo primeiro: Digite na barra de texto que p\u00E1gina voc\u00EA quer editar ou criar na Desciclop\u00E9dia, s\u00F3 n\u00E3o vai fazer merda pra um sysop n\u00E3o te pegar, seu n00b!!";
-		var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
-		notificacao.show();
-		setTimeout(function ()
-		{
-		notificacao.cancel()
-	}, 5000);
+		chrome.notifications.create("editar", {	type : "basic", iconUrl: "../icons/icon_edit.png", title: "DescicloApp", message: "Escreva algo primeiro: Digite na barra de texto que p\u00E1gina voc\u00EA quer editar ou criar na Desciclop\u00E9dia, s\u00F3 n\u00E3o vai fazer merda pra um sysop n\u00E3o te pegar, seu n00b!!", priority: 2}, function() {});
 }
 	
- function pesquisarn() {
-		var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
-		var titulo = "DescicloApp";
-		var subTitulo = "Escreva algo primeiro: Digite na barra de texto o que voc\u00EA quer pesquisar na Desciclop\u00E9dia, ou n\u00E3o";
-		var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
-		notificacao.show();
-		setTimeout(function ()
-		{
-			notificacao.cancel()
-		}, 5000);
+function pesquisarn() {
+		chrome.notifications.create("busca", {	type : "basic", iconUrl: "../icons/icon_busca.png", title: "DescicloApp", message: "Escreva algo primeiro: Digite na barra de texto o que voc\u00EA quer pesquisar na Desciclop\u00E9dia, ou n\u00E3o", priority: 2}, function() {});
 }
 	
 function salvarn() {
-		var icone = "https://raw.github.com/alefesouza/descicloapp-chrome/master/DescicloApp/icons/icon_32.png";
-		var titulo = "DescicloApp";
-		var subTitulo = "Tudo salvo :D";
-		var notificacao = webkitNotifications.createNotification(icone, titulo, subTitulo);
-		notificacao.show();
-		setTimeout(function ()
-		{
-			notificacao.cancel()
-		}, 5000);
+		chrome.notifications.create("busca", {	type : "basic", iconUrl: "../icons/icon_salvar.png", title: "DescicloApp", message: "Tudo salvo :D", priority: 2}, function() {});
 }

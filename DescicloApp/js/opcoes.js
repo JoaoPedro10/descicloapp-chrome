@@ -17,11 +17,16 @@ function salvar() {
 }
 
 function redefinir() {
+	//Apenas para evitar conflitos com as notificacoes no background
+	chrome.extension.getBackgroundPage().location.reload()
+	localStorage["page"] = "true";
 	chrome.notifications.create("redef", { type: "basic", iconUrl: "../icons/icon_64.png", title: "DescicloApp", message: "Tem certeza que quer redefinir as configura\u00e7\u00F5es?", buttons: [{ title: 'Sim', iconUrl: '../imagens/checkmarkicon.png' }, { title: 'N\u00E3o', iconUrl: '../imagens/x.png' }], priority: 0}, function() {});
-	chrome.notifications.onButtonClicked.addListener(function(notificationId, buttonIndex) {
+	chrome.notifications.onButtonClicked.addListener(function(redef, buttonIndex) {
 		if (buttonIndex == 0) {
 				localStorage.clear();
 				if(!localStorage.storagepadrao){
+				localStorage["atualizacao53"] = "desciclopedia.org";
+				localStorage["atualizacao55"] = "desciclopedia.org";
 				localStorage["alternativo_favorito"] = "desciclopedia.org";
 				localStorage["cor-favorita"] = "#00ffff";
 				localStorage["cor2"] = "black";
@@ -34,22 +39,21 @@ function redefinir() {
 				localStorage["botaomais"] = "true";
 				localStorage["barrabusca"] = "true";
 				localStorage["botaofeedback"] = "true";
-				localStorage["preimeira"] = "true";
+				localStorage["primeira"] = "true";
 				localStorage["dois"] = "true";
 				localStorage["tres"] = "true";
+				localStorage["atualizacao55"] = "true";
 				localStorage["pref_tb_is_visible"] = "true";
 				localStorage.storagepadrao = "true";
 				}
 				window.location.reload()
-				chrome.notifications.clear(notificationId, function(wasCleared) {});
+				chrome.notifications.clear(redef, function(wasCleared) {});
 		} else if (buttonIndex == 1) {
-			chrome.notifications.clear(notificationId, function(wasCleared) {});
+			chrome.notifications.clear(redef, function(wasCleared) {});
 		}});
-	chrome.notifications.onClosed.addListener(function(notificationId, byUser) { chrome.notifications.onButtonClicked.addListener(function(notificationId, buttonIndex) {
-	if (buttonIndex == 0) {
-		chrome.notifications.clear(notificationId, function(wasCleared) {});
-	}
-}); });
+	chrome.notifications.onClicked.addListener(function(redef, byUser) {
+		chrome.notifications.clear(redef, function(wasCleared) {});
+	});
 }
 
 function restaurar() {

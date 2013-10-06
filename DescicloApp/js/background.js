@@ -102,7 +102,8 @@ if(localStorage.getItem('pref_tb_is_visible') == "true") { chrome.tabs.onUpdated
 }); }
 
 if(!localStorage.atualizacao53){
-    localStorage.atualizacao53 = "true";
+	// Essa nova versao nao teve nada muito interessante, por isso a notificacao so vai aparecer quando alguem instalar ela, nao quando atualizar
+    localStorage.atualizacao55 = "true";
 	notif = chrome.notifications.create("changelog", { type: "list", iconUrl: "icons/icon_64.png", title: "DescicloApp", message: "DescicloApp atualizado: Vers\u00E3o 5.5", items: [ { title: "NOTA", message: "Passe o mouse em cima"}, { title: "", message: "Nova op\u00e7\u00E3o de abrir um artigo aleat\u00F3rio na Nova guia"}, { title: "", message: "Agora voc\u00ea pode escolher se quer ou n\u00E3o a busca pelo menu contexto"}, { title: "", message: "Corre\u00e7\u00E3o de bugs"}, { title: "", message: "Nova op\u00e7\u00E3o de redefinir"}, { title: "", message: "Corre\u00e7\u00E3o de bugs"}, { title: "", message: "E outras melhoras menores"},], buttons: [{ title: 'Ver changelog completo', iconUrl: 'imagens/externowp7.png' }, { title: 'Abrir op\u00e7\u00F5es', iconUrl: 'imagens/externowp7.png' }], priority: 0}, function() {});
 	chrome.notifications.onButtonClicked.addListener(function(notificationId, buttonIndex) {
 		if (buttonIndex == 0) {
@@ -118,4 +119,4 @@ if(!localStorage.atualizacao53){
 	}
 }); });
 	notif.show();
-}
+} else { localStorage.atualizacao55 = "true"; }

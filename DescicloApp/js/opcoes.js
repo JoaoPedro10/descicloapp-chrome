@@ -25,8 +25,8 @@ function redefinir() {
 		if (buttonIndex == 0) {
 				localStorage.clear();
 				if(!localStorage.storagepadrao){
-				localStorage["atualizacao53"] = "desciclopedia.org";
-				localStorage["atualizacao55"] = "desciclopedia.org";
+				localStorage["atualizacao53"] = "true";
+				localStorage["atualizacao55"] = "true";
 				localStorage["alternativo_favorito"] = "desciclopedia.org";
 				localStorage["cor-favorita"] = "#00ffff";
 				localStorage["cor2"] = "black";
@@ -88,6 +88,9 @@ window.onload = function() {
 	});
 	$('.contextoaviso').change(function() {
 		  $('#contextoavisot').html('<b>NOTA:</b> Essa mudan&ccedil;a s&oacute; ter&aacute; efeito ap&oacute;s voc&ecirc; reiniciar o Google Chrome');
+	});
+	$('#desciclotoolbar').change(function() {
+		  chrome.extension.getBackgroundPage().location.reload();
 	});
 	$('#faq').click(function(){  
 		window.location="faq.html";

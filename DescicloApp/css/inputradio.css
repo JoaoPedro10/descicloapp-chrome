@@ -22,6 +22,7 @@ input[type='radio']) {
   font: inherit;
   margin: 0 1px 0 0;
   text-shadow: 0 1px 0 rgb(240, 240, 240);
+  outline:none;
 }
 
 input[type='checkbox'] {

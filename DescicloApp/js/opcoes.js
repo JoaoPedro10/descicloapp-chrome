@@ -16,6 +16,42 @@ function salvar() {
   salvarn();
 }
 
+function redefinir() {
+	chrome.notifications.create("redef", { type: "basic", iconUrl: "../icons/icon_64.png", title: "DescicloApp", message: "Tem certeza que quer redefinir as configura\u00e7\u00F5es?", buttons: [{ title: 'Sim', iconUrl: '../imagens/checkmarkicon.png' }, { title: 'N\u00E3o', iconUrl: '../imagens/x.png' }], priority: 0}, function() {});
+	chrome.notifications.onButtonClicked.addListener(function(notificationId, buttonIndex) {
+		if (buttonIndex == 0) {
+				localStorage.clear();
+				if(!localStorage.storagepadrao){
+				localStorage["alternativo_favorito"] = "desciclopedia.org";
+				localStorage["cor-favorita"] = "#00ffff";
+				localStorage["cor2"] = "black";
+				localStorage["buscacontexto"] = "true";
+				localStorage["descicloguia"] = "false";
+				localStorage["coricone"] = "imagens/buscawp72.png";
+				localStorage["iricone"] = "imagens/avancarwp7.png";
+				localStorage["editaricone"] = "imagens/novowp7.png";
+				localStorage["pesquisaricone"] = "imagens/buscawp7.png";
+				localStorage["botaomais"] = "true";
+				localStorage["barrabusca"] = "true";
+				localStorage["botaofeedback"] = "true";
+				localStorage["preimeira"] = "true";
+				localStorage["dois"] = "true";
+				localStorage["tres"] = "true";
+				localStorage["pref_tb_is_visible"] = "true";
+				localStorage.storagepadrao = "true";
+				}
+				window.location.reload()
+				chrome.notifications.clear(notificationId, function(wasCleared) {});
+		} else if (buttonIndex == 1) {
+			chrome.notifications.clear(notificationId, function(wasCleared) {});
+		}});
+	chrome.notifications.onClosed.addListener(function(notificationId, byUser) { chrome.notifications.onButtonClicked.addListener(function(notificationId, buttonIndex) {
+	if (buttonIndex == 0) {
+		chrome.notifications.clear(notificationId, function(wasCleared) {});
+	}
+}); });
+}
+
 function restaurar() {
   var favorito = localStorage["alternativo_favorito"];
   if (!favorito) {
@@ -76,6 +112,7 @@ window.onload = function() {
 	$('#escolha').click(function() { new Messi('<iframe src="botoes.html" frameborder="0" style="width:100%; height:515px; border:none;" scrolling="no"></iframe>', {buttons: [{id: 0, label: 'Fechar', val: 'X'}]} )});
 	$('#desciclotoolbar').click(function() {if(document.getElementById("desciclotoolbar").checked == false) { document.getElementById("botaomais").disabled = true; document.getElementById("barrabusca").disabled = true; document.getElementById("botaofeedback").disabled = true; } else { document.getElementById("botaomais").disabled = false; document.getElementById("barrabusca").disabled = false; document.getElementById("botaofeedback").disabled = false; };})
 	$('#descicloapp').click(function() { descicloApp() });
+	$('#redefinir').click(function() { redefinir() });
 	$('#salvar').click(function() { salvar() });
 	restaurar();
 }

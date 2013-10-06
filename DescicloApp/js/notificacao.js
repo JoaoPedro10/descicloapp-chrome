@@ -11,5 +11,5 @@ function pesquisarn() {
 }
 	
 function salvarn() {
-		chrome.notifications.create("busca", {	type : "basic", iconUrl: "../icons/icon_salvar.png", title: "DescicloApp", message: "Tudo salvo :D", priority: 2}, function() {});
+		chrome.notifications.create("salvar", {	type : "basic", iconUrl: "../icons/icon_salvar.png", title: "DescicloApp", message: "Tudo salvo :D", priority: 2}, function() {});
 }

@@ -1,7 +1,7 @@
 {
 	"name": "DescicloApp",
 	"description": "Uma extens\u00E3o para Google Chrome, Mozilla Firefox e Opera para acessar a Desciclop\u00E9dia com mais facilidade.",
-	"version": "5.3",
+	"version": "5.5",
 	"manifest_version": 2,
 	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
 	"permissions": [ "contextMenus", "notifications", "tabs", "unlimitedStorage", "http://*/*", "https://*/*" ],
@@ -23,7 +23,7 @@
 	"commands": {
 		"_execute_browser_action": {
 			"suggested_key": {
-				"default": "Ctrl+Shift+Y"
+				"default": "Ctrl+Shift+A"
 			}
 		}
 	},
@@ -35,20 +35,12 @@
 		"matches": [ "*://*/*" ],
 		"run_at": "document_start"
 	}, {
-		"css": [ "toolbar/content_script/hack/facebook.css" ],
-		"matches": [ "*://*.facebook.com/*" ]
-	}, {
 		"css": [ "toolbar/content_script/hack/relative.css" ],
-		"matches": [ "*://*.google.com/*", "*://*.google.com.br/*", "*://*.wikipedia.org/*", "*://*.desciclopedia.org/*", "*://*.desciclopedia.ws/*", "*://*.pudim.info/*", "*://vist.as/*", "*://pesquisa.la/*", "*://desnoticias.org/*" ],
+		"matches": [ "*://*.google.com.br/search", "*://*.google.com/search", "*://*.google.com.br/", "*://*.google.com/", "*://*.wikipedia.org/*", "*://*.desciclopedia.org/*", "*://*.desciclopedia.ws/*", "*://*.pudim.info/*", "*://vist.as/*", "*://pesquisa.la/*", "*://desnoticias.org/*" ],
 		"run_at": "document_start"
-	}, {
-		"css": [ "toolbar/content_script/hack/static.css" ],
-		"matches": [ "*://*.google.com/imgres*", "*://images.google.com/*", "*://codesearch.google.com/*" ],
-		"run_at": "document_start"
-	} ],
+	}],
 	"homepage_url": "http://desciclopedia.org/wiki/DescicloApp",
 	"web_accessible_resources": [ "toolbar/config/skin/css/containers.css", "toolbar/config/skin/toolbar.html", "toolbar/widgets/mensagem/mensagem.html", "toolbar/widgets/recentes/recentes.html", "toolbar/widgets/mais/mais.html", "toolbar/widgets/feedback/feedback.html"],
-	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
 	"browser_action": {
 		"default_icon": "icons/icon.png",
 		"default_title": "Desciclop\u00E9dia",

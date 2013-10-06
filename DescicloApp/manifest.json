@@ -1,7 +1,7 @@
 {
 	"name": "DescicloApp",
 	"description": "Uma extens\u00E3o para Google Chrome, Mozilla Firefox e Opera para acessar a Desciclop\u00E9dia com mais facilidade.",
-	"version": "5.5.3",
+	"version": "5.5.5",
 	"manifest_version": 2,
 	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
 	"permissions": [ "contextMenus", "notifications", "tabs", "unlimitedStorage", "http://*/*", "https://*/*" ],
@@ -41,7 +41,6 @@
 	}],
 	"homepage_url": "http://desciclopedia.org/wiki/DescicloApp",
 	"web_accessible_resources": [ "toolbar/config/skin/css/containers.css", "toolbar/config/skin/toolbar.html", "toolbar/widgets/mensagem/mensagem.html", "toolbar/widgets/recentes/recentes.html", "toolbar/widgets/mais/mais.html", "toolbar/widgets/feedback/feedback.html"],
-	"update_url": "http://aloogle.googlecode.com/svn/trunk/atualizacoes/google_chrome/extensoes/descicloapp.xml",
 	"browser_action": {
 		"default_icon": "icons/icon.png",
 		"default_title": "Desciclop\u00E9dia",

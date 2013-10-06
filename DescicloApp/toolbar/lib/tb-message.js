@@ -1,19 +1,4 @@
-    /**
-     *   Handles message passing for all the different parts of the
-     * toolbar code.  This class exports two functions for each defined
-     * message, one for the sender to call and the other for the
-     * receiver. Components that can't communicate directly will have
-     * their messages automatically forwarded via the content script.
-     *
-     * { id, from, to, payload, response }
-     *
-     * BUG: Due to a Chrome bug, all uses of postMessage have been replaced
-     * with the chrome.extension.sendRequest API. Thus at present only
-     * widgets, inline html and background widgets that are hosted from
-     * inside the extension can send messages.
-     */
 var ATB_Message = (function() {
-        // the different components that can send and receive messages
         var BG     = "background",
             CS     = "content script",
             WIDGET = "widget",
@@ -43,15 +28,6 @@ var ATB_Message = (function() {
                      ["AnimationFinished", CS, WIDGET],
                      ["ClearSearchHistory", WIDGET, BG],
                      ["CheckWidgetURL", [CS, WIDGET, TB], BG],
-
-                     /**
-                        TODO: this function should be able to open arbitrary windows, not just
-                              ones defined in the widgets config file.
-
-                        @param {String} id          The id of the widget as defined in the config
-                        @param {String} win         A window object, as defined in the config
-                        @param {Object} [state]     An optional argument to pass state to the window
-                     */
                      ["OpenWidget", [TB, WIDGET], BG],
                      ["GetDropdownWidgetStatus", TB, CS],
                      ["OpenDropdownWidget", [TB, BG], CS],

@@ -1,10 +1,3 @@
-/**
- * given a widget window definition, a button position and a boundary
- * rect, compute the correct place to position the widget window
- *
- * XXX ajvincent This needs some serious documentation to define what is "the
- * correct place"!  Why are these calculations correct?
- */
 function calcWindowPosition(win, buttonPos, bounds) {
     var pos = {};
     if ("width" in win)

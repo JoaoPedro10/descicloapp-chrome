@@ -6,7 +6,7 @@ ATB.Lifecycle      = new ATB_Lifecycle();
 if ($.browser.webkit)
     ATB.SideBySide = new ATB_SideBySide();
 
-var browser = $.browser.msie ? "IE" : ($.browser.webkit ? "CR" : "FF");
+var browser = "CR";
 function isBrowserSupported(element, index, array) {
     if(element.browsers)
         return element.browsers.indexOf(browser) != -1;
@@ -43,17 +43,10 @@ function setupWidget(widget) {
                 document.documentElement.appendChild(browser);
                 var injected = false;
                 function injectFrameScripts(){
-                    //Inject FS into http widget background
                     if (!bundled && !injected) {
                         function loadCS(file) {
                             browser.messageManager.loadFrameScript("chrome://aloogle-"+ ATB.CONSTANT.PID +"-toolbar/content/"+ file, true);
                         }
-                        loadCS("toolbar/lib/constant.js");
-                        loadCS("toolbar/lib/default-config.js");
-                        loadCS("toolbar/lib/protocol.js");
-                        loadCS("toolbar/lib/tb-message.js");
-                        loadCS("toolbar/lib/widget-messaging.js");
-                        loadCS("toolbar/content_script/inline-html.js");
                     }
                     injected = true;
                 }
@@ -63,20 +56,9 @@ function setupWidget(widget) {
     }
 }
 
-function updateLocale(locale) {
-    ATB.Pref.setLocale(locale);
-    ATB.Message.broadcastUpdateLocale(locale);
-}
-function updateLang(lang) {
-    ATB.Pref.setLang(lang);
-    ATB.Message.broadcastUpdateLang(lang);
-}
-
 ATB.CONFIG.leftDock.forEach(setupWidget);
 ATB.CONFIG.centerDock.forEach(setupWidget);
 ATB.CONFIG.rightDock.forEach(setupWidget);
-
-ATB.Feeds          = new ATB_Feeds();
 
 ATB.Message.receiveGetToolbarStatus(function (message, sendResponse, sender) {
     chrome.windows.get(sender.tab.windowId, function (win) {
@@ -87,17 +69,11 @@ ATB.Message.receiveGetToolbarStatus(function (message, sendResponse, sender) {
     });
 });
 
-// only the background can call getURL
 ATB.Message.receiveCheckWidgetURL(function (message, sendResponse) {
-    if (!message.url && !message.basepath) //Send fail only if both are not present
+    if (!message.url && !message.basepath)
         sendResponse();
-
-    // we will pass the default reporting params to every widget
     message.url.params = message.url.params || {};
     $.extend(message.url.params, {reporting: JSON.stringify(UR.reportingParams())});
 
     sendResponse(ATB.Utils.buildURL(message.url, message.basepath));
 });
-
-// toolbar ressource loaded, tell the world about that !
-ATB.BrowserAction.updateIcon();

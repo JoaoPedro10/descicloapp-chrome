@@ -1,9 +1,5 @@
 div.tooltip {
 	position:relative;
-	font:12px arial, verdana, helvetica, sans-serif;
-	padding:0;
-	color:#0000ff;
-	text-decoration:none; 
 }
 
 div.tooltip:hover {
@@ -30,10 +26,6 @@ div.tooltip:hover span{
 
 div.tooltip2 {
 	position:relative;
-	font:12px arial, verdana, helvetica, sans-serif;
-	padding:0;
-	color:#0000ff;
-	text-decoration:none; 
 } 
 
 div.tooltip2:hover {
@@ -61,10 +53,6 @@ div.tooltip2:hover span{
 
 div.tooltip3 {
 	position:relative;
-	font:12px arial, verdana, helvetica, sans-serif;
-	padding:0;
-	color:#0000ff;
-	text-decoration:none; 
 } 
 
 div.tooltip3:hover {
@@ -92,10 +80,6 @@ div.tooltip3:hover span{
 
 div.tooltip4 {
 	position:relative;
-	font:12px arial, verdana, helvetica, sans-serif;
-	padding:0;
-	color:#0000ff;
-	text-decoration:none; 
 }
  
 div.tooltip4:hover {
@@ -123,10 +107,6 @@ div.tooltip4:hover span{
 
 div.tooltip5 {
 	position:relative;
-	font:12px arial, verdana, helvetica, sans-serif;
-	padding:0;
-	color:#0000ff;
-	text-decoration:none; 
 } 
 
 div.tooltip5:hover {
@@ -153,11 +133,7 @@ div.tooltip5:hover span{
 }
 
 div.tooltip6 {
-	position:relative;
-	font:12px arial, verdana, helvetica, sans-serif;
-	padding:0;
-	color:#000000;
-	text-decoration:none; ; 
+	position:relative;; 
 }
 
 div.tooltip6:hover {
@@ -182,10 +158,6 @@ div.tooltip6:hover span{
 
 div.tooltip7 {
 	position:relative;
-	font:12px arial, verdana, helvetica, sans-serif;
-	padding:0;
-	color:#0000ff;
-	text-decoration:none; 
 }
  
 div.tooltip7:hover {

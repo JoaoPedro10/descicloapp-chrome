@@ -198,11 +198,11 @@ function restaurar() {
     if (child.value == favorito) {
       child.selected = "true";
       break;
-    }
+    } else { if(localStorage["alternativo_favorito"] != "desciclopedia.org" && localStorage["alternativo_favorito"] != "desciclopedia.ws" && localStorage["alternativo_favorito"] != "pudim.info" && localStorage["alternativo_favorito"] != "vist.as" && localStorage["alternativo_favorito"] != "pesquisa.la" && localStorage["alternativo_favorito"] != "desciclopedia.org" && localStorage["alternativo_favorito"] != "sophia.desciclopedia.org" && localStorage["alternativo_favorito"] != "roberto.desciclopedia.org") { document.getElementById("alternativo").options[8]=new Option(localStorage["napopup"], localStorage["alternativo_favorito"]); child.selected = "outro"; } }
   }
 }
 
-window.onload = function(){
+$(function(){
 		$('hr').css('background-color',localStorage.getItem('cor-favorita'));
 		$('#ir').css({'background-image':'url(' + iricone + ')', 'background-color':localStorage.getItem('cor-favorita'), 'background-repeat': 'no-repeat', 'background-position': 'center'});
 		$('#editar').css({'background-image':'url(' + editaricone + ')', 'background-color':localStorage.getItem('cor-favorita'), 'background-repeat': 'no-repeat', 'background-position': 'center'});
@@ -238,12 +238,36 @@ window.onload = function(){
 		$('#fatos').click(function() { fatos() });
 		$('#facebook').click(function() { facebook() });
 		$('#twitter').click(function() { twitter() });
-		$('#blog').click(function() { blog() });
 		$('#ajuda').click(function() { ajuda() });
 		document.getElementById('q').focus();
 		if(localStorage.getItem('jadesativou') != "true") { $('#apn-options-menu').css({'display':'none'}); } else { $('#apn-options-menu').css({'display':''}); };
 		restaurar();
-}
+		if(localStorage.getItem('barrabuscapopup') == "false") { $('.barrabuscapopup').hide() };
+		if(localStorage.getItem('botaoirpopup') == "false") { $('#irb').hide() };
+		if(localStorage.getItem('botaopaginapopup') == "false") { $('#pagina').hide() };
+		if(localStorage.getItem('botaodiscussaopopup') == "false") { $('#discussao').hide() };
+		if(localStorage.getItem('botaocontribuicoespopup') == "false") { $('#contribuicao').hide() };
+		if(localStorage.getItem('botaovigiadaspopup') == "false") { $('#vigiado').hide() };
+		if(localStorage.getItem('botaocarregarpopup') == "false") { $('#carregar').hide() };
+		if(localStorage.getItem('botaoaleatoriopopup') == "false") { $('#aleatorio').hide() };
+		if(localStorage.getItem('botaomensagempopup') == "false") { $('#mensagem').hide() };
+		if(localStorage.getItem('botaomudancasrecentespopup') == "false") { $('#mudancasrecentes').hide() };
+		if(localStorage.getItem('botaomaispopup') == "false") { $('#aaaaa').hide() };
+		if(localStorage.getItem('botaobotecopopup') == "false") { $('#boteco').hide() };
+		if(localStorage.getItem('botaoaapopup') == "false") { $('#aa').hide() };
+		if(localStorage.getItem('botaomesapopup') == "false") { $('#truco').hide() };
+		if(localStorage.getItem('botaodesnoticiaspopup') == "false") { $('#desnoticias').hide() };
+		if(localStorage.getItem('botaodescionariopopup') == "false") { $('#descionario').hide() };
+		if(localStorage.getItem('botaodeslivrospopup') == "false") { $('#deslivros').hide() };
+		if(localStorage.getItem('botaodespoesiaspopup') == "false") { $('#despoesias').hide() };
+		if(localStorage.getItem('botaodescifraspopup') == "false") { $('#descifras').hide() };
+		if(localStorage.getItem('botaodesentrevistaspopup') == "false") { $('#desentrevistas').hide() };
+		if(localStorage.getItem('botaodescitacoespopup') == "false") { $('#descitacoes').hide() };
+		if(localStorage.getItem('botaodeslistaspopup') == "false") { $('#deslistas').hide() };
+		if(localStorage.getItem('botaofatospopup') == "false") { $('#fatos').hide() };
+		if(localStorage.getItem('botaofacebookpopup') == "false") { $('#facebook').hide() };
+		if(localStorage.getItem('botaotwitterpopup') == "false") { $('#twitter').hide() };
+});
 
 window.onkeypress = function(){
 		enter()

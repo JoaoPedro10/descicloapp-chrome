@@ -62,6 +62,7 @@ if(!localStorage.primeira){
 
 if(!localStorage.storagepadrao){
 	localStorage["alternativo_favorito"] = "desciclopedia.org";
+	localStorage["napopup"] = ".org";
 	localStorage["cor-favorita"] = "#00ffff";
 	localStorage["cor2"] = "black";
 	localStorage["buscacontexto"] = "true";
@@ -73,11 +74,12 @@ if(!localStorage.storagepadrao){
 	localStorage["botaomais"] = "true";
 	localStorage["barrabusca"] = "true";
 	localStorage["botaofeedback"] = "true";
+	localStorage["barrabuscapopup"] = "true";
 	localStorage["pref_tb_is_visible"] = "true";
     localStorage.storagepadrao = "true";
 }
 
-if(localStorage.getItem('tres') == "true"){ 
+if(localStorage.getItem('cinco') == "true"){ 
 if(!localStorage.page){
 	noti = chrome.notifications.create("curtir", { type: "basic", iconUrl: "icons/icon_facebook.png", title: "DescicloApp", message: "Gostando do DescicloApp? Ent\u00E3o fa\u00e7\a uma doa\u00e7\u00E3o e mimimi mimimi mimimi, como eu sei que voc\u00ea \u00E9 m\u00E3o de vaca e n\u00E3o vai doar mesmo com eu gastando tempo e dinheiro pra criar essa jo\u00e7a eu s\u00F3 te pe\u00e7o pra voc\u00ea curtir minha p\u00E1gina de humor de Facebook :D", buttons: [{ title: 'Curtir Aleferror Menes', iconUrl: 'imagens/curtir.png' }], priority: 2}, function creationCallback() {});
 	chrome.notifications.onButtonClicked.addListener(notificationBtnClick);
@@ -90,7 +92,9 @@ function notificationBtnClick(curtir, iBtn) {
 	noti.show();
 } }
 
-// Fazer a notificacao do Facebook aparecer somente na terceira vez que o usuario abrir o Chrome
+// Fazer a notificacao do Facebook aparecer somente na quinta vez que o usuario abrir o Chrome
+if(localStorage.getItem('quatro') == "true"){ localStorage.cinco = "true"; }
+if(localStorage.getItem('tres') == "true"){ localStorage.quatro = "true"; }
 if(localStorage.getItem('dois') == "true"){ localStorage.tres = "true"; }
 if(localStorage.getItem('primeira') == "true"){ localStorage.dois = "true"; }
 
@@ -101,14 +105,19 @@ if(localStorage.getItem('pref_tb_is_visible') == "true") { chrome.tabs.onUpdated
   }
 }); }
 
-if(localStorage.atualizacao53 == "true"){
-	if(!localStorage.atualizacao55) {
-	localStorage.atualizacao55 = "true";
-	notif = chrome.notifications.create("changelog", { type: "list", iconUrl: "icons/icon_64.png", title: "DescicloApp atualizado: Vers\u00E3o 5.5", message: "", items: [ { title: "", message: "Nova op\u00e7\u00E3o de redefinir"}, { title: "", message: "Corre\u00e7\u00E3o de bugs"}, { title: "", message: "E outras melhoras menores"},], buttons: [{ title: 'Ver changelog completo', iconUrl: 'imagens/externowp7.png' }], priority: 0}, function() {});
+if(localStorage.atualizacao55 == "true"){
+	if(!localStorage.atualizacao57) {
+	localStorage.atualizacao57 = "true";
+	localStorage.cinco = "true";
+	localStorage["barrabuscapopup"] = "true";
+	notif = chrome.notifications.create("changelog", { type: "list", iconUrl: "icons/icon_64.png", title: "DescicloApp atualizado: Vers\u00E3o 5.7", message: "", items: [ { title: "NOTA", message: "Passe o mouse em cima"}, { title: "", message: "Agora voc\u00EA pode escolher qualquer dom\u00EDnio para ser seu favorito, inclusive de outras wikis"}, { title: "", message: "Agora voc\u00EA pode escolher os bot\u00F5es que aparecem na popup"}, { title: "", message: "E outras melhoras menores"},], buttons: [{ title: 'Ver changelog completo', iconUrl: 'imagens/externowp7.png' }, { title: 'Abrir op\u00e7\u00F5es', iconUrl: 'imagens/externowp7.png' }], priority: 0}, function() {});
 	chrome.notifications.onButtonClicked.addListener(function(changelog, buttonIndex) {
 		if (buttonIndex == 0) {
 			window.open('paginas/changelog.html');
 			chrome.notifications.clear(changelog, function(wasCleared) {});
+		} else if (buttonIndex == 1) {
+			window.open('paginas/opcoes.html');
+			chrome.notifications.clear(redef, function(wasCleared) {});
 		}});
 	chrome.notifications.onClicked.addListener(function(changelog, byUser) {
 		window.open('paginas/changelog.html');
@@ -117,9 +126,9 @@ if(localStorage.atualizacao53 == "true"){
 	notif.show();
 	}
 } else {
-	localStorage.atualizacao53 = "true";
 	localStorage.atualizacao55 = "true";
-	notif = chrome.notifications.create("changelog", { type: "list", iconUrl: "icons/icon_64.png", title: "DescicloApp atualizado: Vers\u00E3o 5.5", message: "", items: [ { title: "NOTA", message: "Passe o mouse em cima"}, { title: "", message: "Nova op\u00e7\u00E3o de abrir um artigo aleat\u00F3rio na Nova guia"}, { title: "", message: "Agora voc\u00ea pode escolher se quer ou n\u00E3o a busca pelo menu contexto"}, { title: "", message: "Corre\u00e7\u00E3o de bugs"}, { title: "", message: "Nova op\u00e7\u00E3o de redefinir"} ], buttons: [{ title: 'Ver changelog completo', iconUrl: 'imagens/externowp7.png' }], priority: 0}, function() {});
+	localStorage.atualizacao57 = "true";
+	notif = chrome.notifications.create("changelog", { type: "list", iconUrl: "icons/icon_64.png", title: "DescicloApp: Vers\u00E3o 5.7", message: "", items: [ { title: "NOTA", message: "Passe o mouse em cima"}, { title: "", message: "Nova op\u00e7\u00E3o de abrir um artigo aleat\u00F3rio na Nova guia"}, { title: "", message: "Pode escolher se quer ou n\u00E3o a busca pelo menu contexto"}, { title: "", message: "Pode escolher qualquer dom\u00EDnio para ser seu favorito, inclusive de outras wikis"}, { title: "", message: "Pode escolher os bot\u00F5es que aparecem na popup"} ], buttons: [{ title: 'Ver changelog completo', iconUrl: 'imagens/externowp7.png' }], priority: 0}, function() {});
 	chrome.notifications.onButtonClicked.addListener(function(changelog, buttonIndex) {
 		if (buttonIndex == 0) {
 			window.open('paginas/changelog.html');

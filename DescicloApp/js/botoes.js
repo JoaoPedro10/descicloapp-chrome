@@ -1,29 +1,3 @@
-function salvar() {
-	localStorage["botaopagina"] = document.getElementById("pagina").checked;
-	localStorage["botaodiscussao"] = document.getElementById("discussao").checked;
-	localStorage["botaocontribuicoes"] = document.getElementById("contribuicoes").checked;
-	localStorage["botaovigiadas"] = document.getElementById("vigiadas").checked;
-	localStorage["botaocarregar"] = document.getElementById("carregar").checked;
-	localStorage["botaoaleatorio"] = document.getElementById("aleatorio").checked;
-	localStorage["botaomensagem"] = document.getElementById("mensagem").checked;
-	localStorage["botaorecentes"] = document.getElementById("recentes").checked;
-	localStorage["botaoboteco"] = document.getElementById("boteco").checked;
-	localStorage["botaomesa"] = document.getElementById("mesa").checked;
-	localStorage["botaoaa"] = document.getElementById("aa").checked;
-	localStorage["botaodesnoticias"] = document.getElementById("desnoticias").checked;
-	localStorage["botaodescionario"] = document.getElementById("descionario").checked;
-	localStorage["botaodeslivros"] = document.getElementById("deslivros").checked;
-	localStorage["botaodespoesias"] = document.getElementById("despoesias").checked;
-	localStorage["botaodescifras"] = document.getElementById("descifras").checked;
-	localStorage["botaodesentrevistas"] = document.getElementById("desentrevistas").checked;
-	localStorage["botaodescitacoes"] = document.getElementById("descitacoes").checked;
-	localStorage["botaodeslistas"] = document.getElementById("deslistas").checked;
-	localStorage["botaofatos"] = document.getElementById("fatos").checked;
-	localStorage["botaofacebook"] = document.getElementById("facebook").checked;
-	localStorage["botaotwitter"] = document.getElementById("twitter").checked;
-    $('#aviso-salvar').html('<img src="../imagens/checkmarkicon.png">');
-}
-
 window.onload = function() {
 	if(localStorage.getItem('botaopagina') != "false") { document.getElementById("pagina").checked = true; } else { document.getElementById("pagina").checked = false; };
 	if(localStorage.getItem('botaodiscussao') != "false") { document.getElementById("discussao").checked = true; } else { document.getElementById("discussao").checked = false; };
@@ -48,5 +22,26 @@ window.onload = function() {
 	if(localStorage.getItem('botaofacebook') != "false") { document.getElementById("facebook").checked = true; } else { document.getElementById("facebook").checked = false; };
 	if(localStorage.getItem('botaotwitter') != "false") { document.getElementById("twitter").checked = true; } else { document.getElementById("twitter").checked = false; };
 	$('hr').css('background-color',localStorage.getItem('cor-favorita'));
-	$('#salvar').click(function() { salvar() });
+	$("#pagina").change(function() { localStorage["botaopagina"] = document.getElementById("pagina").checked; });
+	$("#discussao").change(function() { localStorage["botaodiscussao"] = document.getElementById("discussao").checked; });
+	$("#contribuicoes").change(function() { localStorage["botaocontribuicoes"] = document.getElementById("contribuicoes").checked; });
+	$("#vigiadas").change(function() { localStorage["botaovigiadas"] = document.getElementById("vigiadas").checked; });
+	$("#carregar").change(function() { localStorage["botaocarregar"] = document.getElementById("carregar").checked; });
+	$("#aleatorio").change(function() { localStorage["botaoaleatorio"] = document.getElementById("aleatorio").checked; });
+	$("#mensagem").change(function() { localStorage["botaomensagem"] = document.getElementById("mensagem").checked; });
+	$("#recentes").change(function() { localStorage["botaorecentes"] = document.getElementById("recentes").checked; });
+	$("#boteco").change(function() { localStorage["botaoboteco"] = document.getElementById("boteco").checked; });
+	$("#mesa").change(function() { localStorage["botaomesa"] = document.getElementById("mesa").checked; });
+	$("#aa").change(function() { localStorage["botaoaa"] = document.getElementById("aa").checked; });
+	$("#desnoticias").change(function() { localStorage["botaodesnoticias"] = document.getElementById("desnoticias").checked; });
+	$("#descionario").change(function() { localStorage["botaodescionario"] = document.getElementById("descionario").checked; });
+	$("#deslivros").change(function() { localStorage["botaodeslivros"] = document.getElementById("deslivros").checked; });
+	$("#despoesias").change(function() { localStorage["botaodespoesias"] = document.getElementById("despoesias").checked; });
+	$("#descifras").change(function() { localStorage["botaodescifras"] = document.getElementById("descifras").checked; });
+	$("#desentrevistas").change(function() { localStorage["botaodesentrevistas"] = document.getElementById("desentrevistas").checked; });
+	$("#descitacoes").change(function() { localStorage["botaodescitacoes"] = document.getElementById("descitacoes").checked; });
+	$("#deslistas").change(function() { localStorage["botaodeslistas"] = document.getElementById("deslistas").checked; });
+	$("#fatos").change(function() { localStorage["botaofatos"] = document.getElementById("fatos").checked; });
+	$("#facebook").change(function() { localStorage["botaofacebook"] = document.getElementById("facebook").checked; });
+	$("#twitter").change(function() { localStorage["botaotwitter"] = document.getElementById("twitter").checked; });
 }

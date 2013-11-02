@@ -112,10 +112,11 @@ input[type='text']:focus {
 <option value="desnoticias.org">desnoticias.org</option>
 <option value="sophia.desciclopedia.org">sophia.desciclopedia.org</option>
 <option value="roberto.desciclopedia.org">roberto.desciclopedia.org</option>
-</select><span>pesquisa.la &eacute; o melhor por ser o mais est&aacute;vel</span></div>
+<option value="outro">Outro</option>
+</select><span>pesquisa.la &eacute; o melhor por ser o mais est&aacute;vel</span></div><div id="outrod"><br>Qual? <input id="dominio" name="dominio" type="text" style="margin-left: 5px; width: 190px;"/> Na popup <input id="napopup" name="napopup" type="text" style="margin-left: 5px; width: 50px;"/></div>
 <hr>
 <h3>Qual &eacute; seu nome de usu&aacute;rio?</h3>
-<div class="tooltip5"><input type="text" id="username" /><span>Deixe em branco caso voc&ecirc; n&atilde;o seja usu&aacute;rio da Desciclop&eacute;dia</span></div>
+<div class="tooltip5"><input type="text" id="username" /><span>Deixe em branco caso voc&ecirc; n&atilde;o seja editor da Desciclop&eacute;dia</span></div>
 <hr>
 <h3>Habilitar a busca do DescicloApp no menu contexto?</h3>
 <div><form><label><input type="radio" name="buscacontexto" id="buscacontextosim" checked="true" class="contextoaviso" value="true"> Sim</label> <label><input type="radio" name="buscacontexto" id="buscacontextonao" class="contextoaviso" value="false"> N&atilde;o</label> </form><div id="contextoavisot"></div></div>
@@ -129,6 +130,10 @@ input[type='text']:focus {
 <label><input type="checkbox" id="barrabusca"> Habilitar a barra de buscas</label><br>
 <label><input type="checkbox" id="botaomais"> Usar bot&atilde;o "Mais" ao inv&eacute;s dos bot&otilde;es de namespaces</label><br>
 <label><input type="checkbox" id="botaofeedback"> Habilitar o bot&atilde;o feedback</label>
+<hr>
+<h3>Popup</h3>
+<button id="escolhapopup">Escolher quais bot&otilde;es devem aparecer</button><br><br>
+<label><input type="checkbox" id="barrabuscapopup" checked="true"> Habilitar a barra de buscas</label>
 <hr>
 <button id="redefinir" style="float:right;" title="Deixar o DescicloApp como se voc&ecirc; tivesse acabado de instalar">Redefinir ao padr&atilde;o</button><br><br>
 <br><br>

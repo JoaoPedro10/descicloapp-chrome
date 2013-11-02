@@ -101,7 +101,7 @@ div.sombra:active {
 <body>
 <div align="center" style="cursor: default;"><b>DescicloApp</b><a id="hifen" style="cursor: default; text-decoration: none;"></a><a id="username" style="cursor: pointer;"></a></div>
 <br><br>
-<table height="25px">
+<div class="barrabuscapopup"><table height="25px">
 <tr><div class="tooltip4"><span>Escolha o dom&iacute;nio alternativo</span><select id="alternativo" style="height:22px;width:50px; -webkit-border-top-left-radius: 10px; -webkit-border-bottom-left-radius: 10px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; float:left;">
 <option value="desciclopedia.org">.org</option>
 <option value="desciclopedia.ws">.ws</option>
@@ -111,7 +111,7 @@ div.sombra:active {
 <option value="desnoticias.org">desnoticias.org</option>
 <option value="sophia.desciclopedia.org">sophia.</option>
 <option value="roberto.desciclopedia.org">roberto.</option>
-</select></div><input type="text" class="text" id="q" style="float:left; width: 175px; -webkit-border-radius: 0px;" autocomplete="on" placeholder="Escreva algo..." name="q" /><div class="tooltip"><span>Ir a esta p&aacute;gina</span><input type="submit" id="ir" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url('imagens/avancarwp7.png'); background-repeat: no-repeat; background-position: center; float:left; -webkit-border-radius:0px;" class="azul" value="" /></div><div class="tooltip"><span>Editar ou criar essa p&aacute;gina</span><input type="submit" id="editar" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url('imagens/novowp7.png'); background-repeat: no-repeat; background-position: center; float:left; -webkit-border-radius: 0px;" class="azul" value="" /></div><div class="tooltip"><span>Pesquisar</span><input type="submit" id="pesquisar" name="pesquisar" style="width:25px; height:22px; border: #000000 solid 1px; float:left; -webkit-border-bottom-right-radius: 10px; -webkit-border-top-right-radius: 10px; background-image:url('imagens/buscawp7.png'); background-repeat: no-repeat; background-position: center; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px;" class="azul" value="" /></div></tr></table>
+</select></div><input type="text" class="text" id="q" style="float:left; width: 175px; -webkit-border-radius: 0px;" autocomplete="on" placeholder="Escreva algo..." name="q" /><div class="tooltip"><span>Ir a esta p&aacute;gina</span><input type="submit" id="ir" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url('imagens/avancarwp7.png'); background-repeat: no-repeat; background-position: center; float:left; -webkit-border-radius:0px;" class="azul" value="" /></div><div class="tooltip"><span>Editar ou criar essa p&aacute;gina</span><input type="submit" id="editar" style="width:25px; height:22px; border: #000000 solid 1px; background-image:url('imagens/novowp7.png'); background-repeat: no-repeat; background-position: center; float:left; -webkit-border-radius: 0px;" class="azul" value="" /></div><div class="tooltip"><span>Pesquisar</span><input type="submit" id="pesquisar" name="pesquisar" style="width:25px; height:22px; border: #000000 solid 1px; float:left; -webkit-border-bottom-right-radius: 10px; -webkit-border-top-right-radius: 10px; background-image:url('imagens/buscawp7.png'); background-repeat: no-repeat; background-position: center; -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px;" class="azul" value="" /></div></tr></table></div>
 <br>
 	<div id="irb" class="menuitem">
 		<img src="icons/icon_16.png"> Ir a Desciclop&eacute;dia
@@ -138,9 +138,9 @@ div.sombra:active {
 	<div id="mensagem" class="menuitem"><div class="seta">
 		<img src="imagens/enviarmensagem.png" width="16px" height="16px"> Enviar mensagem </div>
 	</div>
-	<div class="tooltip2"><span>Abrir dentro da extens&atilde;o</span><div id="recentespopup" class="menuitem"><div id="seta2"></div></div></div><div id="recentes" class="menuitem">
+	<div id="mudancasrecentes"><div class="tooltip2"><span>Abrir dentro da extens&atilde;o</span><div id="recentespopup" class="menuitem"><div id="seta2"></div></div></div><div id="recentes" class="menuitem">
 		<img src="imagens/mrwp7.png" width="16px" height="16px"> Mudan&ccedil;as recentes
-	</div>
+	</div></div>
 	<div class="menuitem" id="aaaaa"><div id="mais"><img src="imagens/baixowp7.png" width="16px"> Mais</div>
 </div><div><div class="mostrar" style="display: none;"><div id="boteco" class="menuitem"><img src="imagens/boteco.png" width="16px" height="16px"> Boteco </div><div id="truco" class="menuitem"><img src="imagens/truco.png" width="16px" height="16px"> Mesa de Truco </div><div id="aa" class="menuitem"><img src="imagens/aa.png" width="16px" height="16px"> A.A. (Ajuda) </div><div id="desnoticias" class="menuitem"><img src="imagens/desnoticias.png" width="16px" height="16px"> Desnot&iacute;cias </div><div id="descionario" class="menuitem"><img src="imagens/descionario.png" width="16px" height="16px"> Descion&aacute;rio </div><div id="deslivros" class="menuitem"><img src="imagens/deslivros.png" width="16px" height="16px"> Deslivros </div><div id="despoesias" class="menuitem"><img src="imagens/despoesias.png" width="16px" height="16px"> Despoesias </div><div id="descifras" class="menuitem"><img src="imagens/descifras.png" width="16px" height="16px"> Descifras </div><div id="desentrevistas" class="menuitem"><img src="imagens/desentrevistas.png" width="16px" height="16px"> Desentrevistas </div><div id="descitacoes" class="menuitem"><img src="imagens/descitacoes.png" width="16px" height="16px"> Descita&ccedil;&otilde;es </div><div id="deslistas" class="menuitem"><img src="imagens/deslistas.png" width="16px" height="16px"> Deslistas </div><div id="fatos" class="menuitem"><img src="imagens/fatos.png" width="16px" height="16px"> Fatos </div>
 </div></div>

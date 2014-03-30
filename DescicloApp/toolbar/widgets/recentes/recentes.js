@@ -1,0 +1,1 @@
+function novaguia(){	window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Special:Recentchanges/250', '_blank');}window.onload = function(){	document.getElementById('novaguia').onclick=novaguia;}

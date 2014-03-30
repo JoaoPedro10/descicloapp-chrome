@@ -35,7 +35,6 @@ function ATB_SideBySide() {
                 ext.pinging = false;
                 if (response && response.name == ATB.CONSTANT.TB.POSITION_ECHO) {
                     toolbars[response.data.extensionInfo.id] = response.data;
-                    //console.log('Answer iamalive TB for %s:', response.data.extensionInfo.id, response);
                 }
             }
         }
@@ -63,7 +62,6 @@ function ATB_SideBySide() {
     function findPosition(tbid) {
         var tb = [];
         for (var id in toolbars) {
-            // this really is a string containing the word 'true'
             if (toolbars[id].toolbarInfo.isVisible == "true")
                 tb.push(id);
         }
@@ -95,10 +93,6 @@ function ATB_SideBySide() {
         sendPings(function () {
             toolbars[extensionInfo.id] = getToolbarData();
             positionData = findPosition(extensionInfo.id);
-            //console.log("new toolbar position is %s (%spx)",
-            //            positionData.ourPosition,
-            //            positionData.ourTop,
-            //            toolbars);
             sendResponse(positionData);
         });
     });

@@ -23,6 +23,7 @@ window.onload = function() {
 	if(localStorage.getItem('botaofatospopup') != "false") { document.getElementById("fatospopup").checked = true; } else { document.getElementById("fatospopup").checked = false; };
 	if(localStorage.getItem('botaofacebookpopup') != "false") { document.getElementById("facebookpopup").checked = true; } else { document.getElementById("facebookpopup").checked = false; };
 	if(localStorage.getItem('botaotwitterpopup') != "false") { document.getElementById("twitterpopup").checked = true; } else { document.getElementById("twitterpopup").checked = false; };
+	if(localStorage.getItem('botaodptoolbar') != "false") { document.getElementById("dptoolbarpopup").checked = true; } else { document.getElementById("dptoolbarpopup").checked = false; };
 	$('hr').css('background-color',localStorage.getItem('cor-favorita'));
 	$("#irpopup").change(function() { localStorage["botaoirpopup"] = document.getElementById("irpopup").checked; });
 	$("#paginapopup").change(function() { localStorage["botaopaginapopup"] = document.getElementById("paginapopup").checked; });
@@ -48,4 +49,5 @@ window.onload = function() {
 	$("#fatospopup").change(function() { localStorage["botaofatospopup"] = document.getElementById("fatospopup").checked; });
 	$("#facebookpopup").change(function() { localStorage["botaofacebookpopup"] = document.getElementById("facebookpopup").checked; });
 	$("#twitterpopup").change(function() { localStorage["botaotwitterpopup"] = document.getElementById("twitterpopup").checked; });
+	$("#dptoolbarpopup").change(function() { localStorage["botaodptoolbar"] = document.getElementById("dptoolbarpopup").checked; });
 }

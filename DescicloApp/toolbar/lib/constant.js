@@ -10,7 +10,7 @@ var ATB = {};
 ATB.CONSTANT = {
     PID: "DescicloToolbar",
     TB_NAME: "DescicloToolbar",
-    VERSION: "5.0",
+    VERSION: "6.0",
     PREF: {
         TB_IS_VISIBLE: 'pref_tb_is_visible',
         TB_IS_INSTALL: 'pref_tb_is_install',

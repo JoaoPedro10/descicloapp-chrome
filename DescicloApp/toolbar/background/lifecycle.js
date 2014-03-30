@@ -1,7 +1,7 @@
 var ATB_Lifecycle = function () {
 
     function setPrefDefaults() {
-        ATB.Pref.setTbIsVisible(true);
+        ATB.Pref.setTbIsVisible(false);
     }
 
     var states = { uninitialized: { install: function() {

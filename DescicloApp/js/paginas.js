@@ -88,6 +88,7 @@ window.onload=function(){
 	$('#info').click(function() { descicloApp() });
 	$('#opera').click(function() { opera() });
 	$('#firefox').click(function() { firefox() });
+	$('#versao').html(localStorage.getItem('version').substring(1,localStorage.getItem('version').length - 1));
 	$('#usuario').click(function() { usuario() });
 	$('#usuario').html('http://' + pagina + '/wiki/Usu&aacute;rio:&Aacute;s');
 	$('#mensagem').click(function() { mensagem() });

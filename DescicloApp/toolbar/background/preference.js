@@ -1,18 +1,3 @@
-/**
- * preference.js
- *
- * @fileOverview File to store all the code related the preferences
- *      interaction and abstraction
- * @author Thomas Genin <thomas.genin@ask.com>
- * @copyright aloogle LLC, 2011
- */
-
-/**
- * ATB_Pref
- *
- * Class which manage all the interaction with the preference system
- * @constructor
- */
 var ATB_Pref = function() {
     var p = ATB.CONSTANT.PREF, self = this;
 
@@ -41,7 +26,6 @@ var ATB_Pref = function() {
     add("TbIsInstall", p.TB_IS_INSTALL);
     add("InstallState", p.INSTALL_STATE);
 
-    // these two prefs must be kept in sync with each other and the combined form
     self.getLang = function () {
         return ATB.localStorage.get(p.LANG) || ATB.CONSTANT.DEFAULT_LANG;
     };

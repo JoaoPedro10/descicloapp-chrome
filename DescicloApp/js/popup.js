@@ -35,23 +35,25 @@ function irb(){
 function pagina(){
 	if(q.value != "") {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Usu%C3%A1rio:' + document.getElementById('q').value}) }
-	else {
-	//Eu usei window.open() porque com ele demora mais pra aparecer a url, dando a impressao de que a extensao descobriu sozinha o username
-	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_p%C3%A1gina') }
+	else { if(localStorage.getItem('username') != "") { 
+	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Usu%C3%A1rio:' + localStorage.getItem('username')}) } else {
+	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_p%C3%A1gina'}) } }
 }
 
 function discussao(){
 	if(q.value != "") {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Usu%C3%A1rio_discuss%C3%A3o:' + document.getElementById('q').value}) }
-	else {
-	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_discuss%C3%A3o') }
+	else { if(localStorage.getItem('username') != "") { 
+	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Usu%C3%A1rio_discuss%C3%A3o:' + localStorage.getItem('username')}) } else {
+	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Minha_discuss%C3%A3o'}) } }
 }
 
 function contribuicao(){
 	if(q.value != "") {
 		chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Contribui%C3%A7%C3%B5es/' + document.getElementById('q').value}) }
-	else {
-	window.open('http://' + document.getElementById('alternativo').value + '/wiki/Special:MyContributions') }
+	else { if(localStorage.getItem('username') != "") { 
+	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Especial:Contribui%C3%A7%C3%B5es/' + localStorage.getItem('username')}) } else {
+	chrome.tabs.create({url: 'http://' + document.getElementById('alternativo').value + '/wiki/Special:MyContributions'}) } }
 }
 
 function vigiado(){
@@ -179,10 +181,6 @@ function twitter(){
 	chrome.tabs.create({url: 'http://twitter.com/DaDesciclopedia'})
 }
 
-function blog(){
-	chrome.tabs.create({url: 'http://descicloblog.blogspot.com'})
-}
-
 function ajuda(){
 	window.open('paginas/faq.html', '_blank')
 }
@@ -202,6 +200,10 @@ function restaurar() {
   }
 }
 
+function markVisited() {
+	chrome.extension.getBackgroundPage().markPageVisited('http://pesquisa.la/index.php?title=Usu%C3%A1rio_Discuss%C3%A3o:' + localStorage.getItem('username') + '&action=history');
+}
+
 $(function(){
 		$('hr').css('background-color',localStorage.getItem('cor-favorita'));
 		$('#ir').css({'background-image':'url(' + iricone + ')', 'background-color':localStorage.getItem('cor-favorita'), 'background-repeat': 'no-repeat', 'background-position': 'center'});
@@ -215,7 +217,7 @@ $(function(){
 		$('#pesquisar').click(function() { pesquisar() });
 		$('#irb').click(function() { irb() });
 		$('#pagina').click(function() { pagina() });
-		$('#discussao').click(function() { discussao() });
+		$('#discussao').click(function() { discussao(); });
 		$('#contribuicao').click(function() { contribuicao() });
 		$('#vigiado').click(function() { vigiado() });
 		$('#carregar').click(function() { carregar() });
@@ -240,7 +242,6 @@ $(function(){
 		$('#twitter').click(function() { twitter() });
 		$('#ajuda').click(function() { ajuda() });
 		document.getElementById('q').focus();
-		if(localStorage.getItem('jadesativou') != "true") { $('#apn-options-menu').css({'display':'none'}); } else { $('#apn-options-menu').css({'display':''}); };
 		restaurar();
 		if(localStorage.getItem('barrabuscapopup') == "false") { $('.barrabuscapopup').hide() };
 		if(localStorage.getItem('botaoirpopup') == "false") { $('#irb').hide() };
@@ -267,6 +268,9 @@ $(function(){
 		if(localStorage.getItem('botaofatospopup') == "false") { $('#fatos').hide() };
 		if(localStorage.getItem('botaofacebookpopup') == "false") { $('#facebook').hide() };
 		if(localStorage.getItem('botaotwitterpopup') == "false") { $('#twitter').hide() };
+		if(localStorage.getItem('botaodptoolbar') == "false") { $('#apn-options-menu').css({'display':'none'}); };
+		chrome.browserAction.getBadgeText({}, function(result) {
+		if(result == "1") { $('#discussao').css({'background-color':'#ffff00'}); $('#discussao').click(function() { markVisited(); localStorage.removeItem('novamensagem'); chrome.extension.getBackgroundPage().location.reload(); });};});
 });
 
 window.onkeypress = function(){

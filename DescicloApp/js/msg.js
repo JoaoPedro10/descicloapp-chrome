@@ -19,17 +19,17 @@ function email(){
 }
 
 function restaurar() {
-  var favorite = localStorage["alternativo_favorito"];
-  if (!favorite) {
+  var favorito = localStorage["alternativo_favorito"];
+  if (!favorito) {
     return;
   }
   var select = document.getElementById("alternativo");
   for (var i = 0; i < select.children.length; i++) {
     var child = select.children[i];
-    if (child.value == favorite) {
+    if (child.value == favorito) {
       child.selected = "true";
       break;
-    }
+    } else { if(localStorage["alternativo_favorito"] != "desciclopedia.org" && localStorage["alternativo_favorito"] != "desciclopedia.ws" && localStorage["alternativo_favorito"] != "pudim.info" && localStorage["alternativo_favorito"] != "vist.as" && localStorage["alternativo_favorito"] != "pesquisa.la" && localStorage["alternativo_favorito"] != "desciclopedia.org" && localStorage["alternativo_favorito"] != "sophia.desciclopedia.org" && localStorage["alternativo_favorito"] != "roberto.desciclopedia.org") { document.getElementById("alternativo").options[8]=new Option(localStorage["napopup"], localStorage["alternativo_favorito"]); child.selected = "outro"; } }
   }
 }
 

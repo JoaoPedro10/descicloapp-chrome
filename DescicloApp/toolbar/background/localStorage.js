@@ -1,7 +1,6 @@
 function ATB_LocalStorage() {
 }
 
-
 ATB_LocalStorage.prototype.set = function (key, value) {
     var str = JSON.stringify(value);
     if ($.browser.webkit)

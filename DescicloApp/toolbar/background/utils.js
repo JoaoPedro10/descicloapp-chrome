@@ -1,21 +1,8 @@
 if (!ATB.Utils) {
-    /**
-     * Contain all the utility functions for the TB
-     * @namespace
-     */
     ATB.Utils = {};
 }
 
-/**
- * Contain all the utility functions related to Array
- * @namespace
- */
 ATB.Utils.Arr = {
-    /**
-     * Remove the value from an Array
-     * @param arr {Array} The array where to remove the value
-     * @param value {Mix} The value you want to remove
-     */
     removeValue: function (arr, value) {
         var i = arr.indexOf(value);
         if (i != -1) {
@@ -24,10 +11,6 @@ ATB.Utils.Arr = {
     }
 };
 
-/**
- * utility function for file interaction
- * @namespace
- */
 ATB.Utils.File = {
     readJSONFile: function (fileRelativePath, callback) {
        $.get(chrome.extension.getURL(fileRelativePath), function (json) {
@@ -45,26 +28,10 @@ ATB.Utils.File = {
 	}
 };
 
-/**
- * Contain all utility functions for Macro
- * @namespace
- */
 ATB.Utils.Macro = {
-    /**
-     * Find if a string contain macro and return their names if it found some
-     *
-     * @param {String} inputString The string to test
-     * @return Array
-     */
     find: function (inputString) {
         return inputString.match(/{(.*?)}/g);
     },
-    /**
-     * Replace all the macro of a string
-     *
-     * @param {String} inputString
-     * @return {String} The input string with the macro replace by their value
-     */
     replace: function (inputString) {
         var out = "";
         if (typeof inputString == "number")
@@ -98,14 +65,6 @@ ATB.Utils.Macro = {
         }
         return out;
     },
-    /**
-     * Replace one specific macro by it value
-     *
-     * @param {String} inputString
-     * @param {String} macro The name of the macro to search
-     * @param {Object} value The value to replace the macro
-     * @return {String} The string with macro repalced
-     */
     replaceSpecificMacro: function (inputString, macro, value) {
         return inputString.replace("{" + macro + "}", value);
     }
@@ -121,15 +80,6 @@ ATB.Utils.Misc = {
         }
     }
 };
-
-/**
- * Set up a long-term timer
- * @param {String}   name      name of the timer, for persisting the state
- * between sessions
- * @param {Function} callback  call this function when the timer fires
- * @param {Number}   duration  wait this long (seconds) between calls to the callback
- * @param {Boolean}  [oneshot] true for a one-shot timer
- */
 ATB.Utils.LongTimer = function LongTimer(name, callback, duration, oneshot) {
     if (!name) {
         console.error("LongTimer requires a name");
@@ -140,10 +90,6 @@ ATB.Utils.LongTimer = function LongTimer(name, callback, duration, oneshot) {
     if (!duration) {
         console.error("LongTimer duration cannot be zero");
     }
-
-    //console.log("%s: initializing timer %s with duration %s", name, name,
-    // duration);
-
     var timerid;
     var machine = new StateMachine(name,
                                    "delay",
@@ -163,11 +109,7 @@ ATB.Utils.LongTimer = function LongTimer(name, callback, duration, oneshot) {
 
     function check() {
         var lastTime = ATB.localStorage.get(name) || 0;
-        var now = new Date().getTime();
-        //console.log("%s: timer last fired at %s", name, new Date(lastTime));
-
-        var nextCall = 0;
-
+        var now = new Date().getTime();        var nextCall = 0;
         if (now < (lastTime + duration)) {
             nextCall = lastTime + duration - now;
         }
@@ -180,7 +122,6 @@ ATB.Utils.LongTimer = function LongTimer(name, callback, duration, oneshot) {
         ATB.localStorage.set(name, now);
         setTimeout(function() {
                        try {
-                           //console.log("%s: firing timer", name);
                            callback();
                        } catch (x) {
                            console.warn("%s: LongTimer callback threw an exception:", name, x);
@@ -193,8 +134,6 @@ ATB.Utils.LongTimer = function LongTimer(name, callback, duration, oneshot) {
     }
 
     function repeat(now, nextCall) {
-        //console.log("%s: timer will next fire in %s seconds at %s", name,
-        // nextCall, new Date(now + nextCall));
         timerid = setTimeout(machine.timer, nextCall * 1000);
         return "waiting";
     }
@@ -203,19 +142,12 @@ ATB.Utils.LongTimer = function LongTimer(name, callback, duration, oneshot) {
     function cancel() { clearTimeout(timerid); return "cancelled"; }
     this.cancel = function() { machine.cancel(); };
 
-    // the delay is a random time between 5 and 15 seconds
     setTimeout(machine.timer, 5000 + Math.floor(Math.random() * 10001));
 };
 
 ATB.Utils.LongTimer.ONE_MINUTE = 60;
 ATB.Utils.LongTimer.ONE_DAY = 24 * 60 * 60;
 
-/**
- * Accepts a url object {path, params, basepath (Optional)}, and returns a macro replaced url
- * @param  {Object} urlObj      The url object with {path, params}
- * @param  {String} basepath    url to resolve relative urls against
- * @return {String}             The macro-replaced url constructed from the path/params
- */
 ATB.Utils.buildURL = function (urlObj, basepath) {
     var tmp = [],
         url = (typeof urlObj.path == "string") ? urlObj.path
@@ -223,7 +155,6 @@ ATB.Utils.buildURL = function (urlObj, basepath) {
         params = urlObj.params;
     if (!/^(https?|chrome):\/\//.test(url))
     {
-        //if path is relative
         url = basepath ? (basepath + url)
                        : chrome.extension.getURL(url);
     }

@@ -13,29 +13,34 @@ function salvar() {
   localStorage["barrabuscapopup"] = document.getElementById("barrabuscapopup").checked;
   if(document.getElementById("coricone").checked == true) { localStorage["coricone"] = document.getElementById("coricone").value; localStorage["iricone"] = "imagens/avancarwp7.png"; localStorage["editaricone"] = "imagens/novowp7.png"; localStorage["pesquisaricone"] = "imagens/buscawp7.png"; localStorage["cor2"] = "#000000"; } else { localStorage["coricone"] = document.getElementById("coricone2").value; localStorage["iricone"] = "imagens/avancarwp7b.png"; localStorage["editaricone"] = "imagens/novowp7b.png"; localStorage["pesquisaricone"] = "imagens/buscawp7b.png"; localStorage["cor2"] = "#ffffff"; };
   if(username.value != "") { localStorage["hifen"] = '&nbsp;-&nbsp'; } else { localStorage["hifen"] = ''};
+  // se o usuario mudar o username apagar o antigo e deixar so o novo
+  if(document.getElementById("username").value != localStorage["username"]) { localStorage.setItem('pages_to_check', '{}') }
   localStorage["username"] = document.getElementById("username").value;
-  if(document.getElementById("desciclotoolbar").checked == true) { localStorage["pref_tb_is_visible"] = true; } else { localStorage["pref_tb_is_visible"] = false; if(!localStorage.jadesativou){ new Messi('<iframe id="JotFormIFrame" allowtransparency="true" src="http://aloogle.tumblr.com/descicloapp/feedbackdptoolbar" frameborder="0" style="width:100%; height:550px; border:none;" scrolling="no"></iframe>', {title: 'DescicloToolbar'}); localStorage.jadesativou = "true"; };};
+  if(username.value == "") { if(confirm('Para ativar as notifica\u00e7\u00F5es, escreva seu username primeiro')) { document.getElementById("notifmsg").checked = false; } else { document.getElementById("notifmsg").checked = false; } }
+  if(document.getElementById("notifmsg").checked == true) { AtivarNotificacoes(); localStorage.setItem('notifmsg', 'true') } else { localStorage.setItem('pages_to_check', '{}'); localStorage.setItem('notifmsg', 'false') };
+  if(document.getElementById("username").value == "") { localStorage.setItem('pages_to_check', '{}'); localStorage.setItem('notifmsg', 'false') };
+  if(document.getElementById("desciclotoolbar").checked == true) { localStorage["pref_tb_is_visible"] = true; } else { localStorage["pref_tb_is_visible"] = false; };
   if(document.getElementById("botaofeedback").checked == true) { localStorage["botaofeedback"] = true; } else { localStorage["botaofeedback"] = false; if(!localStorage.feedback){ new Messi('<iframe id="JotFormIFrame" allowtransparency="true" src="http://aloogle.tumblr.com/descicloapp/feedbackbotaodesativado" frameborder="0" style="width:100%; height:550px; border:none;" scrolling="no"></iframe>', {title: 'Feedback'}); localStorage.feedback = "true"; };};
   $('#app-desciclopedia').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quer ter um aplicativo da Desciclop&eacute;dia na Nova guia? <a href="http://desciclopedia.org/wiki/Usu%C3%A1rio:%C3%81s/DescicloApp/Chrome/App" target="_blank">Clique aqui</a>!!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-  chrome.extension.getBackgroundPage().location.reload();
   salvarn();
 }
 
 function redefinir() {
 	//Apenas para evitar conflitos com as notificacoes no background
-	chrome.extension.getBackgroundPage().location.reload()
+	bg.location.reload()
 	chrome.notifications.create("redef", { type: "basic", iconUrl: "../icons/icon_64.png", title: "DescicloApp", message: "Tem certeza que quer redefinir as configura\u00e7\u00F5es?", buttons: [{ title: 'Sim', iconUrl: '../imagens/checkmarkicon.png' }, { title: 'N\u00E3o', iconUrl: '../imagens/x.png' }], priority: 0}, function() {});
 	chrome.notifications.onButtonClicked.addListener(function(redef, buttonIndex) {
 		if (buttonIndex == 0) {
 				localStorage.clear();
 				if(!localStorage.storagepadrao){
-				localStorage["atualizacao55"] = "true";
 				localStorage["atualizacao57"] = "true";
+				localStorage["atualizacao60"] = "true";
 				localStorage["page"] = "true";
 				localStorage["alternativo_favorito"] = "desciclopedia.org";
 				localStorage["napopup"] = ".org";
 				localStorage["cor-favorita"] = "#00ffff";
 				localStorage["cor2"] = "black";
+				localStorage["username"] = "";
 				localStorage["buscacontexto"] = "true";
 				localStorage["descicloguia"] = "false";
 				localStorage["coricone"] = "imagens/buscawp72.png";
@@ -46,8 +51,11 @@ function redefinir() {
 				localStorage["barrabusca"] = "true";
 				localStorage["botaofeedback"] = "true";
 				localStorage["primeira"] = "true";
-				localStorage["pref_tb_is_visible"] = "true";
+				localStorage["pref_tb_is_visible"] = "false";
 				localStorage["barrabuscapopup"] = "true";
+				localStorage["pref_tb_is_visible"] = "false";
+				localStorage["pages_to_check"] = "{}";
+				localStorage["check_interval"] = "5000";
 				localStorage.storagepadrao = "true";
 				}
 				window.location.reload()
@@ -94,6 +102,22 @@ $('#alternativo').change(function() {
 			}
 	});
 });
+
+var bg = chrome.extension.getBackgroundPage();
+function AtivarNotificacoes() {
+	bg.addNewPage('Mensagens', 'http://pesquisa.la/index.php?title=Usu%C3%A1rio_Discuss%C3%A3o:' + localStorage.getItem('username') + '&action=history', 'chrome-extension://pjglehbpmemdjndlpebplmocdkfjolpj/icons/icon_16.png');
+}
+    
+function markPageMonitored() {
+	monitor_label = document.getElementById('monitor_page');
+	monitor_label.className = 'util_unlinked';
+	monitor_label.onclick = function() {};
+      
+	var temp = monitor_label.firstElementChild;
+	monitor_label.innerHTML = '';
+	monitor_label.appendChild(temp);
+	monitor_label.innerHTML += ' Page Monitored.';
+}
 		
 $(function(){
 	$('.corfavorita').change(function() {
@@ -125,6 +149,7 @@ $(function(){
 	if(localStorage.getItem('buscacontexto') != "false") { document.getElementById("buscacontextosim").checked = true; } else { document.getElementById("buscacontextonao").checked = true; };
 	if(localStorage.getItem('descicloguia') != "false") { document.getElementById("descicloguiasim").checked = true; } else { document.getElementById("descicloguianao").checked = true; };
 	if(localStorage.getItem('pref_tb_is_visible') != "true") { document.getElementById("desciclotoolbar").checked = false; document.getElementById("botaomais").disabled = true; document.getElementById("barrabusca").disabled = true; document.getElementById("botaofeedback").disabled = true; } else { document.getElementById("desciclotoolbar").checked = true; };
+	if(localStorage.getItem('notifmsg') != "true") { document.getElementById("notifmsg").checked = false; } else { document.getElementById("notifmsg").checked = true; };
 	if(localStorage.getItem('botaomais') != "true") { document.getElementById("botaomais").checked = false; } else { document.getElementById("botaomais").checked = true; };
 	if(localStorage.getItem('barrabusca') != "true") { document.getElementById("barrabusca").checked = false; } else { document.getElementById("barrabusca").checked = true; };
 	if(localStorage.getItem('botaofeedback') != "true") { document.getElementById("botaofeedback").checked = false; } else { document.getElementById("botaofeedback").checked = true; };

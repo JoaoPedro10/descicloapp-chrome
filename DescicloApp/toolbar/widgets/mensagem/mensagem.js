@@ -29,7 +29,7 @@ function restaurar() {
     if (child.value == favorite) {
       child.selected = "true";
       break;
-    }
+    } else { if(localStorage["alternativo_favorito"] != "desciclopedia.org" && localStorage["alternativo_favorito"] != "desciclopedia.ws" && localStorage["alternativo_favorito"] != "pudim.info" && localStorage["alternativo_favorito"] != "vist.as" && localStorage["alternativo_favorito"] != "pesquisa.la" && localStorage["alternativo_favorito"] != "desciclopedia.org" && localStorage["alternativo_favorito"] != "sophia.desciclopedia.org" && localStorage["alternativo_favorito"] != "roberto.desciclopedia.org") { document.getElementById("alternativo").options[8]=new Option(localStorage["napopup"], localStorage["alternativo_favorito"]); child.selected = "outro"; } }
   }
 }
 

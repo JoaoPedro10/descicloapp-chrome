@@ -1,49 +1,49 @@
 function boteco(){
-		window.open('botoes/boteco.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Forum:Boteco');
 }
 
 function aa(){
-		window.open('botoes/aa.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Forum:Alco%C3%B3licos_An%C3%B4nimos');
 }
 
 function truco(){
-		window.open('botoes/truco.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Forum:Mesa_de_Truco');
 }
 
 function desnoticias(){
-		window.open('botoes/desnoticias.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Desnot%C3%ADcias:P%C3%A1gina_principal');
 }
 
 function descionario(){
-		window.open('botoes/descionario.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Descion%C3%A1rio:P%C3%A1gina_principal');
 }
 
 function deslivros(){
-		window.open('botoes/deslivros.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Deslivros:P%C3%A1gina_principal');
 }
 
 function despoesias(){
-		window.open('botoes/despoesias.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Despoesias:P%C3%A1gina_principal');
 }
 
 function descifras(){
-		window.open('botoes/descifras.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Descifras:P%C3%A1gina_principal');
 }
 
 function desentrevistas(){
-		window.open('botoes/desentrevistas.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Desentrevistas:P%C3%A1gina_principal');
 }
 
 function descitacoes(){
-		window.open('botoes/descitacoes.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Descita%C3%A7%C3%B5es:P%C3%A1gina_principal');
 }
 
 function deslistas(){
-		window.open('botoes/deslistas.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Deslistas:P%C3%A1gina_principal');
 }
 
 function fatos(){
-		window.open('botoes/fatos.html')
+		window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Fatos:P%C3%A1gina_principal');
 }
 
 window.onload = function(){

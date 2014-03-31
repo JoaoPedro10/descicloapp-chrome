@@ -81,7 +81,7 @@ if (!localStorage.primeira) {
 if (localStorage.getItem('cinco') == "true") {
 	chrome.windows.onCreated.addListener(function () {
 		if (!localStorage.page) {
-			curtir = chrome.notifications.create(curtir, {
+			noti = chrome.notifications.create("curtir", {
 					type : "basic",
 					iconUrl : "icons/icon_facebook.png",
 					title : "DescicloApp",
@@ -102,7 +102,7 @@ if (localStorage.getItem('cinco') == "true") {
 				window.open('http://facebook.com/AleferrorMenes');
 			});
 			localStorage.page = "true";
-			curtir.show();
+			noti.show();
 		}
 	})
 }
@@ -256,8 +256,8 @@ if (localStorage.atualizacao57 == "true") {
 		notif.show();
 	}
 } else {
-	localStorage.atualizacao55 = "true";
 	localStorage.atualizacao57 = "true";
+	localStorage.atualizacao60 = "true";
 	notif = chrome.notifications.create("changelog", {
 			type : "list",
 			iconUrl : "icons/icon_64.png",

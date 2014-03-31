@@ -1,5 +1,5 @@
 function novaguia() {
-	window.open('http://' + localStorage.getItem('alternativo_favorito') + '/wiki/Special:Recentchanges/250')
+	window.open('http://twitter.com/DaDesciclopedia')
 }
 
 window.onload = function () {

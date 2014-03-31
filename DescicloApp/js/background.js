@@ -235,7 +235,7 @@ if (localStorage.atualizacao57 == "true") {
 						bg.takeSnapshot('http://pesquisa.la/index.php?title=Usu%C3%A1rio_Discuss%C3%A3o:' + localStorage.getItem('username') + '&action=history&printable=yes')
 					}, 5000);
 				}
-				localStorage.setItem('pref_tb_is_visible', 'true');
+				localStorage.setItem('pref_tb_is_visible', 'false');
 				setTimeout(function () {
 					localStorage["check_interval"] = "5400"
 				}, 5000);

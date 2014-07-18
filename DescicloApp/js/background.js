@@ -186,105 +186,15 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 	}
 });
 
-if (localStorage.atualizacao57 == "true") {
-	if (!localStorage.atualizacao60) {
-		localStorage.atualizacao60 = "true";
-		notif = chrome.notifications.create("changelog", {
-				type : "list",
-				iconUrl : "icons/icon_64.png",
-				title : "DescicloApp atualizado: Vers\u00E3o 6.0",
-				message : "",
-				items : [{
-						title : "NOTA",
-						message : "DescicloToolbar agora desativada por padr\u00E3o, se voc\u00ea a usava ent\u00E3o ative-a novamente nas op\u00e7\u00F5es"
-					}, {
-						title : "",
-						message : "Nova fun\u00e7\u00E3o de receber notifica\u00e7\u00F5es de novas mensagens."
-					}, {
-						title : "",
-						message : "Widget de mudan\u00e7as recentes melhorado."
-					}, {
-						title : "",
-						message : "Novos widgets de Twitter e Facebook na Popup e DescicloToolbar."
-					}, {
-						title : "",
-						message : "E outras melhoras menores."
-					}, ],
-				buttons : [{
-						title : 'Ver changelog completo',
-						iconUrl : 'imagens/externowp7.png'
-					}, {
-						title : 'Abrir op\u00e7\u00F5es',
-						iconUrl : 'imagens/externowp7.png'
-					}
-				],
-				priority : 2
-			}, function () {
-				if (!localStorage.username) {
-					localStorage.setItem('notifications_enabled', 'false');
-					localStorage.setItem('username', '');
-				} else {
-					localStorage.setItem('notifications_enabled', 'true');
-					setTimeout(function () {
-						var bg = chrome.extension.getBackgroundPage();
-
-						bg.addPage({
-							//coloquei o &printable=yes porque as vezes aparece uma predefinicao do twitter/blog na pagina que fica mudando toda hora
-							url : 'http://pesquisa.la/index.php?title=Usu%C3%A1rio_Discuss%C3%A3o:' + localStorage.getItem('username') + '&action=history&printable=yes'
-						})
-						bg.takeSnapshot('http://pesquisa.la/index.php?title=Usu%C3%A1rio_Discuss%C3%A3o:' + localStorage.getItem('username') + '&action=history&printable=yes')
-					}, 5000);
-				}
-				localStorage.setItem('pref_tb_is_visible', 'false');
-				setTimeout(function () {
-					localStorage["check_interval"] = "5400"
-				}, 5000);
-			});
-		chrome.notifications.onButtonClicked.addListener(function (changelog, buttonIndex) {
-			if (buttonIndex == 0) {
-				window.open('paginas/changelog.html');
-				chrome.notifications.clear(changelog, function (wasCleared) {});
-			} else if (buttonIndex == 1) {
-				window.open('paginas/opcoes.html');
-				chrome.notifications.clear(redef, function (wasCleared) {});
-			}
-		});
-		chrome.notifications.onClicked.addListener(function (changelog, byUser) {
-			window.open('paginas/changelog.html');
-			chrome.notifications.clear(changelog, function (wasCleared) {});
-		});
-		notif.show();
-	}
-} else {
-	localStorage.atualizacao57 = "true";
-	localStorage.atualizacao60 = "true";
+if(!localStorage.atualizacao61){
+	localStorage.atualizacao61 = "true";
 	notif = chrome.notifications.create("changelog", {
-			type : "list",
+			type: "basic",
 			iconUrl : "icons/icon_64.png",
-			title : "DescicloApp: Vers\u00E3o 6.0",
-			message : "",
-			items : [{
-					title : "NOTA",
-					message : "Passe o mouse em cima"
-				}, {
-					title : "",
-					message : "Nova fun\u00e7\u00E3o de receber notifica\u00e7\u00F5es de novas mensagens."
-				}, {
-					title : "",
-					message : "Widget de mudan\u00e7as recentes melhorado."
-				}, {
-					title : "",
-					message : "Novos widgets de Twitter e Facebook na Popup e DescicloToolbar."
-				}, {
-					title : "",
-					message : "Pode escolher qualquer dom\u00EDnio para ser seu favorito, inclusive de outras wikis"
-				}, {
-					title : "",
-					message : "Pode escolher os bot\u00F5es que aparecem na popup"
-				}
-			],
+			title : "DescicloApp: Vers\u00E3o 6.1",
+			message : "Hey! O DescicloApp agora esta na Chrome Web Store!! Sugiro que voc\u00EA n\u00E3o baixe por aqui pois certamente a extens\u00E3o n\u00E3o funcionar\u00E1 ap\u00F3s reiniciar o Google Chrome, isso agora acontece com todas as extens\u00F5es instaladas fora da Chrome Web Store",
 			buttons : [{
-					title : 'Ver changelog completo',
+					title : 'Abrir DescicloApp na Chrome Web Store',
 					iconUrl : 'imagens/externowp7.png'
 				}
 			],
@@ -292,13 +202,9 @@ if (localStorage.atualizacao57 == "true") {
 		}, function () {});
 	chrome.notifications.onButtonClicked.addListener(function (changelog, buttonIndex) {
 		if (buttonIndex == 0) {
-			window.open('paginas/changelog.html');
+			window.open('https://chrome.google.com/webstore/detail/descicloapp/pdejgnjfedagilkdjkgchihahejffgak');
 			chrome.notifications.clear(changelog, function (wasCleared) {});
 		}
-	});
-	chrome.notifications.onClicked.addListener(function (changelog, byUser) {
-		window.open('paginas/changelog.html');
-		chrome.notifications.clear(changelog, function (wasCleared) {});
 	});
 	notif.show();
 }
